@@ -5,6 +5,7 @@ import { api, downloadJson } from "./api";
 import { useResource } from "./useResource";
 import { number } from "./format";
 import { Button, Evidence, Loading, Notice, PageHeading } from "./components";
+import { ReleaseIdentity } from "./ReleaseIdentity";
 
 export function Reports({
   home,
@@ -21,6 +22,7 @@ export function Reports({
         Inspect what was calculated, how the models performed, and where the
         limits remain.
       </PageHeading>
+      <ReleaseIdentity />
       <section className="report-download card">
         <FileCheck2 size={32} strokeWidth={1.3} aria-hidden="true" />
         <div>

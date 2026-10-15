@@ -22,7 +22,9 @@ This record distinguishes local verification from public deployment.
 | Full release working-tree backend run, before final three configuration regression cases | 1,298 passed |
 | Exact staged public-file checkout, excluding explicitly marked data/archive-dependent checks | 1,286 passed, 1 skipped, 14 deselected |
 | Built public-checkout security/readiness tests, including the previously skipped asset check | 20 passed |
-| Final frontend suite | 328 passed in 27 files |
+| Frontend suite before release-identity panel | 328 passed in 27 files |
+| Latest frontend suite including release-identity panel | 330 passed in 28 files |
+| Latest release metadata/API/hosted/money checks | 204 passed |
 | Final React/TypeScript production build | Passed |
 | Independent scoped review of adviser/configuration fixes | 7 frontend and 12 configuration tests passed |
 
@@ -45,6 +47,28 @@ The reviewed money fixture was DEMO-01 with loft insulation and heat pump:
 £1,946 after and £94/year variable-charge saving. Live providers were not called.
 These are software and scenario checks, not measured household outcomes or
 participant research.
+
+### Local PostgreSQL and hosted-mode checks
+
+The actual application was exercised against a task-created PostgreSQL 18.6
+database, using HTTPS TestClient requests. Twelve checks passed: readiness,
+explicit workspace consent, Secure/HttpOnly/SameSite cookie flags, plan save,
+stale-version rejection, cross-origin rejection, wrong-host rejection, distinct
+workspaces, cross-workspace read/write rejection, shared provider-budget
+admission, and restoration of the saved plan after both database and application
+restart. No live provider call was made. The task database was stopped after
+verification; no existing database or service was stopped.
+
+This establishes that the existing PostgreSQL adapter worked in this local
+test. It does not replace the pending hosted connection, pooler, ingress,
+restart and persistence checks.
+
+### Deployment identity
+
+`/api/release` now exposes only the app name, release version, validated Git
+revision (or null), and local/hosted indicator. Reports shows this metadata.
+Missing metadata stays explicitly unknown, and arbitrary environment values
+are not returned. The identity panel is not an uptime or correctness guarantee.
 
 ## Not yet established by this record
 

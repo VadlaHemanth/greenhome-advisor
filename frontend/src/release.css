@@ -9,6 +9,16 @@
 body {
   background: var(--advisor-paper);
 }
+.release-identity {
+  border-left: 3px solid #9dbdae;
+  padding: 9px 16px;
+  margin-bottom: 22px;
+  font-size: 0.8rem;
+}
+.release-identity p {
+  margin: 5px 0 0;
+  font-size: 0.8rem;
+}
 .welcome-hidden {
   display: none !important;
 }

@@ -2,6 +2,14 @@
 
 UK / England and Wales pilot. All monetary quantities GBP. No app/test outcome may be fabricated.
 
+## Public portfolio release metadata
+
+`GET /api/release` returns `name`, `version`, `revision` (a validated lowercase
+40-character Git SHA or null), and `environment` (`local` or `hosted`). It
+never returns credentials or arbitrary environment values. A missing revision
+is explicitly unknown. `/api/readiness` remains the separate asset/model
+readiness check; a version identifier does not prove deployment success.
+
 ## Engine interface owned by lead
 
 `greenhome.engine` exports:

@@ -75,6 +75,19 @@ def test_demo_catalogue_and_schema_without_html_ui(client):
     assert client.get("/redoc").status_code == 404
 
 
+def test_public_release_identity_is_allowlisted_and_not_cacheable(client, monkeypatch):
+    monkeypatch.setenv("VERCEL_GIT_COMMIT_SHA", "b" * 40)
+    monkeypatch.setenv("DATABASE_URL", "NEVER-RETURN-PRIVATE-CONFIG")
+    response = client.get("/api/release")
+    assert response.status_code == 200
+    assert response.json() == {
+        "name": "GreenHome Advisor", "version": "2026.10",
+        "revision": "b" * 40, "environment": "local",
+    }
+    assert response.headers["cache-control"] == "no-store"
+    assert "NEVER-RETURN" not in response.text
+
+
 def test_metrics_project_only_allowlisted_numeric_aggregates(client, monkeypatch, tmp_path):
     path = tmp_path / "metrics.json"
     path.write_text(json.dumps({

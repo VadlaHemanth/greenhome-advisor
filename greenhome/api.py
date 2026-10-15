@@ -482,6 +482,12 @@ def create_app(*, load_environment: bool = True) -> FastAPI:
         result = readiness.check()
         return JSONResponse(result, status_code=200 if result["status"] == "ready" else 503)
 
+    @application.get("/api/release")
+    def release():
+        from greenhome.release_metadata import release_metadata
+        # The shared request boundary supplies the API's no-store policy.
+        return release_metadata(os.environ)
+
     @application.get("/api/catalogue")
     def catalogue():
         return [
