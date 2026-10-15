@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-10T18:41:03.900603+00:00",
+  "scope": "Provenance and observed reuse-notice record, not a legal opinion or source endorsement.",
+  "search_scope": "Targeted English-language Exa search plus direct official GOV.UK, data.gov.uk/CKAN and National Archives verification on 2026-10-10. No broad retrofit-effects literature review.",
+  "sources": [
+    {
+      "id": "DESNZ_NEED_2026",
+      "publisher": "Department for Energy Security and Net Zero",
+      "title": "NEED anonymised domestic property-level data 2026, 50,000-property sample",
+      "publication_date": "2026-06-11",
+      "publication_url": "https://www.gov.uk/government/statistics/national-energy-efficiency-data-framework-need-anonymised-data-2026",
+      "catalogue_url": "https://www.data.gov.uk/dataset/7390402c-e7ce-4e2f-bb08-d8d65f852f47/nationalenergyefficiencydataframeworkanonymiseddata",
+      "metadata_resource_url": "https://ckan.publishing.service.gov.uk/dataset/nationalenergyefficiencydataframeworkanonymiseddata/resource/d6b40609-730f-4172-9c9d-a1f01b03f173?inner_span=True",
+      "licence": {
+        "identifier": "OGL-UK-3.0",
+        "catalogue_label": "UK Open Government Licence (OGL)",
+        "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+        "evidence": "Dataset catalogue and metadata resource explicitly identify OGL; official licence hyperlink resolves to version 3.0. Cached ODS inspected: no separate licence statement found.",
+        "required_default_attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+        "project_source_attribution": "Source: Department for Energy Security and Net Zero, NEED anonymised data 2026, 50,000-property sample and metadata.",
+        "conditions_summary": [
+          "Attribute the provider and link the licence where possible.",
+          "Do not imply official endorsement; no warranty of suitability.",
+          "Personal data and unlicensed third-party rights are excluded from the licence."
+        ],
+        "software_licence_is_not_data_licence": true
+      },
+      "files": [
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6a282d2be371d9d2c0052b39/NEED-2026-anonymised-dataset-metadata.ods",
+          "file": "data/raw/NEED-2026-anonymised-dataset-metadata.ods",
+          "sha256": "1d97e6c535dec8c87e64482a5c7b552a4cb8273e48c13bc171816729f3c377ab",
+          "bytes": 100505,
+          "used_cached_download": true,
+          "checked_utc": "2026-10-10T13:41:22.083042+00:00",
+          "local_hash_verified_utc": "2026-10-10T18:41:03.900603+00:00",
+          "actual_original_acquisition_time": "unknown; existing cached-download check is not acquisition time",
+          "remote_reverified_utc": "2026-10-10T18:41:03.900603+00:00",
+          "remote_sha256": "1d97e6c535dec8c87e64482a5c7b552a4cb8273e48c13bc171816729f3c377ab"
+        },
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6a282ad83b15d05a7ce31fb1/anon2026_50k.csv",
+          "file": "data/raw/anon2026_50k.csv",
+          "sha256": "5da6b2c1d6c2296f200a3ff3f8e3e05d2141fd40767e51cd5f3c57faa501b50b",
+          "bytes": 15085342,
+          "used_cached_download": true,
+          "checked_utc": "2026-10-10T13:41:22.144253+00:00",
+          "local_hash_verified_utc": "2026-10-10T18:41:03.900603+00:00",
+          "actual_original_acquisition_time": "unknown; existing cached-download check is not acquisition time",
+          "remote_retrieval_this_task": false
+        }
+      ],
+      "population": "Anonymised current domestic properties in England and Wales; October 2025 stock snapshot, publisher filtering; not all UK homes.",
+      "metadata_findings": {
+        "sheets": [
+          "Cover_sheet",
+          "Metadata",
+          "Production_steps"
+        ],
+        "quality": "V observed targets only; E estimates and L/G/O/blanks excluded separately by fuel; not zero-filled.",
+        "rounding": "Nearest 100 kWh",
+        "electricity_period": "February 2024 to January 2025, not weather corrected",
+        "gas_period": "Weather corrected; metadata says 2020 onward consistent with 2018/2019 mid-May reporting convention. Not synchronized calendar-year totals.",
+        "no_persistent_customer_or_property_id": true,
+        "epc_dates_missing": true
+      },
+      "allowed_evidence": "Retrospective annual-consumption associations only; not observed retrofit effects, property sales or customer-memory outcomes."
+    },
+    {
+      "id": "DESNZ_GHG_2026",
+      "publisher": "Department for Energy Security and Net Zero",
+      "publication_url": "https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026",
+      "publication_date": "2026-06-11",
+      "page_last_updated": "2026-07-31",
+      "update_scope": "July correction affected the flat file; publication says June full set was not revised.",
+      "workbook_url": "https://assets.publishing.service.gov.uk/media/6a29392bade52dc0882218a8/ghg-conversion-factors-2026-full-set.xlsx",
+      "workbook_bytes": 2109334,
+      "workbook_sha256": "b5c4f2f86cdc74707337b2fb013b44ded189a1b528f5e29ea99856ba65ae0205",
+      "verified_utc": "2026-10-10T18:41:03.900603+00:00",
+      "verification_method": "Fresh official workbook download, ZIP/XML cell extraction in memory; not retained or used to modify engine.",
+      "cell_evidence": {
+        "Fuels": {
+          "C42": "kWh (Gross CV)",
+          "D42": "0.18231",
+          "B39": "Natural gas"
+        },
+        "UK electricity": {
+          "A25": "Electricity generated",
+          "B25": "Electricity: UK",
+          "C25": "kWh",
+          "D25": "2026",
+          "E25": "0.13095999999999999"
+        }
+      },
+      "factors": {
+        "electricity": {
+          "sheet": "UK electricity",
+          "cell": "E25",
+          "value": "0.13096",
+          "unit": "kgCO2e/kWh",
+          "activity": "UK electricity generated"
+        },
+        "gas": {
+          "sheet": "Fuels",
+          "cell": "D42",
+          "value": "0.18231",
+          "unit": "kgCO2e/kWh",
+          "basis": "Natural gas, gross calorific value"
+        }
+      },
+      "boundary": "Operational electricity generation and natural gas combustion; excludes WTT, T&D, embodied carbon and refrigerants.",
+      "licence": {
+        "identifier": "OGL-UK-3.0",
+        "evidence": "Official publication footer links OGL v3, except where otherwise stated. No workbook-specific licence notice located in inspected Introduction sheet.",
+        "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "methodology_url": "https://assets.publishing.service.gov.uk/media/6a2940543b15d05a7ce3202e/2026-GHG-conversion-factors-methodology-report.pdf",
+      "methodology_inspection": "URL verified on official publication; PDF not read in this task."
+    },
+    {
+      "id": "REFERENCE_RULE_V1",
+      "publisher": "Team 225 project",
+      "evidence_kind": "fictional_rule_reference_NOT_observed_savings",
+      "source": "docs/EVALUATION_PROTOCOL.md and scripts/evaluate_reference_cases.py",
+      "coefficient_basis": "Loft 15%/7%, glazing 10%, controls 7%, space-heat share 80%, boiler efficiency 85%, SPF 3, PV 3 kWp/900 yield/45% share and all costs are disclosed prototype assumptions, not empirically fitted NEED targets.",
+      "independence_limit": "Independent Fraction implementation of shared written assumptions, NOT independent physical validation.",
+      "copyright_scope": "New project-authored fictional cases; official source components retain their own terms."
+    }
+  ],
+  "evidence_file": "data/reference_cases_source_evidence.json"
+}

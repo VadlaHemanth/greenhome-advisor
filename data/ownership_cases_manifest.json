@@ -1,0 +1,44 @@
+{
+  "candidate_executed_before_freeze": false,
+  "frozen_at_utc": "2026-10-11T01:21:03.805827Z",
+  "original_materials_sha256": {
+    "LLOYDS-ps2.pdf": "ed34be07da6378128fcc776d61a980be6390bdf44d12b9a8c2197dc3dc940f3a",
+    "PS2 Green Home Score - condensed.pptx": "1853e72b11e50831ae1046ab43e263b62f9b62e6f39b6968fd32cfd0468f4279",
+    "megathon-x-deliverables.pdf": "d0516349061cc92525ef5354fe7b88fe08ae26e8a9a0f6a0f80e9f8c55993a13",
+    "megathon-x-guidelines.pdf": "081c7b6d6c6bec553ace8c516ba9faf51141be665d59498201c67b2246323372"
+  },
+  "protected_files_sha256": {
+    "data/energy_splits.csv": "2bf3d7948768d83b8accfca955f10bcec5c893d50800ab356a4975f2bce13087",
+    "data/reference_cases.json": "9a8c65161d74b5fbac6ef82c221f1b17ff9392ceb8cece18d1abea51ef481912",
+    "data/reference_cases_manifest.json": "02ad9f1924eb32f8a4f422ad2b9807070d2990b639974d11865c5744824199e8",
+    "data/synthetic_value_properties.csv": "b77b51ea68348a02bbc11d4787c94a7f65efb5e4f30cc21c31e55dc214495fb7",
+    "data/synthetic_value_scenarios.csv": "b9d2476d22181d6aaf60e71446a05301acd267522e98a141b7ba456bda996068",
+    "docs/EVALUATION_PROTOCOL.md": "fab06ea51b368213e5c30a3c4f88b8c88c1a5e592fe4f6229f885b26b907302b",
+    "docs/MEMORY_EVALUATION.md": "c2e691b5197d53f3b2f480925dff7c5b2a07cc44092188dfa21740a540b4f96c",
+    "models/energy_benchmark.joblib": "0e49b26bd32c15f3db053ef34f023e275f5563a4fef0ee8a0dcd3a7cfc648b5a",
+    "models/synthetic_value.joblib": "97cbb21e369a277c305bbebb77ccc09e9c4d3d58e09f2b466c5bf662998db9af",
+    "reports/memory_evaluation.json": "e6f9a6febf00ef414686f958aabe7bfc98ea45b10f8d389bde7c370fe63be323",
+    "reports/reference_metrics.json": "a599e8019859b650fd227c581f272461a92c86701f71d29bbef1e7f65ab4f99c",
+    "reports/reference_predictions.json": "ad26fff467cc32d2d9803a80fe24989bb6342c2e0a5ef0137b632e7304c9b693",
+    "reports/test_predictions.csv": "32fed65d27803540fa9c94203531d65e6309656d50fbe4f06530899ec645df6b",
+    "reports/training.log": "55dc669d9e7f2d87b586fb714d9a044440b51d93e5bbfccfd6419f3e3167f0e2",
+    "reports/training_metrics.json": "256fa93cc8b280a78a2b2e187ee2c50d5565fbb76be7f93f3cfcd5755c504976",
+    "reports/validation_predictions.csv": "6a05c3a9c4900b22bdfeae51561b11e88676095b080fb510d4bc7ef8a33827ec",
+    "scripts/evaluate_memory.py": "b93210e26850c4b08a1a107316706872cd1f65284e47dbd06b39d1ccda6fa687"
+  },
+  "protocol_sha256": "8181fd730fe9bc4570dac96c0066fd589bbbbc6a943e813d8a837f5089e97bbe",
+  "reference_sha256": "365336d4cc0c62502c92c0246407781edceae2eb92e5706e60f735fa792cf612",
+  "source_at_freeze_sha256": {
+    "docs/MULTI_PROPERTY_CONTRACT.md": "2a1a2acd5a8f9242dc574ddb43203dbf76da24333c49190b7df2bc5340dda167",
+    "greenhome/api.py": "ce178a1ddbb01bd54e196c25626958a27944178ceab1990cc764b6847fbd4384",
+    "greenhome/engine.py": "688965410bd1a52ef235b6b57ef0850e7a06620d04da3090282d2a15389d2da3",
+    "greenhome/ranking.py": "7bc7ea0686f34d464bfb2f2a0dbf7d69ad042c0479319c495c9d3f2861f2530e",
+    "greenhome/security.py": "9bce2897688f17d0bce7e3e2078e6bfd95ac0dc44b61aa28c3cde50c5f670ff1",
+    "greenhome/service.py": "54cd830decf7011ec51ed1c33eba16d1b5335eed3c4daad48906d532d57836b6",
+    "greenhome/workspace_api.py": "119f07d73bd4f1c28395b6cff706bcc5aa82de54dc545f51e3c17200361b3e77",
+    "greenhome/workspace_store.py": "2998749d92479f9aee751d53d44bc7e595b0134d5a30ac7eea96b2f26de947b4",
+    "scripts/evaluate_ownership.py": "28ba9c91245f6b1c9b23cbcb0becd73d726661a72fa972c5c4d876978d0ade62",
+    "tests/test_ownership_evaluation.py": "58b4abd5aafc4e2076afff1ca8a5b53ab9d5c248eeab2a44eae401de57931738"
+  },
+  "version": "ownership-http-v1"
+}

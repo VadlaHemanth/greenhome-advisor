@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="820"
+     viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
+  <title id="title">GreenHome customer to many properties architecture Team 225</title>
+  <desc id="desc">One cookie-scoped fictional workspace contains customers.
+    Each customer has one to eight child properties with a composite customer
+    and workspace foreign key. Three child properties are shown below the same
+    parent. Budgets, permissions, bills, selections and completion histories are
+    property-local. Customer-wide exclusions and the shared planning cap are
+    separate. FastAPI checks both versions under a customer transaction.
+    The deterministic engine computes results before the optional single Xkiro
+    call; only server-validated claims are displayed. No production accounts
+    or owner-level NEED model are implied.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4"
+            orient="auto-start-reverse">
+      <path d="M0 0 L8 4 L0 8Z" fill="#3e5c4d"/>
+    </marker>
+    <style>
+      text { font-family: Liberation Sans, Arial, sans-serif; fill: #17231e; font-size: 23px; }
+      .heading { font-size: 27px; font-weight: 700; }
+      .small { font-size: 22px; }
+      .box { fill: white; stroke: #809888; stroke-width: 2; rx: 8; }
+      .link { fill: none; stroke: #3e5c4d; stroke-width: 3; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1440" height="820" fill="white"/>
+  <text x="24" y="32" class="heading">Team 225   |   Fictional customer workspace   |   England and Wales   |   GBP</text>
+
+  <rect x="24" y="58" width="410" height="135" class="box"/>
+  <text x="42" y="90" class="heading">React customer / home views</text>
+  <text x="42" y="123">Choose customer, then that home</text>
+  <text x="42" y="153">CSV preview → explicit Apply</text>
+  <text x="42" y="181" class="small">Identity and version keyed responses</text>
+  <path d="M434 123 H474" class="link"/>
+  <rect x="482" y="58" width="934" height="135" class="box"/>
+  <text x="502" y="90" class="heading">FastAPI   |   cookie + customer ID + property ID</text>
+  <text x="502" y="123">Wrong parent → 404   |   stale versions or allocation conflict → reject</text>
+  <text x="502" y="153">Customer-locked transaction checks shared cap and both versions</text>
+  <text x="502" y="181" class="small">Sibling facts stay separate   |   export and delete scoped to the workspace</text>
+
+  <rect x="24" y="223" width="908" height="439" rx="12" fill="#f3f7f4"
+        stroke="#6a8170" stroke-width="2" stroke-dasharray="9 6"/>
+  <text x="43" y="254" class="heading">SQLite private workspace   |   schema v2   |   not bank identity</text>
+  <path d="M830 193 V272" class="link"/>
+  <rect x="160" y="282" width="630" height="132" class="box"/>
+  <text x="181" y="315" class="heading">Customer 1   |   one parent, many properties</text>
+  <text x="181" y="347">Customer preferences + optional shared cap</text>
+  <text x="181" y="376">Plan upper costs + completed planning reserves</text>
+  <text x="181" y="403" class="small">Allocation is not actual spending or realised saving</text>
+  <path d="M475 414 V451 H179 V477" class="link"/>
+  <path d="M475 414 V477" class="link"/>
+  <path d="M475 451 H771 V477" class="link"/>
+  <text x="492" y="440" class="small">1 → 1–8 properties   |   owner FK</text>
+  <rect x="43" y="484" width="273" height="158" class="box"/>
+  <text x="59" y="516" class="heading">Property A</text>
+  <text x="59" y="550">Budget + permissions</text>
+  <text x="59" y="580">Bills + selected plan</text>
+  <text x="59" y="610">Own history + version</text>
+  <rect x="338" y="484" width="273" height="158" class="box"/>
+  <text x="354" y="516" class="heading">Property B</text>
+  <text x="354" y="550">Budget + permissions</text>
+  <text x="354" y="580">Bills + selected plan</text>
+  <text x="354" y="610">Own history + version</text>
+  <rect x="634" y="484" width="273" height="158" class="box"/>
+  <text x="650" y="516" class="heading">Property C</text>
+  <text x="650" y="550">Budget + permissions</text>
+  <text x="650" y="580">Bills + selected plan</text>
+  <text x="650" y="610">Own history + version</text>
+
+  <rect x="970" y="223" width="446" height="192" class="box"/>
+  <text x="990" y="255" class="heading">Deterministic engine + models</text>
+  <text x="990" y="291">Effective exclusions = local ∪ customer</text>
+  <text x="990" y="322">Each home's budget and potential</text>
+  <text x="990" y="353">Signed fuels, score, carbon, ranges</text>
+  <text x="990" y="386" class="small">Never aggregate ownership prediction</text>
+  <path d="M932 340 H964" class="link"/>
+  <path d="M1192 415 V445" class="link"/>
+  <rect x="970" y="452" width="446" height="210" class="box"/>
+  <text x="990" y="484" class="heading">Optional bounded explanation</text>
+  <text x="990" y="519">Recompute → approved claim registry</text>
+  <text x="990" y="550">Explicit consent → one Xkiro call</text>
+  <text x="990" y="581">Qwen output is untrusted</text>
+  <text x="990" y="612">Validate IDs → server-rendered facts</text>
+  <text x="990" y="641" class="small">Labelled local fallback, not a new provider</text>
+
+  <text x="24" y="698" class="small">Migration: offline private backup → validate all rows → atomic v1 upgrade or rollback; never reset unknown data.</text>
+  <text x="24" y="730" class="small">Unknown legacy completion reserve stays null until explicitly confirmed. Completed history cannot be rolled back by edits.</text>
+  <rect x="24" y="751" width="1392" height="49" rx="6" fill="#f3f7f4" stroke="#91a297"/>
+  <text x="42" y="784">Distinct evidence: observed NEED benchmark  |  engineering assumptions  |  synthetic value  |  fictional ownership replay</text>
+</svg>

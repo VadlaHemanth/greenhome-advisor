@@ -1,0 +1,31 @@
+# Private state and configuration
+.env
+.env.*
+!.env.example
+*.sqlite*
+*.db
+state/
+work/
+outputs/
+.planning/
+.superpowers/
+# Environments and build output
+.venv/
+.venv
+node_modules/
+frontend/dist/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+*.tsbuildinfo
+.vercel/
+# Training datasets: reproduce from scripts, do not publish raw records
+data/raw/
+data/*.csv
+!data/monthly_energy_example.csv
+data/*.ods
+reports/history/
+docs/superpowers/
+docs/*_REVIEW.md
+.codex/

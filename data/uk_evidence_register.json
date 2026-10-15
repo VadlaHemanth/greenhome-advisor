@@ -1,0 +1,512 @@
+{
+  "schema_version": 1,
+  "team_number": 225,
+  "evidence_cutoff": "2026-10-11",
+  "reviewed_on": "2026-10-11",
+  "purpose": "Documentation-only UK source and assumption audit. Not an input to training, labels or runtime calculations.",
+  "pilot_geography": ["England", "Wales"],
+  "currency": "GBP",
+  "runtime_values_changed": false,
+  "frozen_labels_changed": false,
+  "models_retrained": false,
+  "personal_records_retrieved": false,
+  "search_scope": {
+    "method": "English-language Exa discovery and primary-page extraction; direct official files fetched and parsed in memory. web.run attempts returned no usable content.",
+    "included_publishers": ["DESNZ", "HM Land Registry", "ONS", "Ofgem", "MHCLG", "Energy Systems Catapult", "UK Data Service", "The National Archives"],
+    "excluded_as_coefficient_evidence": ["Installer marketing", "Social media", "Secondary repetitions of one trial", "Post-cutoff releases"],
+    "not_performed": ["Systematic literature review", "Causal reanalysis", "EoH household-series download", "Address-level EPC or sales lookup", "Provider or credential search", "Training or runtime modification"],
+    "scope_limit": "Glazing, controls, solar-site yield and installed costs were not exhaustively reviewed. No exact coefficient calibration is claimed."
+  },
+  "sources": [
+    {
+      "id": "NEED_ANON_2026",
+      "document_index": "S1",
+      "publisher": "Department for Energy Security and Net Zero",
+      "title": "National Energy Efficiency Data-Framework: anonymised data 2026",
+      "publication_date": "2026-06-11",
+      "next_update_stated": "2027-06",
+      "publication_url": "https://www.gov.uk/government/statistics/national-energy-efficiency-data-framework-need-anonymised-data-2026",
+      "licence_evidence_url": "https://www.data.gov.uk/dataset/7390402c-e7ce-4e2f-bb08-d8d65f852f47/nationalenergyefficiencydataframeworkanonymiseddata",
+      "evidence_type": "Official anonymised property-level administrative data; processed annual consumption",
+      "evidence_grade": "High for source identity and documented variables; limited for prospective or individual-home inference",
+      "lineage": "DESNZ domestic NEED; not independent of NEED aggregate and impact publications",
+      "geography": ["England", "Wales"],
+      "unit_of_observation": "Anonymised domestic property in October 2025 council-tax stock snapshot",
+      "row_count": 50000,
+      "larger_release_rows": 4000000,
+      "stock_filter_counts_millions": {"initial_stock": 27.3, "meter_matched": 25.6, "after_structural_exclusions": 25.2, "after_rare_combination_suppression": 21.6},
+      "time": {
+        "consumption_years_available": [2005, 2024],
+        "project_target_year": 2024,
+        "electricity_target_period": "February 2024 to January 2025",
+        "gas_target_period": "Mid-May 2024 to mid-May 2025; explicitly confirmed in NEED 2026 Annex D p12 and summary report",
+        "electricity_weather_corrected": false,
+        "gas_weather_corrected": true,
+        "stock_snapshot": "2025-10",
+        "epc": "Most recent certificate; no lodgement date in this release"
+      },
+      "files": [
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6a282ad83b15d05a7ce31fb1/anon2026_50k.csv",
+          "existing_local_file": "data/raw/anon2026_50k.csv",
+          "bytes": 15085342,
+          "sha256": "5da6b2c1d6c2296f200a3ff3f8e3e05d2141fd40767e51cd5f3c57faa501b50b",
+          "verification": "Fresh direct download in memory; byte-for-byte match to existing local source; flags recounted locally",
+          "saved_again": false
+        },
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6a282d2be371d9d2c0052b39/NEED-2026-anonymised-dataset-metadata.ods",
+          "existing_local_file": "data/raw/NEED-2026-anonymised-dataset-metadata.ods",
+          "bytes": 100505,
+          "sha256": "1d97e6c535dec8c87e64482a5c7b552a4cb8273e48c13bc171816729f3c377ab",
+          "verification": "Fresh direct download in memory; byte-for-byte match; Cover_sheet, Metadata and Production_steps inspected",
+          "saved_again": false
+        }
+      ],
+      "quality": {
+        "rounding_kwh": 100,
+        "project_accepts_flags": ["V"],
+        "project_excludes_flags": ["E", "L", "G", "O", "<blank>"],
+        "electricity_flag_counts": {"V": 45214, "E": 1020, "L": 2101, "G": 155, "O": 740, "<blank>": 770},
+        "gas_flag_counts": {"V": 37186, "E": 2316, "L": 1015, "G": 214, "O": 609, "<blank>": 8660},
+        "valid_electricity_bounds_kwh": [500, 25000],
+        "valid_gas_bounds_kwh": [1000, 50000],
+        "missing_is_zero": false,
+        "V_is_not_raw_interval_measurement": true
+      },
+      "supports": ["Retrospective property-cohort consumption benchmarks", "Documented feature categories and quality flags"],
+      "does_not_support": ["All-UK coverage", "Household-specific retrofit effects", "Exact floor area from a band", "Observed sales/value uplift", "Monthly customer charts", "Fully time-safe forecasting"],
+      "caveats": [
+        "MAIN_HEAT_FUEL depends on gas consumption in 2022-2024 and is excluded from predictors.",
+        "Later property snapshot and undated latest EPC can post-date the 2024 target.",
+        "No EPC includes missing certificates and failed matching.",
+        "Insulation flags principally capture government-scheme records, not all private improvements.",
+        "No persistent property ID or address-level join key; generated row IDs are snapshot-local.",
+        "Filtering and project target exclusions limit representativeness.",
+        "Publisher area concepts differ for houses and flats; API/EPC area is not necessarily measurement-equivalent."
+      ],
+      "licence": {
+        "identifier": "OGL-UK-3.0",
+        "evidence": "Dataset catalogue explicitly labels UK Open Government Licence; no separate licence text found in inspected ODS.",
+        "attribution": "Source: DESNZ, NEED anonymised data 2026. Contains public sector information licensed under the Open Government Licence v3.0.",
+        "restrictions": ["No official endorsement", "Personal data and unlicensed third-party rights excluded", "No re-identification or address joins"]
+      }
+    },
+    {
+      "id": "NEED_IMPACT_2026",
+      "document_index": "S2",
+      "publisher": "Department for Energy Security and Net Zero",
+      "title": "NEED impact of measures data tables 2026",
+      "publication_date": "2026-06-11",
+      "next_update_stated": "2027-06",
+      "publication_url": "https://www.gov.uk/government/statistics/national-energy-efficiency-data-framework-need-impact-of-measures-data-tables-2026",
+      "evidence_type": "Accredited official statistics; observational matched difference-in-differences estimates",
+      "evidence_grade": "High for published cells; moderate, population-limited intervention-effect evidence",
+      "lineage": "DESNZ domestic NEED; not derived from the project's 50000-row training subset",
+      "geography": ["England", "Wales"],
+      "installation_year_label": 2023,
+      "savings_year_label": 2024,
+      "gas_installation_window": "Mid-May 2023 to mid-May 2024",
+      "pv_installation_window": "February 2023 to January 2024",
+      "files": [
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6a28277b3b15d05a7ce31fa3/Impact_of_measures_headline_EW_2023.xlsx",
+          "bytes": 227150,
+          "sha256": "bde31f1752cf75b0f696eef95dcc3cedd96ec13c7036f8b09b8a429052be1600",
+          "verification": "Direct in-memory download; Cover sheet, Notes and Tables 1-4 inspected",
+          "saved_locally": false
+        },
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6a28290ff553ec1112221818/Impact_of_measures_attributes_loft_EW_2023.xlsx",
+          "bytes": 249068,
+          "sha256": "fd80314e2fa3cba388acd0b8fec69b18a97dcee463fc12098d39f7164b019ef2",
+          "verification": "Direct in-memory download; attribute-table cells inspected",
+          "saved_locally": false
+        }
+      ],
+      "headline_columns": {"sheet": "Table 1", "sample": "D", "median_fraction": "E", "mean_fraction": "F", "median_kwh": "G", "mean_kwh": "H"},
+      "headline_observations_not_runtime_constants": [
+        {"row": 5, "measure": "Condensing boiler", "fuel": "gas", "sample": 354312, "median_percent_rounded": 2.28, "mean_percent_rounded": 0.94, "median_kwh_rounded": 236},
+        {"row": 6, "measure": "Solid wall insulation", "fuel": "gas", "sample": 2411, "median_percent_rounded": 17.28, "mean_percent_rounded": 16.85, "median_kwh_rounded": 1857},
+        {"row": 7, "measure": "Cavity wall insulation", "fuel": "gas", "sample": 2191, "median_percent_rounded": 11.98, "mean_percent_rounded": 11.14, "median_kwh_rounded": 1208},
+        {"row": 8, "measure": "Loft, including roof and room-in-roof insulation", "fuel": "gas", "sample": 1486, "median_percent_rounded": 3.21, "mean_percent_rounded": 2.89, "median_kwh_rounded": 324},
+        {"row": 9, "measure": "Solar PV", "fuel": "electricity imports", "sample": 25199, "median_percent_rounded": 12.23, "mean_percent_rounded": 9.35, "median_kwh_rounded": 304}
+      ],
+      "loft_detail": {
+        "headline_median_fraction_E8": 0.0321169156666163,
+        "headline_mean_fraction_F8": 0.0289229885628914,
+        "headline_median_kwh_G8": 323.615262313838,
+        "headline_mean_kwh_H8": 390.935923389615,
+        "effect_distribution_lower_quartile_percent": -15.9098673790677,
+        "effect_distribution_upper_quartile_percent": 21.9969091336926,
+        "distribution_locator": "Table 3 H16/J16; paired savings estimate distribution, NOT confidence bounds for median",
+        "prior_insulation_depth_matches_project_categories": false
+      },
+      "additional_files_located_not_reanalysed": [
+        "https://assets.publishing.service.gov.uk/media/6a28289f6d178a6fb7e31fa1/Impact_of_measures_installation_year_EW.xlsx",
+        "https://assets.publishing.service.gov.uk/media/6a2828c0e371d9d2c0052b34/Impact_of_measures_in_years_following_installation_EW.xlsx"
+      ],
+      "supports": ["Positive central cohort effects for listed measures", "Uncertainty, heterogeneity and separate fuel accounting"],
+      "does_not_support": ["Universal 15 percent savings", "Poor/partial loft coefficients", "Standalone controls effects by subtracting package medians", "A 3 kWp yield or 45 percent PV self-consumption assumption", "Exact marginal package interactions"],
+      "licence": {"identifier": "OGL-UK-3.0", "evidence": "GOV.UK notices and Annex D copyright page; third-party exceptions retained"}
+    },
+    {
+      "id": "NEED_METHOD_2026",
+      "document_index": "S3",
+      "publisher": "Department for Energy Security and Net Zero",
+      "publication_date": "2026-06-11",
+      "publication_url": "https://www.gov.uk/government/statistics/national-energy-efficiency-data-framework-need-report-summary-of-analysis-2026",
+      "summary_url": "https://www.gov.uk/government/statistics/national-energy-efficiency-data-framework-need-report-summary-of-analysis-2026/national-energy-efficiency-data-framework-need-report-summary-of-analysis-2026-accessible-webpage",
+      "methodology_url": "https://assets.publishing.service.gov.uk/media/6a2824696d178a6fb7e31f9c/annex-d-domestic-need-methodology-2026.pdf",
+      "methodology_bytes": 567995,
+      "methodology_sha256": "3a573a68dbf7287d279ad5e761f661c712d2347dc82a30f81bbbc83b64680dde",
+      "evidence_type": "Primary statistical methods and source documentation",
+      "evidence_grade": "High for defining method; not a separate validation study",
+      "verification": "Summary read through Exa; Annex D direct in-memory PDF extraction, particularly pp9-18",
+      "impact_method": {
+        "design": "Matched difference-in-differences with elastic weighting and matching",
+        "random_control_match_repetitions": 50,
+        "gas_bounds_kwh": [2500, 50000],
+        "electricity_bounds_kwh": [500, 25000],
+        "tail_trim_percent_each_side": 2.5,
+        "exclusions": ["Flats and rare property types", "Missing matching attributes", "Suspected imputed consumption", "Extreme consumption changes", "Smart-meter installations in comparison period", "Other recorded interventions for single-measure comparison", "Post-1999 homes for fabric measures"],
+        "caveats": ["Unrecorded private installations", "Unmeasured occupant changes", "Comfort taking", "Changing installation size/quality", "Matching and small-subgroup uncertainty", "Cross-release methodology revisions"]
+      },
+      "separate_aggregate_consumption_bounds_kwh": {"gas": [100, 50000], "electricity": [100, 25000]},
+      "bounds_warning": "Aggregate consumption, anonymised-release and impact-analysis thresholds differ. Do not change the frozen training filter.",
+      "area_warning": "House reduced cover area differs from flat effective floor area, which excludes bathrooms, WCs, showers and lobby areas; not necessarily EPC total useful floor area.",
+      "licence": {"identifier": "OGL-UK-3.0", "locator": "Annex D PDF p18", "third_party_exceptions": true}
+    },
+    {
+      "id": "GHG_2026",
+      "document_index": "S4",
+      "publisher": "Department for Energy Security and Net Zero",
+      "title": "Greenhouse gas reporting: conversion factors 2026",
+      "publication_date": "2026-06-11",
+      "last_updated": "2026-07-31",
+      "publication_url": "https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026",
+      "evidence_type": "Official emissions accounting factors and methodology",
+      "evidence_grade": "High for stated boundary; not a lifecycle or marginal-emissions model",
+      "update_scope": "July corrected unavailable values encoded as zero in flat file; June full set unchanged.",
+      "files": [
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6a29392bade52dc0882218a8/ghg-conversion-factors-2026-full-set.xlsx",
+          "bytes": 2109334,
+          "sha256": "b5c4f2f86cdc74707337b2fb013b44ded189a1b528f5e29ea99856ba65ae0205",
+          "verification": "Direct in-memory download; exact cell checks and electricity guidance/FAQ reading",
+          "saved_locally": false
+        },
+        {
+          "url": "https://assets.publishing.service.gov.uk/media/6a2940543b15d05a7ce3202e/2026-GHG-conversion-factors-methodology-report.pdf",
+          "bytes": 1761487,
+          "sha256": "e15e575e3d54c75a723e32b7aebcbd4e294abe39267d585d6daa231fc5cbd7d7",
+          "verification": "Direct in-memory PDF; section 3, selected fuel-property/appendix material, copyright page",
+          "saved_locally": false
+        }
+      ],
+      "verified_existing_factors": [
+        {"sheet": "UK electricity", "cell": "E25", "activity": "Electricity generated", "reporting_year": 2026, "value": 0.13096, "unit": "kgCO2e/kWh"},
+        {"sheet": "Fuels", "cell": "D42", "activity": "Natural gas", "basis": "Gross CV", "value": 0.18231, "unit": "kgCO2e/kWh"}
+      ],
+      "boundary": "Operational electricity generation and mains gas combustion",
+      "excluded": ["Upstream/well-to-tank energy", "Transmission and distribution losses", "Embodied emissions", "Refrigerant losses"],
+      "source_distinctions": [
+        "UK electricity A22 instructs use of generation factor with metered/billed electricity for Scope 2.",
+        "UK electricity A29-A30 distinguish consumption-inclusive generation plus T&D from generation-only.",
+        "Fuels D41 is net CV, not interchangeable with D42.",
+        "2026 methodology uses more recent Energy Trends inputs; old blanket two-year-lag descriptions do not apply."
+      ],
+      "does_not_support": ["Household boiler efficiency", "Guaranteed saving under all conditions", "Whole-life assessment", "Historical monthly or marginal grid intensity"],
+      "licence": {"identifier": "OGL-UK-3.0", "locator": "Methodology copyright p2 and GOV.UK notices", "third_party_exceptions": true}
+    },
+    {
+      "id": "EOH_PROJECT",
+      "document_index": "S5",
+      "publisher": "DESNZ/BEIS; project managed by Energy Systems Catapult",
+      "publication_url": "https://www.gov.uk/government/publications/electrification-of-heat-demonstration-project-successful-bids",
+      "government_page_published": "2020-06-29",
+      "government_page_updated": "2021-12-20",
+      "final_collection_url": "https://es.catapult.org.uk/report/electrification-of-heat-summary-reports-and-datasets/",
+      "final_collection_date": "2024-12-19",
+      "project_overview_url": "https://es.catapult.org.uk/project/electrification-of-heat-demonstration-project/",
+      "project_overview_date": "2025-01-08",
+      "evidence_type": "Government provenance and contractor final-report landing pages",
+      "evidence_grade": "High for project identity; final numerical tables unverified in this audit",
+      "installed_households": 742,
+      "sample_design": "Volunteer sample, not a random all-UK household sample",
+      "regions": ["North-east England", "South-east England", "Scotland"],
+      "verification": "Public text read through Exa. Direct final-collection request returned HTTP 401; report download flow listed an information form.",
+      "final_report_tables_read": false,
+      "access_restriction_bypassed": false,
+      "does_not_support": ["Every UK home is suitable", "SPF 3 is guaranteed", "All 742 systems qualify for each SPF statistic", "Universal bill savings"],
+      "licence": {"government_page": "OGL-UK-3.0 except exceptions", "contractor_report": "Republication rights not verified; no final-report content/assets redistributed", "dataset": "See EOH_CLEANSED_9050"}
+    },
+    {
+      "id": "EOH_CLEANSED_9050",
+      "document_index": "S5",
+      "publisher": "Energy Systems Catapult; distributed by UK Data Service",
+      "title": "Electrification of Heat Demonstration Project: Heat Pump Performance Cleansed Data, 2020-2023",
+      "publication_url": "https://datacatalogue.ukdataservice.ac.uk/studies/study/9050",
+      "edition": 2,
+      "edition_date": "2024-12",
+      "doi": "10.5255/UKDA-SN-9050-2",
+      "fieldwork": "November 2020 to September 2023",
+      "evidence_type": "Primary data repository metadata",
+      "evidence_grade": "High for availability, scope and access terms; no fresh performance reanalysis",
+      "households": 742,
+      "observation_unit": "Families/households; time-series measurements",
+      "access": "Open; no registration required for study 9050",
+      "raw_data_distinction": "Study 9049 raw data requires registered UKDS access, unlike open cleansed data.",
+      "related_studies": {"raw": 9049, "thirty_minute": 9209, "daily": 9210},
+      "downloaded_household_data": false,
+      "verification": "Catalogue and licence inspected through Exa",
+      "licence": {
+        "identifier": "OGL",
+        "catalogue_label": "Open Government Licence",
+        "version_verification": "Version not explicit in extracted catalogue text; confirm download licence before redistribution.",
+        "copyright": "Crown copyright",
+        "required_citation": "Energy Systems Catapult. (2024). Electrification of Heat Demonstration Project: Heat Pump Performance Cleansed Data, 2020-2023. [data collection]. 2nd Edition. UK Data Service. SN: 9050, DOI: 10.5255/UKDA-SN-9050-2."
+      }
+    },
+    {
+      "id": "EOH_INTERIM_2023",
+      "document_index": "S5",
+      "publisher": "Energy Systems Catapult",
+      "title": "Interim Insights from Heat Pump Performance Data",
+      "publication_date": "2023-03-16",
+      "publication_url": "https://es.catapult.org.uk/wp-content/uploads/2023/03/EoH-Interim-Insights-from-Heat-Pump-Performance-Data-1.pdf",
+      "methodology_url": "https://es.catapult.org.uk/wp-content/uploads/2023/03/EoH-Interim-Heat-Pump-Performance-Data-Analysis-Report-1.pdf",
+      "evidence_type": "Primary interim field-trial report; superseded as latest project result",
+      "evidence_grade": "Moderate; historical selected cohort only",
+      "lineage": "Same EoH trial, not an independent study",
+      "monitoring_cutoff": "2022-08-24",
+      "locator": "Interim Insights section 1.1.1 and Table 5.1",
+      "interim_observations_not_runtime_constants": {"ashp_n": 291, "median_SPF_H4": 2.8, "IQR_SPF_H4": [2.53, 3.09], "median_SPF_H2": 2.94},
+      "boundary": "H4 includes heat pump, immersion/back-up heater and circulation-system electricity/heat; not nameplate COP or the project's space-heating-only model",
+      "verification": "Primary indexed PDF text read through Exa; no direct-file hash recorded",
+      "licence": {"status": "No full report/assets redistributed; government funding does not establish reuse rights for every contractor asset"},
+      "does_not_support": ["Labelling these final 2024 results", "Guaranteed SPF 3.0", "Calibrated uncertainty for our model"]
+    },
+    {
+      "id": "EOH_CONTRACTOR_UPDATE_2024",
+      "document_index": "S5",
+      "publisher": "Energy Systems Catapult",
+      "publication_date": "2024-04-23",
+      "publication_url": "https://es.catapult.org.uk/insight/we-need-an-army-of-heat-pump-installers-rebecca-sweeney/",
+      "evidence_type": "Project-owner commentary, not final technical tables",
+      "evidence_grade": "Lower methodological weight than technical report",
+      "lineage": "Same EoH trial",
+      "reported_median_ashp_SPF_H4": 2.78,
+      "verification": "Public contractor article read through Exa; sample and final mean not certified",
+      "used_for": "Demonstrate that the 2023 interim headline should not be labelled final",
+      "licence": {"status": "No full report/artwork redistributed; no blanket OGL inference"}
+    },
+    {
+      "id": "UKHPI_JULY_2026",
+      "document_index": "S6",
+      "publisher": "HM Land Registry, ONS, Registers of Scotland and Land and Property Services Northern Ireland",
+      "publication_date": "2026-09-16",
+      "publication_page_updated": "2026-09-18",
+      "update_scope": "Welsh translations added",
+      "observation_month": "2026-07",
+      "latest_available_as_of_cutoff": true,
+      "next_release": {"observation_month": "2026-08", "scheduled_date": "2026-10-21"},
+      "publication_url": "https://www.gov.uk/government/statistics/uk-house-price-index-for-july-2026",
+      "summary_url": "https://www.gov.uk/government/statistics/uk-house-price-index-for-july-2026/uk-house-price-index-summary-july-2026",
+      "methodology_url": "https://www.gov.uk/government/publications/about-the-uk-house-price-index/quality-and-methodology",
+      "methodology_updated": "2026-07-23",
+      "evidence_type": "Official mix-adjusted aggregate completed-sale index, including cash and mortgage transactions",
+      "evidence_grade": "High for dated market context; no identification of retrofit-specific effects",
+      "geography": "UK; Northern Ireland estimates quarterly",
+      "provisional_context_gbp": {"England": 293479, "Wales": 215037, "UK_all_property_types": 272611},
+      "files": [
+        {
+          "url": "https://publicdata.landregistry.gov.uk/market-trend-data/house-price-index-data/Summary-change-by-country-and-government-official-region-2026-07.csv",
+          "bytes": 510,
+          "sha256": "982be254f03fbcf4fbd71336581eed0e89874bd3f1dc8eabb2191b1d0d793635",
+          "data_rows": 13,
+          "verification": "Direct in-memory download and cp1252 CSV parsing after UTF-8 failed on pound symbol",
+          "contains_address_records": false,
+          "saved_locally": false
+        },
+        {
+          "url": "https://publicdata.landregistry.gov.uk/market-trend-data/house-price-index-data/Summary-United-Kingdom-average-price-change-by-property-type-2026-07.csv",
+          "bytes": 212,
+          "sha256": "217511c516743becf65b59fe62f655abb2e414178037add6ea1315aaa2599eca",
+          "data_rows": 5,
+          "verification": "Direct in-memory download and cp1252 CSV parsing",
+          "contains_address_records": false,
+          "saved_locally": false
+        }
+      ],
+      "caveats": [
+        "Recent estimates provisional; registration lags and 12-month revisions.",
+        "Greater uncertainty for new builds and small geographies.",
+        "Mix adjustment is not individual-property valuation.",
+        "July summary contains stale general download links labelled April/May; explicitly July-labelled table CSVs were verified instead."
+      ],
+      "used_in_training_or_runtime": false,
+      "address_level_price_paid_data_retrieved": false,
+      "does_not_support": ["Causal retrofit premiums", "Calibration of invented value labels", "Individual property value", "No-op value uplift"],
+      "licence": {"identifier": "OGL-UK-3.0", "evidence": "Official publication notices subject to third-party rights; aggregate files only"}
+    },
+    {
+      "id": "OFGEM_TDCV_2026",
+      "document_index": "S7",
+      "publisher": "Ofgem",
+      "title": "Review of typical domestic consumption values: decision",
+      "publication_date": "2026-05-27",
+      "effective_date": "2026-07-01",
+      "publication_url": "https://www.ofgem.gov.uk/consultation/review-typical-domestic-consumption-values",
+      "decision_url": "https://www.ofgem.gov.uk/sites/default/files/2026-05/Review%20of%20typical%20domestic%20consumption%20values%20decision.pdf",
+      "decision_bytes": 207896,
+      "decision_sha256": "009eb2ebe4979e1691d1900ad9d05e79f655eeada1801b8c6eed2f7a49a19ec9",
+      "bill_guidance_url": "https://www.ofgem.gov.uk/your-energy-supply/your-energy-bill/energy-price-cap-and-standing-charges-explained",
+      "annual_statement_definition_url": "https://www.ofgem.gov.uk/energy-terms-explained",
+      "evidence_type": "Regulator decision and customer guidance",
+      "evidence_grade": "High for current TDCV; not an individual customer's actual usage",
+      "geography": "Great Britain",
+      "locator": "Decision p7 Table 1; publication date p1; reuse notice p2",
+      "current_tdcv_kwh_year": {
+        "electricity_single_rate": {"low": 1600, "medium": 2500, "high": 3800},
+        "electricity_multi_rate": {"low": 1900, "medium": 3400, "high": 6100},
+        "gas": {"low": 6000, "medium": 9500, "high": 14000}
+      },
+      "superseded_medium_pair": {"electricity_single_rate": 2700, "gas": 11500, "not_current_since": "2026-07-01"},
+      "verification": "Direct decision PDF in memory; publication/outcome and guidance through Exa",
+      "supports": ["Typical consumption for communication where actual usage unavailable", "Separate unit rates, standing charges and total bill", "Dated actual usage distinct from price forecasts"],
+      "does_not_support": ["Zero-filling unknown usage", "Inferring kWh from direct debit", "Average bill as customer bill", "Mandatory 12/n annualisation"],
+      "licence": {"identifier": "OGL-UK-3.0", "evidence": "Decision p2 permits text reuse under OGL, excluding logos.", "attribution": "Crown copyright 2026, Ofgem, Review of typical domestic consumption values: decision."}
+    },
+    {
+      "id": "EPC_GUIDANCE",
+      "document_index": "S8",
+      "publisher": "GOV.UK / MHCLG",
+      "publication_url": "https://www.gov.uk/buy-sell-your-home/energy-performance-certificates",
+      "lookup_guidance_url": "https://www.gov.uk/find-energy-certificate",
+      "standard_occupancy_guide_url": "https://assets.publishing.service.gov.uk/media/5a821a74ed915d74e3401be1/A_guide_to_energy_performance_certificates_for_the_marketing__sale_and_let_of_dwellings.pdf",
+      "statistical_definition_url": "https://www.ons.gov.uk/peoplepopulationandcommunity/housing/articles/energyefficiencyofhousinginenglandandwales/2024",
+      "evidence_type": "Official customer guidance and asset-rating definition",
+      "evidence_grade": "High for interpretation; no observed household consumption or retrofit-effect validation",
+      "guidance_rechecked_on": "2026-10-11",
+      "lookup_geography": ["England", "Wales", "Northern Ireland"],
+      "scotland_separate_service": true,
+      "current_rating_scale": "A-G",
+      "current_validity_years": 10,
+      "supports": ["Existing certificate lookup", "Standard occupancy estimates differ from actual bills", "Older valid certificates can miss later upgrades"],
+      "does_not_support": ["GreenHome composite score is an EPC", "All homes have certificates", "EPC estimated energy is observed customer kWh"],
+      "personal_property_searches_performed": false,
+      "licence": {"identifier": "OGL-UK-3.0", "scope": "Guidance only; no blanket permission asserted for address-level records or third-party material"}
+    },
+    {
+      "id": "HEM_EPC_TIMELINE",
+      "document_index": "S9",
+      "publisher": "Department for Energy Security and Net Zero",
+      "publication_date": "2026-01-21",
+      "timeline_update": "2026-03-17",
+      "publication_url": "https://www.gov.uk/government/consultations/home-energy-model-energy-performance-certificates",
+      "document_url": "https://assets.publishing.service.gov.uk/media/6970eb6aec1d126584b9ef88/home-energy-model-energy-performance-certificates-methodology.pdf",
+      "evidence_type": "Government consultation/revised timeline, not operational certificate standard",
+      "evidence_grade": "High for published intended timeline; implementation subject to change",
+      "proposed_launch_after_update": "Second half of 2027",
+      "verification": "Primary consultation/indexed document text read through Exa",
+      "supports": ["Do not claim HEM EPC metrics already operational in October 2026"],
+      "does_not_support": ["Changing frozen score mappings", "Treating proposed metrics as current compliance"],
+      "licence": {"identifier": "OGL-UK-3.0", "third_party_exceptions": true}
+    },
+    {
+      "id": "OGL_3",
+      "document_index": "S10",
+      "publisher": "The National Archives",
+      "publication_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "evidence_type": "Primary reuse licence",
+      "evidence_grade": "Authoritative text; audit is not a legal opinion",
+      "default_attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
+      "conditions": ["Acknowledge source/specified attribution", "Link licence where possible", "No implied endorsement", "No warranty"],
+      "excluded_rights": ["Personal data", "Unlicensed third-party rights", "Most official logos/crests", "Patents, trademarks and design rights"],
+      "software_MIT_does_not_replace_data_licence": true
+    }
+  ],
+  "project_assumption_audit": [
+    {
+      "id": "LOFT_RULE",
+      "frozen_value": {"poor_remaining_space_heat_reduction": 0.15, "partial_remaining_space_heat_reduction": 0.07},
+      "source_ids": ["NEED_IMPACT_2026", "NEED_METHOD_2026"],
+      "support": "Direction/cohort context only, not exact coefficients or prior insulation categories",
+      "calibrated_by_source": false,
+      "denominator_warning": "At 0.8 gas heat share with unchanged efficiency, these imply 12 or 5.6 percent of whole gas, not 15 or 7 percent of total purchased energy.",
+      "action": "Retain frozen protocol; no recalibration"
+    },
+    {
+      "id": "GLAZING_CONTROLS",
+      "frozen_value": {"glazing_remaining_space_heat_reduction": 0.1, "controls_remaining_space_heat_reduction": 0.07},
+      "source_ids": ["NEED_IMPACT_2026"],
+      "support": "No applicable estimate for exact values established; package effects do not isolate controls",
+      "calibrated_by_source": false
+    },
+    {
+      "id": "HEAT_ALLOCATION_EFFICIENCY",
+      "frozen_value": {"space_heat_fraction": 0.8, "boiler_efficiency_gross_CV": 0.85},
+      "source_ids": ["NEED_ANON_2026", "GHG_2026"],
+      "support": "Not measured by anonymised NEED; gas carbon factor is not boiler efficiency",
+      "calibrated_by_source": false
+    },
+    {
+      "id": "HEAT_PUMP",
+      "frozen_value": {"SPF": 3.0},
+      "source_ids": ["EOH_PROJECT", "EOH_CLEANSED_9050", "EOH_INTERIM_2023"],
+      "support": "Field-performance context only; boundaries/cohorts differ",
+      "calibrated_by_source": false,
+      "final_EoH_tables_verified": false
+    },
+    {
+      "id": "PV",
+      "frozen_value": {"new_kWp": 3.0, "annual_kwh_per_kwp": 900.0, "self_consumption_fraction": 0.45},
+      "source_ids": ["NEED_IMPACT_2026"],
+      "support": "Observed import savings support accounting distinction, not site yield or assumed share",
+      "calibrated_by_source": false
+    },
+    {
+      "id": "INTERACTION_COST_SCORE",
+      "source_ids": [],
+      "support": "Package interactions and costs are project assumptions. Seven weights are challenge requirements, not statutory EPC methodology.",
+      "calibrated_by_source": false,
+      "cost_calibration_performed": false
+    },
+    {
+      "id": "SYNTHETIC_VALUE",
+      "source_ids": ["UKHPI_JULY_2026"],
+      "local_protocol": "docs/DATA_AND_MODELS.md; synthetic paired-home labels",
+      "data_kind": "invented_synthetic_reference_NOT_observed_sale_or_market_premium",
+      "support": "HPI is background only; no coefficient, baseline GBP/m2, regional multiplier or interval is market-calibrated",
+      "calibrated_by_source": false,
+      "real_home_abstention_required": true,
+      "no_op_change": 0,
+      "no_op_is_arithmetic_identity_not_market_estimate": true
+    },
+    {
+      "id": "MONTHLY_INTAKE",
+      "source_ids": ["OFGEM_TDCV_2026", "EPC_GUIDANCE"],
+      "local_contract": "docs/INTEGRATED_BUILD_CONTRACT.md",
+      "support": "Request actual dated kWh; typical usage and EPC estimates are not customer readings",
+      "project_policy_not_regulator_rule": "12 completed calendar months per fuel; blank unknown, explicit zero, no 12/n seasonal scaling",
+      "runtime_implementation_tested_in_this_audit": false
+    }
+  ],
+  "validation_boundary": {
+    "fresh_source_hash_matches": ["NEED CSV", "NEED metadata", "DESNZ full-set carbon workbook"],
+    "source_cells_and_csvs_read": ["NEED headline effects", "Loft attribute tables", "Electricity and gross-CV gas factors", "Ofgem 2026 TDCV", "Two aggregate July UK HPI CSVs"],
+    "extraction_recoveries": [
+      "One workbook diagnostic encountered an EmptyCell row-attribute error; focused extraction subsequently verified both carbon cells.",
+      "HPI UTF-8 decoding failed on pound sign; both CSVs subsequently parsed as cp1252."
+    ],
+    "training_run": false,
+    "backend_or_frontend_suite_run": false,
+    "new_participant_or_field_study": false,
+    "new_physical_or_market_validation": false,
+    "provider_calls": false,
+    "commits_or_pushes": false,
+    "external_deployment": false,
+    "open_gaps": ["Final EoH technical tables not directly inspected", "Exact savings/cost/value assumptions uncalibrated", "No prospective validation or all-UK representativeness claim"]
+  }
+}

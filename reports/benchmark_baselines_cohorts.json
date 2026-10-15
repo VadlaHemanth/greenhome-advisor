@@ -1,0 +1,805 @@
+[
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Detached",
+      "3"
+    ],
+    "n_train": 940,
+    "median_kwh": 3000.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "2"
+    ],
+    "n_train": 1700,
+    "median_kwh": 2500.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "2"
+    ],
+    "n_train": 652,
+    "median_kwh": 2400.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Detached",
+      "4"
+    ],
+    "n_train": 372,
+    "median_kwh": 3700.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "5"
+    ],
+    "n_train": 34,
+    "median_kwh": 3950.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "2"
+    ],
+    "n_train": 823,
+    "median_kwh": 2500.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "2"
+    ],
+    "n_train": 1409,
+    "median_kwh": 2300.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "2"
+    ],
+    "n_train": 646,
+    "median_kwh": 2100.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Detached",
+      "2"
+    ],
+    "n_train": 192,
+    "median_kwh": 2500.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "1"
+    ],
+    "n_train": 1653,
+    "median_kwh": 2000.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "3"
+    ],
+    "n_train": 983,
+    "median_kwh": 2900.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "3"
+    ],
+    "n_train": 16,
+    "median_kwh": 2900.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "3"
+    ],
+    "n_train": 264,
+    "median_kwh": 2900.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "3"
+    ],
+    "n_train": 166,
+    "median_kwh": 2950.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "3"
+    ],
+    "n_train": 567,
+    "median_kwh": 2900.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "4"
+    ],
+    "n_train": 27,
+    "median_kwh": 3600.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Detached",
+      "5"
+    ],
+    "n_train": 253,
+    "median_kwh": 5700.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "5"
+    ],
+    "n_train": 1,
+    "median_kwh": 11800.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "4"
+    ],
+    "n_train": 52,
+    "median_kwh": 3500.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "5"
+    ],
+    "n_train": 19,
+    "median_kwh": 5500.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "4"
+    ],
+    "n_train": 83,
+    "median_kwh": 4000.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "4"
+    ],
+    "n_train": 2,
+    "median_kwh": 4800.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "1"
+    ],
+    "n_train": 43,
+    "median_kwh": 1900.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "1"
+    ],
+    "n_train": 8,
+    "median_kwh": 1800.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "4"
+    ],
+    "n_train": 22,
+    "median_kwh": 3350.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "1"
+    ],
+    "n_train": 3,
+    "median_kwh": 2600.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "5"
+    ],
+    "n_train": 6,
+    "median_kwh": 4050.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "5"
+    ],
+    "n_train": 4,
+    "median_kwh": 3550.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "1"
+    ],
+    "n_train": 1,
+    "median_kwh": 900.0,
+    "eligible": false
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "area",
+    "key": "3",
+    "n_train": 2936,
+    "median_kwh": 2900.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "area",
+    "key": "2",
+    "n_train": 5422,
+    "median_kwh": 2400.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "area",
+    "key": "4",
+    "n_train": 558,
+    "median_kwh": 3700.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "area",
+    "key": "5",
+    "n_train": 317,
+    "median_kwh": 5500.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "area",
+    "key": "1",
+    "n_train": 1708,
+    "median_kwh": 2000.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type",
+    "key": "Detached",
+    "n_train": 1757,
+    "median_kwh": 3300.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type",
+    "key": "Semi detached",
+    "n_train": 2801,
+    "median_kwh": 2700.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type",
+    "key": "End terrace",
+    "n_train": 950,
+    "median_kwh": 2600.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type",
+    "key": "Flat",
+    "n_train": 2495,
+    "median_kwh": 2100.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type",
+    "key": "Mid terrace",
+    "n_train": 2055,
+    "median_kwh": 2400.0,
+    "eligible": true
+  },
+  {
+    "fuel": "electricity",
+    "cohort": "type",
+    "key": "Bungalow",
+    "n_train": 883,
+    "median_kwh": 2300.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Detached",
+      "3"
+    ],
+    "n_train": 853,
+    "median_kwh": 13000.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "2"
+    ],
+    "n_train": 1614,
+    "median_kwh": 9700.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "2"
+    ],
+    "n_train": 604,
+    "median_kwh": 8700.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Detached",
+      "4"
+    ],
+    "n_train": 312,
+    "median_kwh": 15950.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "5"
+    ],
+    "n_train": 26,
+    "median_kwh": 25200.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "2"
+    ],
+    "n_train": 435,
+    "median_kwh": 7200.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "2"
+    ],
+    "n_train": 1320,
+    "median_kwh": 8500.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "2"
+    ],
+    "n_train": 577,
+    "median_kwh": 9300.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Detached",
+      "2"
+    ],
+    "n_train": 180,
+    "median_kwh": 10550.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "1"
+    ],
+    "n_train": 807,
+    "median_kwh": 5800.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "3"
+    ],
+    "n_train": 907,
+    "median_kwh": 11700.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "3"
+    ],
+    "n_train": 232,
+    "median_kwh": 11500.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "3"
+    ],
+    "n_train": 533,
+    "median_kwh": 10600.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "4"
+    ],
+    "n_train": 24,
+    "median_kwh": 13850.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "3"
+    ],
+    "n_train": 131,
+    "median_kwh": 14400.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Detached",
+      "5"
+    ],
+    "n_train": 151,
+    "median_kwh": 21400.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "4"
+    ],
+    "n_train": 50,
+    "median_kwh": 14850.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "5"
+    ],
+    "n_train": 17,
+    "median_kwh": 27400.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "4"
+    ],
+    "n_train": 76,
+    "median_kwh": 19800.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "4"
+    ],
+    "n_train": 1,
+    "median_kwh": 23300.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Flat",
+      "3"
+    ],
+    "n_train": 6,
+    "median_kwh": 14550.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "1"
+    ],
+    "n_train": 35,
+    "median_kwh": 6600.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Mid terrace",
+      "1"
+    ],
+    "n_train": 7,
+    "median_kwh": 6100.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "4"
+    ],
+    "n_train": 12,
+    "median_kwh": 17550.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Bungalow",
+      "5"
+    ],
+    "n_train": 3,
+    "median_kwh": 24300.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "5"
+    ],
+    "n_train": 3,
+    "median_kwh": 32800.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "Semi detached",
+      "1"
+    ],
+    "n_train": 1,
+    "median_kwh": 17000.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type_area",
+    "key": [
+      "End terrace",
+      "1"
+    ],
+    "n_train": 1,
+    "median_kwh": 2600.0,
+    "eligible": false
+  },
+  {
+    "fuel": "gas",
+    "cohort": "area",
+    "key": "3",
+    "n_train": 2662,
+    "median_kwh": 12000.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "area",
+    "key": "2",
+    "n_train": 4730,
+    "median_kwh": 9000.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "area",
+    "key": "4",
+    "n_train": 475,
+    "median_kwh": 16200.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "area",
+    "key": "5",
+    "n_train": 200,
+    "median_kwh": 22900.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "area",
+    "key": "1",
+    "n_train": 851,
+    "median_kwh": 5800.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type",
+    "key": "Detached",
+    "n_train": 1496,
+    "median_kwh": 13800.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type",
+    "key": "Semi detached",
+    "n_train": 2624,
+    "median_kwh": 10600.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type",
+    "key": "End terrace",
+    "n_train": 864,
+    "median_kwh": 9500.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type",
+    "key": "Flat",
+    "n_train": 1249,
+    "median_kwh": 6300.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type",
+    "key": "Mid terrace",
+    "n_train": 1927,
+    "median_kwh": 9200.0,
+    "eligible": true
+  },
+  {
+    "fuel": "gas",
+    "cohort": "type",
+    "key": "Bungalow",
+    "n_train": 758,
+    "median_kwh": 9800.0,
+    "eligible": true
+  }
+]

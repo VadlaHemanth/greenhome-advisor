@@ -1,0 +1,175 @@
+{
+  "status": "completed",
+  "evaluated_at_utc": "2026-10-10T19:12:16.925386+00:00",
+  "protocol": {
+    "version": 1,
+    "population": "Six fictional DEMO-01 variants; not a household sample",
+    "gas_kwh": [
+      3000,
+      6000,
+      12000
+    ],
+    "electricity_kwh": [
+      2400,
+      4800
+    ],
+    "budgets_gbp": [
+      3000,
+      7350,
+      17000,
+      25000
+    ],
+    "development_grid": {
+      "space_heat_fraction": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "heat_pump_spf": [
+        2.0,
+        3.0,
+        4.0
+      ],
+      "solar_self_consumption_fraction": [
+        0.25,
+        0.45,
+        0.65
+      ]
+    },
+    "verification_grid": {
+      "space_heat_fraction": [
+        0.7,
+        0.9
+      ],
+      "heat_pump_spf": [
+        2.5,
+        3.5
+      ],
+      "solar_self_consumption_fraction": [
+        0.35,
+        0.55
+      ]
+    },
+    "strategies": [
+      "greedy",
+      "nominal",
+      "robust"
+    ],
+    "selection": "Freeze choices using nominal/development inputs, then evaluate all on 8 off-grid points",
+    "ties": "1e-8 kWh, then lower upper cost, then catalogue-ordered IDs",
+    "interpretation": "Designed model stress cases, not probabilities or empirical physical validation",
+    "data_policy": "No observed or synthetic ML train/validation/test files are read; no post-result tuning"
+  },
+  "protocol_sha256": "d0c317b9c1089acb25256fb7d00687ed0e50132298d7baf6ec4126cd5facde85",
+  "source_sha256": {
+    "greenhome/decision.py": "23b30cd2b4ab93eb7354b02eef555ca0b1dc0180b1fd90ed445afa45a64e1e48",
+    "greenhome/engine.py": "688965410bd1a52ef235b6b57ef0850e7a06620d04da3090282d2a15389d2da3",
+    "scripts/evaluate_decision.py": "e3e4334cca86c4c071b81f4fe95bae41daaaf00d6154bdfaede7f1bc4cba10c4"
+  },
+  "case_count": 24,
+  "decision_active_cases": 24,
+  "unavailable_cases": 0,
+  "no_action_cases": 0,
+  "stable_active_cases": 16,
+  "development_rows": 648,
+  "verification_rows": 192,
+  "feasibility_or_budget_violations": [],
+  "verification_summary": {
+    "greedy": {
+      "mean_case_verification_max_regret_kwh": 1836.6975000000002,
+      "worst_case_verification_max_regret_kwh": 5610.291428571429
+    },
+    "nominal": {
+      "mean_case_verification_max_regret_kwh": 58.54725000000007,
+      "worst_case_verification_max_regret_kwh": 389.3670000000002
+    },
+    "robust": {
+      "mean_case_verification_max_regret_kwh": 58.54725000000007,
+      "worst_case_verification_max_regret_kwh": 389.3670000000002
+    }
+  },
+  "paired_comparisons": {
+    "robust_vs_greedy": {
+      "better_count": 16,
+      "tied_count": 8,
+      "worse_count": 0,
+      "better_case_ids": [
+        "DECISION-02",
+        "DECISION-03",
+        "DECISION-04",
+        "DECISION-06",
+        "DECISION-07",
+        "DECISION-08",
+        "DECISION-10",
+        "DECISION-11",
+        "DECISION-12",
+        "DECISION-14",
+        "DECISION-15",
+        "DECISION-16",
+        "DECISION-19",
+        "DECISION-20",
+        "DECISION-23",
+        "DECISION-24"
+      ],
+      "tied_case_ids": [
+        "DECISION-01",
+        "DECISION-05",
+        "DECISION-09",
+        "DECISION-13",
+        "DECISION-17",
+        "DECISION-18",
+        "DECISION-21",
+        "DECISION-22"
+      ],
+      "worse_case_ids": [],
+      "lower_nominal_savings_case_ids": []
+    },
+    "robust_vs_nominal": {
+      "better_count": 0,
+      "tied_count": 24,
+      "worse_count": 0,
+      "better_case_ids": [],
+      "tied_case_ids": [
+        "DECISION-01",
+        "DECISION-02",
+        "DECISION-03",
+        "DECISION-04",
+        "DECISION-05",
+        "DECISION-06",
+        "DECISION-07",
+        "DECISION-08",
+        "DECISION-09",
+        "DECISION-10",
+        "DECISION-11",
+        "DECISION-12",
+        "DECISION-13",
+        "DECISION-14",
+        "DECISION-15",
+        "DECISION-16",
+        "DECISION-17",
+        "DECISION-18",
+        "DECISION-19",
+        "DECISION-20",
+        "DECISION-21",
+        "DECISION-22",
+        "DECISION-23",
+        "DECISION-24"
+      ],
+      "worse_case_ids": [],
+      "lower_nominal_savings_case_ids": []
+    }
+  },
+  "runtime_seconds": {
+    "first_decision_call": 0.002910368006268982,
+    "max_decision_call": 0.01482008800667245,
+    "median_decision_call": 0.006946015997527866,
+    "total_evaluation": 0.41268411600321997
+  },
+  "limitations": [
+    "All cases and scenario responses are fictional deterministic calculator outputs.",
+    "No ML test set, market outcomes, measured retrofit savings, or probability distributions are used.",
+    "The six archetypes repeated over four budgets are not 24 independent sampled households.",
+    "Development-grid minimax dominance is an optimisation identity, not external validation.",
+    "Every off-grid case and nominal-energy sacrifice is reported; no tuning follows this verification."
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "Cover_sheet": [
+    [
+      "National Energy Efficiency Data-Framework (NEED): Anonymised data 2026"
+    ],
+    [
+      "The Domestic National Energy Efficiency Data-Framework (NEED) brings together information on domestic gas and electricity consumption with other information about domestic properties and the households that live in them. Key findings from the analysis of this dataset can be found in:"
+    ],
+    [
+      "NEED Annual Report 2026"
+    ],
+    [
+      "The full NEED dataset is not published. However, DESNZ publishes two samples of the full NEED dataset (one containing 4,000,000 properties and one containing 50,000 properties) designed to be representative of domestic properties in England and Wales, while ensuring that information about individual households remains protected:"
+    ],
+    [
+      "NEED Anonymised data 2026"
+    ],
+    [
+      "This workbook provides metadata for the NEED Anonymised datasets, including the definitions of the variables provided and an outline of how the datasets are produced."
+    ],
+    [
+      "Note that the NEED Anonymised dataset 2026 only includes current domestic properties in England and Wales based on the HM Revenue & Customs (HMRC) Council Tax Database as at October 2025 (formerly the Valuation Office Agency which became part of HMRC in April 2026). It does not include domestic properties from earlier years which are no longer in existence (or no longer used for domestic purposes)."
+    ],
+    [
+      "Contents"
+    ],
+    [
+      "This cover sheet is followed by a metadata sheet containing a table of definitions for each variable in the NEED Anonymised data, this is followed by a \"Production steps\" sheet which outlines how the datasets were produced."
+    ],
+    [
+      "Methodology"
+    ],
+    [
+      "Information about how the NEED dataset is compiled is available in:"
+    ],
+    [
+      "Domestic NEED Annex A: What is Domestic NEED?"
+    ],
+    [
+      "An outline of how the NEED Anonymised datasets were produced from the NEED dataset is provided in the \"Production steps\" sheet within this workbook."
+    ],
+    [
+      "Publication dates"
+    ],
+    [
+      "Publication date: 11 June 2026"
+    ],
+    [
+      "Next update: June 2027"
+    ],
+    [
+      "Domestic NEED publication data and documents"
+    ],
+    [
+      "Statistical releases (including data sources and methodology)"
+    ],
+    [
+      "Consumption data tables"
+    ],
+    [
+      "Impact of measures data tables"
+    ],
+    [
+      "Property level domestic consumption data"
+    ],
+    [
+      "Accessing property level domestic consumption data"
+    ],
+    [
+      "Contact details"
+    ],
+    [
+      "Responsible statistician: Hiten Shah"
+    ],
+    [
+      "energyefficiency.stats@energysecurity.gov.uk"
+    ],
+    [
+      "newsdesk@energysecurity.gov.uk"
+    ]
+  ],
+  "Metadata": [
+    [
+      "National Energy Efficiency Data-framework (NEED) Anonymised Dataset 2026: Metadata"
+    ],
+    [
+      "Column name",
+      "Description",
+      "Categories",
+      "Data source"
+    ],
+    [
+      "PROP_TYPE",
+      "Property type",
+      "Detached; Semi detached; Mid terrace; End terrace; Bungalow; Flat",
+      "HM Revenue & Customs (HMRC)"
+    ],
+    [
+      "PROP_AGE_BAND",
+      "When the property was built",
+      "1 = before 1930; 2 = 1930-1972; 3 = 1973-1999; 4 = 2000 or later",
+      "HM Revenue & Customs (HMRC)"
+    ],
+    [
+      "FLOOR_AREA_BAND",
+      "Banded floor area of the property",
+      "1 = 50 or less; 2 = 51 - 100; 3 = 101 - 150; 4 = 151 - 200; 5 = over 200 (square metres)",
+      "HM Revenue & Customs (HMRC)"
+    ],
+    [
+      "CONSERVATORY_FLAG",
+      "Flag indicating whether the property has a conservatory or not",
+      "1 = has conservatory; 0 = does not have a conservatory  Where the column is left blank this indicates that this information is unknown.",
+      "HM Revenue & Customs (HMRC)"
+    ],
+    [
+      "COUNCIL_TAX_BAND",
+      "Council tax band of the property",
+      "A; B; C; D; E; F; G; H; I",
+      "HM Revenue & Customs (HMRC)"
+    ],
+    [
+      "IMD_BAND_ENG",
+      "For properties in England only: Index of multiple deprivation, England (2025) quintile based on the Lower Layer Super Output Area (LSOA) the property is in.",
+      "1 - 5 (1 = most deprived; 5 = least deprived).",
+      "Index of multiple deprivation - England (2025) is produced by the Ministry of Housing, Communities and Local Government (MHCLG)).  This index is incorporated into the National Statistics UPRN Lookup (NSUL) published by the Office for National Statistics (ONS)."
+    ],
+    [
+      "IMD_BAND_WALES",
+      "For properties in Wales only: Index of multiple deprivation, Wales (2025) quintile based on the Lower Layer Super Output Area (LSOA) the property is in.",
+      "1 - 5 (1 = most deprived; 5 = least deprived).",
+      "Index of multiple deprivation - Wales (2025) is produced by the Welsh Government.  This index is incorporated into the National Statistics UPRN Lookup (NSUL) published by the Office for National Statistics (ONS)."
+    ],
+    [
+      "REGION",
+      "ONS geography codes for the 9 English Regions and Wales",
+      "E12000001 = North East E12000002 = North West E12000003 = Yorkshire and The Humber E12000004 = East Midlands E12000005 = West Midlands E12000006 = East E12000007 = London E12000008 = South East E12000009 = South West W92000004 = Wales",
+      "National Statistics UPRN Lookup (NSUL) - Office for National Statistics (ONS)"
+    ],
+    [
+      "EPC",
+      "The most recent Energy Performance Certificate (EPC) Rating of the property",
+      "A/B, C, D, E, F/G, No EPC  EPC ratings are valid for ten years, so they may not provide an up-to-date picture of the current energy efficiency of each property.  'No EPC' includes both: a) properties without an EPC rating (such as owner-occupied properties which have not been sold since EPC ratings came into use); and b) cases where the EPC data for a given property could not be matched to the property in question (as represented by an entry in the HMRC data).",
+      "EPC Open Data - Ministry of Housing, Communities and Local Government (MHCLG)"
+    ],
+    [
+      "LI_FLAG",
+      "Indication of whether the property has had loft insulation (including roof and room-in-roof) installed under a government scheme from 2000 onwards.",
+      "1 = installed; 0 = not installed",
+      "Scheme administrators (for example, Ofgem for the Energy Company Obligation)"
+    ],
+    [
+      "LI_DATE",
+      "The year of the latest occasion (since 2000) on which loft insulation was installed under a government scheme.",
+      "",
+      "Scheme administrators (for example, Ofgem for the Energy Company Obligation)"
+    ],
+    [
+      "CWI_FLAG",
+      "Indication of whether the property has had cavity wall insulation installed under a government scheme from 2000 onwards.",
+      "1 = installed; 0 = not installed",
+      "Scheme administrators (for example, Ofgem for the Energy Company Obligation)"
+    ],
+    [
+      "CWI_DATE",
+      "The year of the latest occasion (since 2000) on which cavity wall insulation was installed under a government scheme.",
+      "",
+      "Scheme administrators (for example, Ofgem for the Energy Company Obligation)"
+    ],
+    [
+      "PV_FLAG",
+      "Indication of whether the property has solar PV.",
+      "1 = installed; 0 = not installed",
+      "Microgeneration Certification Scheme (MCS), Central Feed-in Tariffs register - Ofgem"
+    ],
+    [
+      "PV_DATE",
+      "The year of the latest occasion (since 2010) on which solar PV was installed.",
+      "",
+      "Microgeneration Certification Scheme (MCS), Central Feed-in Tariffs register - Ofgem"
+    ],
+    [
+      "MAIN_HEAT_FUEL",
+      "Flag indicating whether the property uses gas as its main heating fuel.  A property is assumed to be using gas as its main heating fuel if (and only if) it has a gas meter matched to it and that gas meter has a consumption of at least 1,000 kWh for any of the latest 3 years (2022-2024).",
+      "1 = gas is the main heating fuel; 2 = gas is not the main heating fuel",
+      "Derived"
+    ],
+    [
+      "Gcons2005,\u2026,Gcons2024",
+      "Annual gas consumption rounded to the nearest 100 kWh. These estimates are weather corrected (adjusted to remove the effects of year on year differences in weather conditions to provide more like for like comparisons over time).  Blank values are either missing or removed due to being too large (over 50,000 kWh) or too small (under 1,000 kWh).  Note that the years do not correspond to calendar years but are as follows: Prior to 2015: consistent with 2015 2015: October 2014 \u2013 September 2015 2016: mid-July 2016 \u2013 mid-July 2017 2017: mid-June 2017 to mid-June 2018 2018: mid-May 2018 to mid-May 2019 2019: mid-May 2019 to mid-May 2020 2020 onwards: consistent with 2018 and 2019",
+      "",
+      "Xoserve (Central data service provider for Great Britain's gas market)"
+    ],
+    [
+      "GasValFlag2005,\u2026,GasValFlag2024",
+      "Valid category - Indicating whether or not the gas consumption estimate was based on real meter readings or providing the reason that it was supressed. ",
+      "V = valid; E = estimated consumption; L = annual consumption below 1,000 kWh; G = annual consumption over 50,000 kWh; O = missing (this includes cases where the property did not yet exist or was not yet connected to the gas grid)  Where this column is left blank this indicates that no gas meters could be matched to the property in question. Most of the time this will be due to the property not being connected to the gas grid.",
+      "Derived"
+    ],
+    [
+      "Econs2005,...,Econs2024",
+      "Annual electricity consumption (not weather corrected) rounded to the nearest 100 kWh.  Blank values are either missing or removed due to being too large (over 25,000 kWh) or too small (under 500 kWh).  Note that the years do not correspond to calendar years but instead cover the months February to January (for example the 2024 electricity year refers to the months February 2024 to January 2025).",
+      "",
+      "Data aggregators on behalf of electricity suppliers"
+    ],
+    [
+      "ElecValFlag2005,...,ElecValFlag2024",
+      "Valid category - Indicating whether or not the electricity consumption estimate was based on real meter readings or providing the reason that it was supressed.",
+      "V = valid; E = estimated consumption; L = annual consumption below 500 kWh; G = annual consumption over 25,000 kWh; O = missing (this includes cases where the property did not yet exist)  Where this column is left blank this indicates that no electricity meters could be matched to the property in question.",
+      "Derived"
+    ]
+  ],
+  "Production_steps": [
+    [
+      "Steps in the production of the NEED Anonymised dataset 2026"
+    ],
+    [
+      "Step",
+      "Number of properties (millions)"
+    ],
+    [
+      "HM Revenue & Customs (HMRC) database:All domestic properties in England and Wales (October 2025)",
+      "27.3"
+    ],
+    [
+      "NEED dataset:The sub-population of domestic properties to which gas and/or electricity meters could be matched",
+      "25.6"
+    ],
+    [
+      "Removing properties with rare property types (e.g. cluster houses) or key characteristics (e.g. property type, property age) missing",
+      "25.2"
+    ],
+    [
+      "Removing combinations of characteristics with fewer than 5 properties based on: MAIN_HEAT_FUEL PROP_TYPE / PROP_AGE_BAND / FLOOR_AREA_BAND CONSERVATORY_FLAG COUNCIL_TAX_BAND IMD_BAND_ENG / IMD_BAND_WALES REGION EPC LI_FLAG / LI_DATE CWI_FLAG / CWI_DATE PV_FLAG / PV_DATE",
+      "21.6"
+    ],
+    [
+      "NEED Anonymised datasets:Stratified random samples of 4,000,000 and 50,000 properties picked from the remaining properties, stratified by: MAIN_HEAT_FUEL PROP_TYPE / PROP_AGE_BAND / FLOOR_AREA_BAND CONSERVATORY_FLAG COUNCIL_TAX_BAND IMD_BAND_ENG / IMD_BAND_WALES REGION EPC LI_FLAG / LI_DATE CWI_FLAG / CWI_DATE PV_FLAG / PV_DATE",
+      "4.0 (or 0.05)"
+    ]
+  ]
+}

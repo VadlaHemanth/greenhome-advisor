@@ -1,0 +1,113 @@
+{
+  "verified_at_utc": "2026-10-10T18:41:03.900603+00:00",
+  "official_pages": [
+    {
+      "id": "NEED_catalogue",
+      "url": "https://www.data.gov.uk/dataset/7390402c-e7ce-4e2f-bb08-d8d65f852f47/nationalenergyefficiencydataframeworkanonymiseddata",
+      "verified_utc": "2026-10-10T18:41:03.900603+00:00",
+      "method": "Direct HTTPS fetch of official page; Exa search/fetch used for discovery and cross-check.",
+      "bytes": 40395,
+      "sha256": "825e87a31637e130a58ae4a473083700f3b1fbe8c56b9dd3171f58a5881490a3",
+      "checks": {
+        "links_ogl_v3": true,
+        "explicit_dataset_ogl_label": true
+      }
+    },
+    {
+      "id": "NEED_publication",
+      "url": "https://www.gov.uk/government/statistics/national-energy-efficiency-data-framework-need-anonymised-data-2026",
+      "verified_utc": "2026-10-10T18:41:03.900603+00:00",
+      "method": "Direct HTTPS fetch of official page; Exa search/fetch used for discovery and cross-check.",
+      "bytes": 75914,
+      "sha256": "49e3e3c202169d46d7cacff2fe7ac5ad5d7baadc1e228c98711d012e4c899b91",
+      "checks": {
+        "links_ogl_v3": true
+      }
+    },
+    {
+      "id": "NEED_metadata_resource",
+      "url": "https://ckan.publishing.service.gov.uk/dataset/nationalenergyefficiencydataframeworkanonymiseddata/resource/d6b40609-730f-4172-9c9d-a1f01b03f173?inner_span=True",
+      "verified_utc": "2026-10-10T18:41:03.900603+00:00",
+      "method": "Direct HTTPS fetch of official page; Exa search/fetch used for discovery and cross-check.",
+      "bytes": 15647,
+      "sha256": "f7a503efb34e281147bba40833f197464fdd0177316cc94738448a313c962e8d",
+      "checks": {
+        "links_ogl_v3": true,
+        "explicit_dataset_ogl_label": true
+      }
+    },
+    {
+      "id": "carbon_publication",
+      "url": "https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026",
+      "verified_utc": "2026-10-10T18:41:03.900603+00:00",
+      "method": "Direct HTTPS fetch of official page; Exa search/fetch used for discovery and cross-check.",
+      "bytes": 87242,
+      "sha256": "5823cf56c45274a3c08961126442fb8f293b98d4cbc4f91c948ecf9088b257b6",
+      "checks": {
+        "links_ogl_v3": true
+      }
+    },
+    {
+      "id": "OGL_v3",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "verified_utc": "2026-10-10T18:41:03.900603+00:00",
+      "method": "Direct HTTPS fetch of official page; Exa search/fetch used for discovery and cross-check.",
+      "bytes": 10450,
+      "sha256": "f5b2b9f2af63647cde889fa6c3508f5705925295b74912c68caa28dd37e64aa5",
+      "checks": {
+        "links_ogl_v3": true
+      }
+    }
+  ],
+  "carbon_workbook": {
+    "id": "DESNZ_GHG_2026",
+    "publisher": "Department for Energy Security and Net Zero",
+    "publication_url": "https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2026",
+    "publication_date": "2026-06-11",
+    "page_last_updated": "2026-07-31",
+    "update_scope": "July correction affected the flat file; publication says June full set was not revised.",
+    "workbook_url": "https://assets.publishing.service.gov.uk/media/6a29392bade52dc0882218a8/ghg-conversion-factors-2026-full-set.xlsx",
+    "workbook_bytes": 2109334,
+    "workbook_sha256": "b5c4f2f86cdc74707337b2fb013b44ded189a1b528f5e29ea99856ba65ae0205",
+    "verified_utc": "2026-10-10T18:41:03.900603+00:00",
+    "verification_method": "Fresh official workbook download, ZIP/XML cell extraction in memory; not retained or used to modify engine.",
+    "cell_evidence": {
+      "Fuels": {
+        "C42": "kWh (Gross CV)",
+        "D42": "0.18231",
+        "B39": "Natural gas"
+      },
+      "UK electricity": {
+        "A25": "Electricity generated",
+        "B25": "Electricity: UK",
+        "C25": "kWh",
+        "D25": "2026",
+        "E25": "0.13095999999999999"
+      }
+    },
+    "factors": {
+      "electricity": {
+        "sheet": "UK electricity",
+        "cell": "E25",
+        "value": "0.13096",
+        "unit": "kgCO2e/kWh",
+        "activity": "UK electricity generated"
+      },
+      "gas": {
+        "sheet": "Fuels",
+        "cell": "D42",
+        "value": "0.18231",
+        "unit": "kgCO2e/kWh",
+        "basis": "Natural gas, gross calorific value"
+      }
+    },
+    "boundary": "Operational electricity generation and natural gas combustion; excludes WTT, T&D, embodied carbon and refrigerants.",
+    "licence": {
+      "identifier": "OGL-UK-3.0",
+      "evidence": "Official publication footer links OGL v3, except where otherwise stated. No workbook-specific licence notice located in inspected Introduction sheet.",
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    },
+    "methodology_url": "https://assets.publishing.service.gov.uk/media/6a2940543b15d05a7ce3202e/2026-GHG-conversion-factors-methodology-report.pdf",
+    "methodology_inspection": "URL verified on official publication; PDF not read in this task."
+  }
+}

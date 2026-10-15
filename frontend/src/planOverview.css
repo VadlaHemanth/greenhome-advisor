@@ -1,0 +1,113 @@
+.metric-action {
+  margin-top: 12px;
+  min-height: 36px;
+  text-align: left;
+  justify-content: flex-start;
+  line-height: 1.4;
+}
+.starting-point-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.feature-retrofit-icon {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  align-self: center;
+  aspect-ratio: 1;
+  border-radius: 24px;
+  background: #f0f3ec;
+}
+.feature-retrofit-icon > svg {
+  width: min(80%, 172px);
+  height: auto;
+}
+.empty-plan-guidance {
+  margin: 16px 0 20px;
+}
+.empty-plan-guidance h3 {
+  font-size: 0.85rem;
+  margin: 0 0 8px;
+}
+.empty-plan-guidance p,
+.empty-plan-guidance small {
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.empty-plan-guidance p {
+  margin: 0 0 8px;
+}
+.empty-plan-guidance small {
+  display: block;
+  font-size: 0.66rem;
+}
+.rail-recommendations .rail-recommendation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 8px;
+}
+.rail-rec-details {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  justify-content: start;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  color: inherit;
+}
+.rail-rec-details > .rail-retrofit-icon {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+}
+.rail-rec-details .rail-rec-copy {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.rail-quick-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  min-width: 44px;
+  width: 44px;
+  min-height: 48px;
+  padding: 5px;
+  border: 1px solid #ccd8ca;
+  border-radius: 10px;
+  background: #f5f7f1;
+  color: #2e4d36;
+  font-size: 0.61rem;
+}
+.rail-quick-add:hover:not(:disabled),
+.rail-quick-add.is-selected {
+  background: #e7eedf;
+  border-color: #819779;
+}
+.comparison-empty {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+@media (max-width: 390px) {
+  .starting-point-actions .button {
+    width: 100%;
+  }
+  .recommendation-feature {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .feature-retrofit-icon {
+    display: none;
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "counts": {
+    "dev": {
+      "accepted": 232,
+      "customers": 12,
+      "feasibility_labels": {
+        "budget": 26,
+        "excluded": 3,
+        "feasible": 51,
+        "infeasible": 9,
+        "no_modelled_benefit": 10,
+        "unknown": 18,
+        "unsupported_existing_pv": 3
+      },
+      "properties": 24,
+      "ranking_statuses": {
+        "available": 16,
+        "insufficient_evidence": 5,
+        "no_affordable_option": 1,
+        "no_modelled_benefit": 1,
+        "unsupported": 1
+      },
+      "scenarios": 792
+    },
+    "test": {
+      "accepted": 232,
+      "customers": 12,
+      "feasibility_labels": {
+        "budget": 26,
+        "excluded": 3,
+        "feasible": 51,
+        "infeasible": 9,
+        "no_modelled_benefit": 10,
+        "unknown": 18,
+        "unsupported_existing_pv": 3
+      },
+      "properties": 24,
+      "ranking_statuses": {
+        "available": 16,
+        "insufficient_evidence": 5,
+        "no_affordable_option": 1,
+        "no_modelled_benefit": 1,
+        "unsupported": 1
+      },
+      "scenarios": 792
+    },
+    "train": {
+      "accepted": 464,
+      "customers": 24,
+      "feasibility_labels": {
+        "budget": 52,
+        "excluded": 6,
+        "feasible": 102,
+        "infeasible": 18,
+        "no_modelled_benefit": 20,
+        "unknown": 36,
+        "unsupported_existing_pv": 6
+      },
+      "properties": 48,
+      "ranking_statuses": {
+        "available": 32,
+        "insufficient_evidence": 10,
+        "no_affordable_option": 2,
+        "no_modelled_benefit": 2,
+        "unsupported": 2
+      },
+      "scenarios": 1584
+    }
+  },
+  "frozen_at_utc": "2026-10-10T18:43:56.246689+00:00",
+  "generator_sha256_at_freeze": "97253e25c116161b3e00edb4dce41acaad4b1066f79f21b78b857a8cf587676c",
+  "independence": "Separate Fraction ledger, not candidate-generated targets; shared documented assumptions, not independent physical evidence.",
+  "protocol_sha256": "fab06ea51b368213e5c30a3c4f88b8c88c1a5e592fe4f6229f885b26b907302b",
+  "reference_sha256": "9a8c65161d74b5fbac6ef82c221f1b17ff9392ceb8cece18d1abea51ef481912",
+  "seed": "225-independent-reference-20261010-v1",
+  "source_register_sha256_at_freeze": "6ac941bac0e5a57a50d07d8e6d40de4df82613f42fb42f569087b2d9f40d8305",
+  "split_policy": "48 fictional customers hash-ordered, 24/12/12 train/dev/test, two properties each; split before scenario expansion.",
+  "test_policy": "Contract conformance suite, not a pristine empirical holdout after first inspection; never tune labels to candidate.",
+  "version": "rational-reference-v1"
+}

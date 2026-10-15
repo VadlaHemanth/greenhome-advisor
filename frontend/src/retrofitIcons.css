@@ -1,0 +1,82 @@
+.retrofit-icon {
+  display: block;
+  flex: none;
+  color: var(--forest, #1e2e27);
+}
+
+.retrofit-icon .retrofit-icon__sage {
+  fill: var(--sage, #7a8f7a);
+  fill-opacity: 0.28;
+}
+
+.retrofit-icon .retrofit-icon__gold {
+  fill: var(--gold, #d8b483);
+}
+
+.retrofit-icon .retrofit-icon__ivory {
+  fill: var(--ivory, #faf9f6);
+}
+
+.retrofit-icon .retrofit-icon__sun {
+  stroke: var(--forest, #1e2e27);
+}
+
+.improvement-card.retrofit-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.retrofit-card > .improvement-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.retrofit-card__heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0 14px;
+}
+
+.retrofit-card .retrofit-card__heading h2 {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.retrofit-card .card-topline > .subtle {
+  white-space: nowrap;
+}
+
+.retrofit-card .improvement-body > p {
+  min-height: 0;
+}
+
+.retrofit-card .card-actions {
+  margin-top: auto;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+.retrofit-card .standalone-savings > div {
+  flex-wrap: wrap;
+}
+
+@media (forced-colors: active) {
+  .retrofit-icon {
+    color: CanvasText;
+  }
+
+  .retrofit-icon .retrofit-icon__sage,
+  .retrofit-icon .retrofit-icon__gold,
+  .retrofit-icon .retrofit-icon__ivory {
+    fill: Canvas;
+    fill-opacity: 1;
+  }
+
+  .retrofit-icon .retrofit-icon__sun {
+    stroke: currentColor;
+  }
+}

@@ -1,0 +1,1710 @@
+{
+  "status": "completed",
+  "evaluated_at_utc": "2026-10-10T18:44:02.069229+00:00",
+  "scope": "VALIDATION ONLY retrospective observed annual-consumption association, NOT retrofit savings or prospective forecasting.",
+  "policy": "Train V targets only; type+area median if n>=30, then area, type, global. Fixed before results.",
+  "candidate_source": "Hash-verified frozen validation_predictions.csv from existing energy_benchmark.joblib; no reload/refit/retraining.",
+  "test_policy": "Test rows skipped before target conversion; no test predictions file opened, metrics computed, tuning or model selection.",
+  "train_properties": 12000,
+  "validation_properties": 4000,
+  "test_rows_skipped": 4000,
+  "prediction_rows": 6606,
+  "input_hashes_before": {
+    "data/energy_properties.csv": "175be2c81bdb61c8899b570f909877bafe9f7fc380d6f4966522e2615495f19f",
+    "data/data_manifest.json": "ec61fd27d02a22fa6fec522582c153d0df04f60ccb3e93feb11ef4d0e00d7cc2",
+    "reports/training_metrics.json": "256fa93cc8b280a78a2b2e187ee2c50d5565fbb76be7f93f3cfcd5755c504976",
+    "reports/validation_predictions.csv": "6a05c3a9c4900b22bdfeae51561b11e88676095b080fb510d4bc7ef8a33827ec",
+    "models/energy_benchmark.joblib": "0e49b26bd32c15f3db053ef34f023e275f5563a4fef0ee8a0dcd3a7cfc648b5a",
+    "scripts/evaluate_benchmark_baselines.py": "2ff33dc6e0de2c0be633b1f77cef79da56342ec55a54a16ec92608fcf575cb68",
+    "docs/EVALUATION_PROTOCOL.md": "fab06ea51b368213e5c30a3c4f88b8c88c1a5e592fe4f6229f885b26b907302b"
+  },
+  "input_hashes_after": {
+    "data/energy_properties.csv": "175be2c81bdb61c8899b570f909877bafe9f7fc380d6f4966522e2615495f19f",
+    "data/data_manifest.json": "ec61fd27d02a22fa6fec522582c153d0df04f60ccb3e93feb11ef4d0e00d7cc2",
+    "reports/training_metrics.json": "256fa93cc8b280a78a2b2e187ee2c50d5565fbb76be7f93f3cfcd5755c504976",
+    "reports/validation_predictions.csv": "6a05c3a9c4900b22bdfeae51561b11e88676095b080fb510d4bc7ef8a33827ec",
+    "models/energy_benchmark.joblib": "0e49b26bd32c15f3db053ef34f023e275f5563a4fef0ee8a0dcd3a7cfc648b5a",
+    "scripts/evaluate_benchmark_baselines.py": "2ff33dc6e0de2c0be633b1f77cef79da56342ec55a54a16ec92608fcf575cb68",
+    "docs/EVALUATION_PROTOCOL.md": "fab06ea51b368213e5c30a3c4f88b8c88c1a5e592fe4f6229f885b26b907302b"
+  },
+  "results": {
+    "electricity": {
+      "n_train": 10941,
+      "n_validation": 3615,
+      "strategies": {
+        "existing_model": {
+          "n": 3615,
+          "mae": 1570.5901569795517,
+          "rmse": 2551.8576975667797,
+          "bias": -548.5614193691785
+        },
+        "global_median": {
+          "n": 3615,
+          "mae": 1639.585062240664,
+          "rmse": 2682.210747715224,
+          "bias": -657.2890733056709
+        },
+        "type_area_median": {
+          "n": 3615,
+          "mae": 1569.4190871369294,
+          "rmse": 2576.029383740045,
+          "bias": -624.1355463347164
+        }
+      },
+      "fallback_counts": {
+        "type_area": 3567,
+        "area": 48
+      }
+    },
+    "gas": {
+      "n_train": 8918,
+      "n_validation": 2991,
+      "strategies": {
+        "existing_model": {
+          "n": 2991,
+          "mae": 4120.808162716055,
+          "rmse": 5823.373577353462,
+          "bias": -1315.1073058424743
+        },
+        "global_median": {
+          "n": 2991,
+          "mae": 4932.497492477432,
+          "rmse": 6934.625471112853,
+          "bias": -1274.189234369776
+        },
+        "type_area_median": {
+          "n": 2991,
+          "mae": 4299.281176863925,
+          "rmse": 6007.8277674589135,
+          "bias": -1016.7335339351388
+        }
+      },
+      "fallback_counts": {
+        "type_area": 2948,
+        "area": 43
+      }
+    }
+  },
+  "slices": [
+    {
+      "fuel": "electricity",
+      "slice": "EPC",
+      "value": "A/B",
+      "n": 365,
+      "strategies": {
+        "existing_model": {
+          "n": 365,
+          "mae": 1389.845300605726,
+          "rmse": 2252.3713166452653,
+          "bias": -321.5933090291233
+        },
+        "global_median": {
+          "n": 365,
+          "mae": 1462.1917808219177,
+          "rmse": 2355.8205387845023,
+          "bias": -292.8767123287671
+        },
+        "type_area_median": {
+          "n": 365,
+          "mae": 1381.3698630136987,
+          "rmse": 2216.263052484569,
+          "bias": -235.8904109589041
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "EPC",
+      "value": "C",
+      "n": 866,
+      "strategies": {
+        "existing_model": {
+          "n": 866,
+          "mae": 1428.3360882127251,
+          "rmse": 2294.905326533688,
+          "bias": -490.2397874999538
+        },
+        "global_median": {
+          "n": 866,
+          "mae": 1524.364896073903,
+          "rmse": 2363.2653458061413,
+          "bias": -349.5381062355658
+        },
+        "type_area_median": {
+          "n": 866,
+          "mae": 1423.0369515011548,
+          "rmse": 2304.528502021222,
+          "bias": -499.82678983833716
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "EPC",
+      "value": "D",
+      "n": 937,
+      "strategies": {
+        "existing_model": {
+          "n": 937,
+          "mae": 1621.3194838860404,
+          "rmse": 2523.5458285030127,
+          "bias": -598.5981304638634
+        },
+        "global_median": {
+          "n": 937,
+          "mae": 1691.889007470651,
+          "rmse": 2716.4721456003995,
+          "bias": -815.2614727854856
+        },
+        "type_area_median": {
+          "n": 937,
+          "mae": 1644.5570971184632,
+          "rmse": 2624.574468736288,
+          "bias": -807.4172892209178
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "EPC",
+      "value": "E",
+      "n": 261,
+      "strategies": {
+        "existing_model": {
+          "n": 261,
+          "mae": 1735.6969950091955,
+          "rmse": 2489.702221399606,
+          "bias": -405.10492371877393
+        },
+        "global_median": {
+          "n": 261,
+          "mae": 1827.5862068965516,
+          "rmse": 2798.740822507665,
+          "bias": -991.5708812260536
+        },
+        "type_area_median": {
+          "n": 261,
+          "mae": 1714.7509578544061,
+          "rmse": 2600.248661849146,
+          "bias": -890.2298850574713
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "EPC",
+      "value": "F/G",
+      "n": 39,
+      "strategies": {
+        "existing_model": {
+          "n": 39,
+          "mae": 2269.7636555366666,
+          "rmse": 2946.192172572775,
+          "bias": -64.86012990692309
+        },
+        "global_median": {
+          "n": 39,
+          "mae": 2025.6410256410256,
+          "rmse": 2738.519158137693,
+          "bias": -1189.7435897435898
+        },
+        "type_area_median": {
+          "n": 39,
+          "mae": 2050.0,
+          "rmse": 2768.515755270229,
+          "bias": -783.3333333333334
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "EPC",
+      "value": "No EPC",
+      "n": 1147,
+      "strategies": {
+        "existing_model": {
+          "n": 1147,
+          "mae": 1632.7260468205927,
+          "rmse": 2832.8592514036686,
+          "bias": -673.0356921075676
+        },
+        "global_median": {
+          "n": 1147,
+          "mae": 1684.3940714908456,
+          "rmse": 2936.954516308198,
+          "bias": -782.3888404533566
+        },
+        "type_area_median": {
+          "n": 1147,
+          "mae": 1628.9886660854402,
+          "rmse": 2813.4101743377432,
+          "bias": -625.8500435919791
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000001",
+      "n": 166,
+      "strategies": {
+        "existing_model": {
+          "n": 166,
+          "mae": 1293.1872591281324,
+          "rmse": 2329.3107121722865,
+          "bias": -579.8278300053615
+        },
+        "global_median": {
+          "n": 166,
+          "mae": 1268.6746987951808,
+          "rmse": 2233.9656240950876,
+          "bias": -293.9759036144578
+        },
+        "type_area_median": {
+          "n": 166,
+          "mae": 1233.132530120482,
+          "rmse": 2259.691310616808,
+          "bias": -333.13253012048193
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000002",
+      "n": 473,
+      "strategies": {
+        "existing_model": {
+          "n": 473,
+          "mae": 1471.6232432108245,
+          "rmse": 2220.950546270479,
+          "bias": -557.4151345742073
+        },
+        "global_median": {
+          "n": 473,
+          "mae": 1572.7272727272727,
+          "rmse": 2342.0731316317188,
+          "bias": -590.9090909090909
+        },
+        "type_area_median": {
+          "n": 473,
+          "mae": 1488.0549682875264,
+          "rmse": 2222.8524329539327,
+          "bias": -570.507399577167
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000003",
+      "n": 355,
+      "strategies": {
+        "existing_model": {
+          "n": 355,
+          "mae": 1327.997621601831,
+          "rmse": 2107.3130113571906,
+          "bias": -361.17094369405635
+        },
+        "global_median": {
+          "n": 355,
+          "mae": 1378.5915492957747,
+          "rmse": 2187.0425074921304,
+          "bias": -293.5211267605634
+        },
+        "type_area_median": {
+          "n": 355,
+          "mae": 1325.4929577464789,
+          "rmse": 2125.961257315296,
+          "bias": -356.4788732394366
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000004",
+      "n": 318,
+      "strategies": {
+        "existing_model": {
+          "n": 318,
+          "mae": 1664.4831344954719,
+          "rmse": 2630.303719459912,
+          "bias": -540.1447650171069
+        },
+        "global_median": {
+          "n": 318,
+          "mae": 1788.6792452830189,
+          "rmse": 2894.920730820768,
+          "bias": -680.503144654088
+        },
+        "type_area_median": {
+          "n": 318,
+          "mae": 1683.4905660377358,
+          "rmse": 2710.4604612407993,
+          "bias": -557.3899371069182
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000005",
+      "n": 379,
+      "strategies": {
+        "existing_model": {
+          "n": 379,
+          "mae": 1566.6372096707125,
+          "rmse": 2448.382099419108,
+          "bias": -543.7319245097098
+        },
+        "global_median": {
+          "n": 379,
+          "mae": 1593.4036939313985,
+          "rmse": 2527.750989706672,
+          "bias": -709.4986807387863
+        },
+        "type_area_median": {
+          "n": 379,
+          "mae": 1559.7625329815303,
+          "rmse": 2458.9519293855715,
+          "bias": -645.778364116095
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000006",
+      "n": 342,
+      "strategies": {
+        "existing_model": {
+          "n": 342,
+          "mae": 1644.0965985922514,
+          "rmse": 2631.537408094237,
+          "bias": -491.6281597382163
+        },
+        "global_median": {
+          "n": 342,
+          "mae": 1680.4093567251462,
+          "rmse": 2705.8362307431576,
+          "bias": -734.2105263157895
+        },
+        "type_area_median": {
+          "n": 342,
+          "mae": 1607.8947368421052,
+          "rmse": 2663.8554260684177,
+          "bias": -704.6783625730994
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000007",
+      "n": 498,
+      "strategies": {
+        "existing_model": {
+          "n": 498,
+          "mae": 1487.5258470626507,
+          "rmse": 2371.0491551642067,
+          "bias": -462.6407702618474
+        },
+        "global_median": {
+          "n": 498,
+          "mae": 1572.8915662650602,
+          "rmse": 2441.4879589740476,
+          "bias": -515.4618473895582
+        },
+        "type_area_median": {
+          "n": 498,
+          "mae": 1484.3373493975903,
+          "rmse": 2406.221020270909,
+          "bias": -624.4979919678715
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000008",
+      "n": 575,
+      "strategies": {
+        "existing_model": {
+          "n": 575,
+          "mae": 1763.9861612899826,
+          "rmse": 2974.435449352859,
+          "bias": -741.854803782087
+        },
+        "global_median": {
+          "n": 575,
+          "mae": 1873.0434782608695,
+          "rmse": 3225.814356231549,
+          "bias": -1024.3478260869565
+        },
+        "type_area_median": {
+          "n": 575,
+          "mae": 1782.5217391304348,
+          "rmse": 3023.8091439656764,
+          "bias": -902.1739130434783
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "E12000009",
+      "n": 336,
+      "strategies": {
+        "existing_model": {
+          "n": 336,
+          "mae": 1730.4538647767263,
+          "rmse": 2752.7862871339803,
+          "bias": -582.2392328239881
+        },
+        "global_median": {
+          "n": 336,
+          "mae": 1770.5357142857142,
+          "rmse": 2890.1979253364375,
+          "bias": -778.2738095238095
+        },
+        "type_area_median": {
+          "n": 336,
+          "mae": 1718.8988095238096,
+          "rmse": 2746.508877084646,
+          "bias": -673.9583333333334
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "REGION",
+      "value": "W92000004",
+      "n": 173,
+      "strategies": {
+        "existing_model": {
+          "n": 173,
+          "mae": 1581.7502523769363,
+          "rmse": 2902.1987744869543,
+          "bias": -556.9584062696531
+        },
+        "global_median": {
+          "n": 173,
+          "mae": 1621.9653179190752,
+          "rmse": 2980.6892945290742,
+          "bias": -578.0346820809249
+        },
+        "type_area_median": {
+          "n": 173,
+          "mae": 1596.820809248555,
+          "rmse": 2914.5216444873026,
+          "bias": -493.35260115606934
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "PROP_TYPE",
+      "value": "Bungalow",
+      "n": 333,
+      "strategies": {
+        "existing_model": {
+          "n": 333,
+          "mae": 1525.5693635374475,
+          "rmse": 2768.0419329276842,
+          "bias": -620.6222597922223
+        },
+        "global_median": {
+          "n": 333,
+          "mae": 1602.7027027027027,
+          "rmse": 2828.6341529386887,
+          "bias": -452.5525525525525
+        },
+        "type_area_median": {
+          "n": 333,
+          "mae": 1519.6696696696697,
+          "rmse": 2799.0466523732975,
+          "bias": -730.7807807807808
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "PROP_TYPE",
+      "value": "Detached",
+      "n": 580,
+      "strategies": {
+        "existing_model": {
+          "n": 580,
+          "mae": 2050.2203141089826,
+          "rmse": 3186.4435087240854,
+          "bias": -669.3448135423275
+        },
+        "global_median": {
+          "n": 580,
+          "mae": 2217.4137931034484,
+          "rmse": 3664.5999922840524,
+          "bias": -1618.7931034482758
+        },
+        "type_area_median": {
+          "n": 580,
+          "mae": 2006.2068965517242,
+          "rmse": 3149.088538083624,
+          "bias": -749.6551724137931
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "PROP_TYPE",
+      "value": "End terrace",
+      "n": 293,
+      "strategies": {
+        "existing_model": {
+          "n": 293,
+          "mae": 1298.6002062474404,
+          "rmse": 1796.3631229229363,
+          "bias": -165.6686156808191
+        },
+        "global_median": {
+          "n": 293,
+          "mae": 1275.7679180887371,
+          "rmse": 1781.5895805283267,
+          "bias": -196.58703071672355
+        },
+        "type_area_median": {
+          "n": 293,
+          "mae": 1292.1501706484642,
+          "rmse": 1796.2038088331997,
+          "bias": -233.4470989761092
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "PROP_TYPE",
+      "value": "Flat",
+      "n": 802,
+      "strategies": {
+        "existing_model": {
+          "n": 802,
+          "mae": 1580.8277538394514,
+          "rmse": 2511.3674873135283,
+          "bias": -571.8957965840399
+        },
+        "global_median": {
+          "n": 802,
+          "mae": 1713.715710723192,
+          "rmse": 2570.3129630804788,
+          "bias": -342.64339152119703
+        },
+        "type_area_median": {
+          "n": 802,
+          "mae": 1630.2992518703243,
+          "rmse": 2648.5656966321526,
+          "bias": -772.6932668329177
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "PROP_TYPE",
+      "value": "Mid terrace",
+      "n": 707,
+      "strategies": {
+        "existing_model": {
+          "n": 707,
+          "mae": 1305.6083654424895,
+          "rmse": 2014.6279860483082,
+          "bias": -458.538623152843
+        },
+        "global_median": {
+          "n": 707,
+          "mae": 1316.4073550212165,
+          "rmse": 1998.1851737725867,
+          "bias": -329.13719943422916
+        },
+        "type_area_median": {
+          "n": 707,
+          "mae": 1297.3125884016972,
+          "rmse": 2000.5939712054924,
+          "bias": -383.3097595473833
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "PROP_TYPE",
+      "value": "Semi detached",
+      "n": 900,
+      "strategies": {
+        "existing_model": {
+          "n": 900,
+          "mae": 1565.7357820692444,
+          "rmse": 2630.410961235645,
+          "bias": -618.6379853669778
+        },
+        "global_median": {
+          "n": 900,
+          "mae": 1587.111111111111,
+          "rmse": 2687.948412203379,
+          "bias": -801.5555555555555
+        },
+        "type_area_median": {
+          "n": 900,
+          "mae": 1556.111111111111,
+          "rmse": 2630.4340579709146,
+          "bias": -687.7777777777778
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "1",
+      "n": 564,
+      "strategies": {
+        "existing_model": {
+          "n": 564,
+          "mae": 1425.2757965014362,
+          "rmse": 2182.357200229992,
+          "bias": -489.7556496258333
+        },
+        "global_median": {
+          "n": 564,
+          "mae": 1613.6524822695035,
+          "rmse": 2262.753453536059,
+          "bias": -123.93617021276596
+        },
+        "type_area_median": {
+          "n": 564,
+          "mae": 1497.163120567376,
+          "rmse": 2372.911549101263,
+          "bias": -727.6595744680851
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "2",
+      "n": 1786,
+      "strategies": {
+        "existing_model": {
+          "n": 1786,
+          "mae": 1429.3436311774133,
+          "rmse": 2366.6544891949293,
+          "bias": -532.1990744475812
+        },
+        "global_median": {
+          "n": 1786,
+          "mae": 1453.0795072788353,
+          "rmse": 2349.537134850248,
+          "bias": -373.57222844344903
+        },
+        "type_area_median": {
+          "n": 1786,
+          "mae": 1427.491601343785,
+          "rmse": 2388.764996454585,
+          "bias": -590.5375139977604
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "3",
+      "n": 968,
+      "strategies": {
+        "existing_model": {
+          "n": 968,
+          "mae": 1618.871343449969,
+          "rmse": 2550.5235063163004,
+          "bias": -544.7101748991425
+        },
+        "global_median": {
+          "n": 968,
+          "mae": 1616.3223140495868,
+          "rmse": 2646.6492147837994,
+          "bias": -920.2479338842975
+        },
+        "type_area_median": {
+          "n": 968,
+          "mae": 1596.849173553719,
+          "rmse": 2547.1569996746834,
+          "bias": -585.5888429752066
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "4",
+      "n": 188,
+      "strategies": {
+        "existing_model": {
+          "n": 188,
+          "mae": 1960.347774550532,
+          "rmse": 2909.115014444558,
+          "bias": -305.6565001323404
+        },
+        "global_median": {
+          "n": 188,
+          "mae": 2058.5106382978724,
+          "rmse": 3283.728420625788,
+          "bias": -1553.1914893617022
+        },
+        "type_area_median": {
+          "n": 188,
+          "mae": 1951.595744680851,
+          "rmse": 2935.5759882821503,
+          "bias": -420.74468085106383
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "5",
+      "n": 109,
+      "strategies": {
+        "existing_model": {
+          "n": 109,
+          "mae": 3535.8467972141284,
+          "rmse": 5213.8888187113525,
+          "bias": -1574.1002416511928
+        },
+        "global_median": {
+          "n": 109,
+          "mae": 4313.761467889908,
+          "rmse": 6391.249752160794,
+          "bias": -4185.321100917431
+        },
+        "type_area_median": {
+          "n": 109,
+          "mae": 3366.0550458715597,
+          "rmse": 4996.682385581989,
+          "bias": -1332.1100917431193
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "other_fuel_availability",
+      "value": "both_valid",
+      "n": 2763,
+      "strategies": {
+        "existing_model": {
+          "n": 2763,
+          "mae": 1360.6465581875461,
+          "rmse": 2091.6074616385713,
+          "bias": -305.1494554862215
+        },
+        "global_median": {
+          "n": 2763,
+          "mae": 1397.828447339848,
+          "rmse": 2179.2809115279247,
+          "bias": -399.2037640246109
+        },
+        "type_area_median": {
+          "n": 2763,
+          "mae": 1338.8526963445531,
+          "rmse": 2077.764108757181,
+          "bias": -347.5750995294969
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "other_fuel_availability",
+      "value": "other_fuel_not_valid",
+      "n": 852,
+      "strategies": {
+        "existing_model": {
+          "n": 852,
+          "mae": 2251.4283770057395,
+          "rmse": 3666.4266123339,
+          "bias": -1337.9361332290493
+        },
+        "global_median": {
+          "n": 852,
+          "mae": 2423.5915492957747,
+          "rmse": 3888.862452402877,
+          "bias": -1494.24882629108
+        },
+        "type_area_median": {
+          "n": 852,
+          "mae": 2317.1361502347418,
+          "rmse": 3762.4160652282094,
+          "bias": -1521.0093896713615
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "epc_availability",
+      "value": "missing_epc",
+      "n": 1147,
+      "strategies": {
+        "existing_model": {
+          "n": 1147,
+          "mae": 1632.7260468205927,
+          "rmse": 2832.8592514036686,
+          "bias": -673.0356921075676
+        },
+        "global_median": {
+          "n": 1147,
+          "mae": 1684.3940714908456,
+          "rmse": 2936.954516308198,
+          "bias": -782.3888404533566
+        },
+        "type_area_median": {
+          "n": 1147,
+          "mae": 1628.9886660854402,
+          "rmse": 2813.4101743377432,
+          "bias": -625.8500435919791
+        }
+      }
+    },
+    {
+      "fuel": "electricity",
+      "slice": "epc_availability",
+      "value": "recorded_epc",
+      "n": 2468,
+      "strategies": {
+        "existing_model": {
+          "n": 2468,
+          "mae": 1541.712577705778,
+          "rmse": 2410.136903909917,
+          "bias": -490.7121524198542
+        },
+        "global_median": {
+          "n": 2468,
+          "mae": 1618.7601296596433,
+          "rmse": 2555.189050911794,
+          "bias": -599.1491085899514
+        },
+        "type_area_median": {
+          "n": 2468,
+          "mae": 1541.7341977309563,
+          "rmse": 2457.916047507814,
+          "bias": -623.3387358184765
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "EPC",
+      "value": "A/B",
+      "n": 237,
+      "strategies": {
+        "existing_model": {
+          "n": 237,
+          "mae": 2757.025556383207,
+          "rmse": 3761.0299647643496,
+          "bias": -949.9401287281855
+        },
+        "global_median": {
+          "n": 237,
+          "mae": 4086.4978902953585,
+          "rmse": 4904.424077037605,
+          "bias": 2027.4261603375528
+        },
+        "type_area_median": {
+          "n": 237,
+          "mae": 3962.869198312236,
+          "rmse": 4659.763580319561,
+          "bias": 2927.8481012658226
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "EPC",
+      "value": "C",
+      "n": 717,
+      "strategies": {
+        "existing_model": {
+          "n": 717,
+          "mae": 3546.6666173627054,
+          "rmse": 4976.908760027365,
+          "bias": -788.6229719724687
+        },
+        "global_median": {
+          "n": 717,
+          "mae": 4352.719665271967,
+          "rmse": 5702.659097388873,
+          "bias": 911.4365411436542
+        },
+        "type_area_median": {
+          "n": 717,
+          "mae": 3590.097629009763,
+          "rmse": 4930.93584549757,
+          "bias": 26.917712691771268
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "EPC",
+      "value": "D",
+      "n": 838,
+      "strategies": {
+        "existing_model": {
+          "n": 838,
+          "mae": 4265.1856294685085,
+          "rmse": 6061.545065900245,
+          "bias": -1307.3857363674822
+        },
+        "global_median": {
+          "n": 838,
+          "mae": 4695.226730310263,
+          "rmse": 6783.855255244249,
+          "bias": -1510.2625298329356
+        },
+        "type_area_median": {
+          "n": 838,
+          "mae": 4248.806682577566,
+          "rmse": 6082.836097419264,
+          "bias": -1320.5250596658711
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "EPC",
+      "value": "E",
+      "n": 192,
+      "strategies": {
+        "existing_model": {
+          "n": 192,
+          "mae": 5303.1432362133855,
+          "rmse": 7510.091017075653,
+          "bias": -2693.6591417733853
+        },
+        "global_median": {
+          "n": 192,
+          "mae": 6131.770833333333,
+          "rmse": 8777.002976529062,
+          "bias": -3948.4375
+        },
+        "type_area_median": {
+          "n": 192,
+          "mae": 5520.052083333333,
+          "rmse": 7768.505292472077,
+          "bias": -3329.9479166666665
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "EPC",
+      "value": "F/G",
+      "n": 22,
+      "strategies": {
+        "existing_model": {
+          "n": 22,
+          "mae": 6015.296716762273,
+          "rmse": 7624.861916499795,
+          "bias": -2237.505791895
+        },
+        "global_median": {
+          "n": 22,
+          "mae": 6477.272727272727,
+          "rmse": 9414.66457665429,
+          "bias": -4195.454545454545
+        },
+        "type_area_median": {
+          "n": 22,
+          "mae": 5668.181818181818,
+          "rmse": 7342.373903953308,
+          "bias": -2677.2727272727275
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "EPC",
+      "value": "No EPC",
+      "n": 985,
+      "strategies": {
+        "existing_model": {
+          "n": 985,
+          "mae": 4471.265590411665,
+          "rmse": 6163.538494674676,
+          "bias": -1503.4624778110356
+        },
+        "global_median": {
+          "n": 985,
+          "mae": 5491.675126903553,
+          "rmse": 7772.812829943874,
+          "bias": -2872.1827411167515
+        },
+        "type_area_median": {
+          "n": 985,
+          "mae": 4670.862944162436,
+          "rmse": 6498.56797970153,
+          "bias": -1979.0862944162436
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000001",
+      "n": 150,
+      "strategies": {
+        "existing_model": {
+          "n": 150,
+          "mae": 3657.4972694201333,
+          "rmse": 4880.02336406478,
+          "bias": -1469.1272354989335
+        },
+        "global_median": {
+          "n": 150,
+          "mae": 4285.333333333333,
+          "rmse": 5803.596586026059,
+          "bias": -1172.0
+        },
+        "type_area_median": {
+          "n": 150,
+          "mae": 3678.3333333333335,
+          "rmse": 4834.768177827488,
+          "bias": -1268.3333333333333
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000002",
+      "n": 405,
+      "strategies": {
+        "existing_model": {
+          "n": 405,
+          "mae": 4038.2215185757777,
+          "rmse": 5520.531158631016,
+          "bias": -1066.580917780568
+        },
+        "global_median": {
+          "n": 405,
+          "mae": 4634.074074074074,
+          "rmse": 6330.0225264358405,
+          "bias": -672.5925925925926
+        },
+        "type_area_median": {
+          "n": 405,
+          "mae": 4070.1234567901233,
+          "rmse": 5473.119497785247,
+          "bias": -495.0617283950617
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000003",
+      "n": 316,
+      "strategies": {
+        "existing_model": {
+          "n": 316,
+          "mae": 4332.025833419399,
+          "rmse": 5966.809560191354,
+          "bias": -1746.1283118239555
+        },
+        "global_median": {
+          "n": 316,
+          "mae": 4766.772151898735,
+          "rmse": 6619.254135962427,
+          "bias": -1269.3037974683543
+        },
+        "type_area_median": {
+          "n": 316,
+          "mae": 4349.841772151899,
+          "rmse": 5963.038182595229,
+          "bias": -1370.7278481012659
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000004",
+      "n": 278,
+      "strategies": {
+        "existing_model": {
+          "n": 278,
+          "mae": 3815.4088262242085,
+          "rmse": 5538.677350106034,
+          "bias": -984.4915767408993
+        },
+        "global_median": {
+          "n": 278,
+          "mae": 4399.280575539568,
+          "rmse": 6616.150938227609,
+          "bias": -1205.7553956834533
+        },
+        "type_area_median": {
+          "n": 278,
+          "mae": 3938.8489208633096,
+          "rmse": 5585.089025652182,
+          "bias": -367.62589928057554
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000005",
+      "n": 343,
+      "strategies": {
+        "existing_model": {
+          "n": 343,
+          "mae": 4272.218108580992,
+          "rmse": 6270.439664453907,
+          "bias": -1177.2076724826238
+        },
+        "global_median": {
+          "n": 343,
+          "mae": 5158.01749271137,
+          "rmse": 7258.621093219229,
+          "bias": -1657.142857142857
+        },
+        "type_area_median": {
+          "n": 343,
+          "mae": 4425.364431486881,
+          "rmse": 6526.376177162247,
+          "bias": -1247.8134110787173
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000006",
+      "n": 273,
+      "strategies": {
+        "existing_model": {
+          "n": 273,
+          "mae": 3598.818574448681,
+          "rmse": 5151.391500972204,
+          "bias": -961.4794298138829
+        },
+        "global_median": {
+          "n": 273,
+          "mae": 4683.150183150183,
+          "rmse": 6691.493150716108,
+          "bias": -935.1648351648352
+        },
+        "type_area_median": {
+          "n": 273,
+          "mae": 3761.5384615384614,
+          "rmse": 5246.776439268497,
+          "bias": -520.1465201465202
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000007",
+      "n": 363,
+      "strategies": {
+        "existing_model": {
+          "n": 363,
+          "mae": 4980.932231244297,
+          "rmse": 6968.871299634775,
+          "bias": -1845.9338525436365
+        },
+        "global_median": {
+          "n": 363,
+          "mae": 6314.600550964187,
+          "rmse": 8741.257734265677,
+          "bias": -2507.438016528926
+        },
+        "type_area_median": {
+          "n": 363,
+          "mae": 5394.903581267217,
+          "rmse": 7632.910023509857,
+          "bias": -3220.2479338842977
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000008",
+      "n": 468,
+      "strategies": {
+        "existing_model": {
+          "n": 468,
+          "mae": 4263.0463232782695,
+          "rmse": 5962.202139067739,
+          "bias": -1979.3400402848504
+        },
+        "global_median": {
+          "n": 468,
+          "mae": 5181.623931623932,
+          "rmse": 7318.677079092518,
+          "bias": -2109.82905982906
+        },
+        "type_area_median": {
+          "n": 468,
+          "mae": 4475.747863247863,
+          "rmse": 6185.490587125551,
+          "bias": -1425.534188034188
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "E12000009",
+      "n": 255,
+      "strategies": {
+        "existing_model": {
+          "n": 255,
+          "mae": 3649.1902871191373,
+          "rmse": 5238.511302285391,
+          "bias": -493.9292603963921
+        },
+        "global_median": {
+          "n": 255,
+          "mae": 4503.921568627451,
+          "rmse": 5996.616693161726,
+          "bias": 433.3333333333333
+        },
+        "type_area_median": {
+          "n": 255,
+          "mae": 4024.3137254901962,
+          "rmse": 5338.766840062321,
+          "bias": 1037.6470588235295
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "REGION",
+      "value": "W92000004",
+      "n": 140,
+      "strategies": {
+        "existing_model": {
+          "n": 140,
+          "mae": 3786.094340554214,
+          "rmse": 5169.994887525041,
+          "bias": -479.02275107192855
+        },
+        "global_median": {
+          "n": 140,
+          "mae": 4220.0,
+          "rmse": 5522.719309491346,
+          "bias": -112.85714285714286
+        },
+        "type_area_median": {
+          "n": 140,
+          "mae": 4038.9285714285716,
+          "rmse": 5320.709203534002,
+          "bias": 189.64285714285714
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "PROP_TYPE",
+      "value": "Bungalow",
+      "n": 293,
+      "strategies": {
+        "existing_model": {
+          "n": 293,
+          "mae": 4585.465593969352,
+          "rmse": 6786.278543107847,
+          "bias": -2010.0633669608192
+        },
+        "global_median": {
+          "n": 293,
+          "mae": 4932.081911262799,
+          "rmse": 7399.90083874157,
+          "bias": -1769.6245733788396
+        },
+        "type_area_median": {
+          "n": 293,
+          "mae": 4591.808873720137,
+          "rmse": 6731.100453163673,
+          "bias": -1479.863481228669
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "PROP_TYPE",
+      "value": "Detached",
+      "n": 491,
+      "strategies": {
+        "existing_model": {
+          "n": 491,
+          "mae": 4672.459880223747,
+          "rmse": 6540.694397419364,
+          "bias": -1581.9305048818737
+        },
+        "global_median": {
+          "n": 491,
+          "mae": 6516.904276985743,
+          "rmse": 9437.37424215857,
+          "bias": -5532.790224032587
+        },
+        "type_area_median": {
+          "n": 491,
+          "mae": 5009.775967413442,
+          "rmse": 6940.279140045559,
+          "bias": -1418.7372708757637
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "PROP_TYPE",
+      "value": "End terrace",
+      "n": 286,
+      "strategies": {
+        "existing_model": {
+          "n": 286,
+          "mae": 3575.4270903783217,
+          "rmse": 5294.975703471494,
+          "bias": -1309.479778162937
+        },
+        "global_median": {
+          "n": 286,
+          "mae": 4069.230769230769,
+          "rmse": 5795.7182169554835,
+          "bias": -697.2027972027972
+        },
+        "type_area_median": {
+          "n": 286,
+          "mae": 3736.713286713287,
+          "rmse": 5307.696614977476,
+          "bias": -1026.923076923077
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "PROP_TYPE",
+      "value": "Flat",
+      "n": 424,
+      "strategies": {
+        "existing_model": {
+          "n": 424,
+          "mae": 3519.5347409934197,
+          "rmse": 5261.573519603354,
+          "bias": -1344.2450327164859
+        },
+        "global_median": {
+          "n": 424,
+          "mae": 4935.377358490566,
+          "rmse": 5946.887563937392,
+          "bias": 2448.1132075471696
+        },
+        "type_area_median": {
+          "n": 424,
+          "mae": 3699.056603773585,
+          "rmse": 5465.1554898558825,
+          "bias": -1260.377358490566
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "PROP_TYPE",
+      "value": "Mid terrace",
+      "n": 659,
+      "strategies": {
+        "existing_model": {
+          "n": 659,
+          "mae": 3931.768146776009,
+          "rmse": 5421.1163849194045,
+          "bias": -1195.711432892883
+        },
+        "global_median": {
+          "n": 659,
+          "mae": 4195.2959028831565,
+          "rmse": 5729.36821046152,
+          "bias": -102.73141122913505
+        },
+        "type_area_median": {
+          "n": 659,
+          "mae": 3961.380880121396,
+          "rmse": 5487.18572056917,
+          "bias": -741.1987860394537
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "PROP_TYPE",
+      "value": "Semi detached",
+      "n": 838,
+      "strategies": {
+        "existing_model": {
+          "n": 838,
+          "mae": 4274.138314685012,
+          "rmse": 5760.452773811288,
+          "bias": -996.8550867010979
+        },
+        "global_median": {
+          "n": 838,
+          "mae": 4877.207637231503,
+          "rmse": 6718.486056590535,
+          "bias": -1607.2792362768496
+        },
+        "type_area_median": {
+          "n": 838,
+          "mae": 4542.124105011933,
+          "rmse": 6029.827411771566,
+          "bias": -709.1885441527446
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "1",
+      "n": 302,
+      "strategies": {
+        "existing_model": {
+          "n": 302,
+          "mae": 2997.6910475377153,
+          "rmse": 4328.916286749345,
+          "bias": -1057.0478160010928
+        },
+        "global_median": {
+          "n": 302,
+          "mae": 4793.7086092715235,
+          "rmse": 5539.727083434743,
+          "bias": 3179.139072847682
+        },
+        "type_area_median": {
+          "n": 302,
+          "mae": 3155.9602649006624,
+          "rmse": 4627.011823044763,
+          "bias": -981.1258278145696
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "2",
+      "n": 1574,
+      "strategies": {
+        "existing_model": {
+          "n": 1574,
+          "mae": 3743.622842191556,
+          "rmse": 5216.825616906595,
+          "bias": -1079.6324635613914
+        },
+        "global_median": {
+          "n": 1574,
+          "mae": 3957.2426937738246,
+          "rmse": 5236.612992094296,
+          "bias": 236.40406607369758
+        },
+        "type_area_median": {
+          "n": 1574,
+          "mae": 3845.266836086404,
+          "rmse": 5278.592948854367,
+          "bias": -765.0254129606099
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "3",
+      "n": 891,
+      "strategies": {
+        "existing_model": {
+          "n": 891,
+          "mae": 4512.108204431706,
+          "rmse": 6382.945336339834,
+          "bias": -1515.4840069808417
+        },
+        "global_median": {
+          "n": 891,
+          "mae": 5241.863075196408,
+          "rmse": 7393.016239218995,
+          "bias": -3212.0089786756453
+        },
+        "type_area_median": {
+          "n": 891,
+          "mae": 4753.086419753086,
+          "rmse": 6636.010322221703,
+          "bias": -1222.8956228956229
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "4",
+      "n": 155,
+      "strategies": {
+        "existing_model": {
+          "n": 155,
+          "mae": 5971.806268524967,
+          "rmse": 7521.818289660186,
+          "bias": -1815.35755252871
+        },
+        "global_median": {
+          "n": 155,
+          "mae": 8821.935483870968,
+          "rmse": 11359.4979443806,
+          "bias": -8094.193548387097
+        },
+        "type_area_median": {
+          "n": 155,
+          "mae": 6614.8387096774195,
+          "rmse": 8174.563222030137,
+          "bias": -1524.516129032258
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "FLOOR_AREA_BAND",
+      "value": "5",
+      "n": 69,
+      "strategies": {
+        "existing_model": {
+          "n": 69,
+          "mae": 8429.764970257971,
+          "rmse": 10675.042537459882,
+          "bias": -4104.91801210145
+        },
+        "global_median": {
+          "n": 69,
+          "mae": 15055.072463768116,
+          "rmse": 18139.515676707226,
+          "bias": -14881.159420289856
+        },
+        "type_area_median": {
+          "n": 69,
+          "mae": 8598.550724637682,
+          "rmse": 10794.557136266218,
+          "bias": -3111.5942028985505
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "other_fuel_availability",
+      "value": "both_valid",
+      "n": 2763,
+      "strategies": {
+        "existing_model": {
+          "n": 2763,
+          "mae": 4094.7958627087983,
+          "rmse": 5791.487278150157,
+          "bias": -1392.364268999258
+        },
+        "global_median": {
+          "n": 2763,
+          "mae": 4883.930510314875,
+          "rmse": 6908.144809735047,
+          "bias": -1411.0387260224393
+        },
+        "type_area_median": {
+          "n": 2763,
+          "mae": 4269.0915671371695,
+          "rmse": 5969.057776730525,
+          "bias": -1088.1288454578357
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "other_fuel_availability",
+      "value": "other_fuel_not_valid",
+      "n": 228,
+      "strategies": {
+        "existing_model": {
+          "n": 228,
+          "mae": 4436.03616675136,
+          "rmse": 6196.756956926111,
+          "bias": -378.87489706092106
+        },
+        "global_median": {
+          "n": 228,
+          "mae": 5521.0526315789475,
+          "rmse": 7247.842994310476,
+          "bias": 384.2105263157895
+        },
+        "type_area_median": {
+          "n": 228,
+          "mae": 4665.131578947368,
+          "rmse": 6459.187832548327,
+          "bias": -151.53508771929825
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "epc_availability",
+      "value": "missing_epc",
+      "n": 985,
+      "strategies": {
+        "existing_model": {
+          "n": 985,
+          "mae": 4471.265590411665,
+          "rmse": 6163.538494674676,
+          "bias": -1503.4624778110356
+        },
+        "global_median": {
+          "n": 985,
+          "mae": 5491.675126903553,
+          "rmse": 7772.812829943874,
+          "bias": -2872.1827411167515
+        },
+        "type_area_median": {
+          "n": 985,
+          "mae": 4670.862944162436,
+          "rmse": 6498.56797970153,
+          "bias": -1979.0862944162436
+        }
+      }
+    },
+    {
+      "fuel": "gas",
+      "slice": "epc_availability",
+      "value": "recorded_epc",
+      "n": 2006,
+      "strategies": {
+        "existing_model": {
+          "n": 2006,
+          "mae": 3948.724131669108,
+          "rmse": 5648.849823026694,
+          "bias": -1222.6198460274027
+        },
+        "global_median": {
+          "n": 2006,
+          "mae": 4657.926221335992,
+          "rmse": 6483.506184362901,
+          "bias": -489.53140578265203
+        },
+        "type_area_median": {
+          "n": 2006,
+          "mae": 4116.824526420738,
+          "rmse": 5751.553715265229,
+          "bias": -544.1924227318046
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Latest EPC/property snapshot can post-date targets; not time-safe.",
+    "Fuel quality inclusion is separate; missing gas is not zero.",
+    "Electricity/gas periods differ, and only gas is weather corrected.",
+    "Anonymous row IDs do not establish independent customers.",
+    "Slices overlap and have unequal support; no significance or calibrated uncertainty claim.",
+    "No historical model or saved metrics modified; this diagnostic cannot justify tuning on old test data."
+  ]
+}

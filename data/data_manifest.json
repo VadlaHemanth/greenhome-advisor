@@ -1,0 +1,105 @@
+{
+  "seed": 42,
+  "requested_energy_sample": 20000,
+  "source_files": [
+    {
+      "url": "https://assets.publishing.service.gov.uk/media/6a282d2be371d9d2c0052b39/NEED-2026-anonymised-dataset-metadata.ods",
+      "file": "data/raw/NEED-2026-anonymised-dataset-metadata.ods",
+      "sha256": "1d97e6c535dec8c87e64482a5c7b552a4cb8273e48c13bc171816729f3c377ab",
+      "bytes": 100505,
+      "used_cached_download": true,
+      "checked_utc": "2026-10-10T13:41:22.083042+00:00"
+    },
+    {
+      "url": "https://assets.publishing.service.gov.uk/media/6a282ad83b15d05a7ce31fb1/anon2026_50k.csv",
+      "file": "data/raw/anon2026_50k.csv",
+      "sha256": "5da6b2c1d6c2296f200a3ff3f8e3e05d2141fd40767e51cd5f3c57faa501b50b",
+      "bytes": 15085342,
+      "used_cached_download": true,
+      "checked_utc": "2026-10-10T13:41:22.144253+00:00"
+    }
+  ],
+  "energy_features": [
+    "PROP_TYPE",
+    "PROP_AGE_BAND",
+    "FLOOR_AREA_BAND",
+    "REGION",
+    "EPC"
+  ],
+  "fallback_reason": null,
+  "data_kind": "observed_NEED2026",
+  "quality": {
+    "Econs2024": {
+      "flag_counts": {
+        "V": 45214,
+        "L": 2101,
+        "E": 1020,
+        "<blank>": 770,
+        "O": 740,
+        "G": 155
+      },
+      "accepted": 45214,
+      "excluded": 4786,
+      "valid_flag_missing_numeric": 0,
+      "policy": "V only, finite values; E/L/G/O/blank excluded; missing remains missing"
+    },
+    "Gcons2024": {
+      "flag_counts": {
+        "V": 37186,
+        "<blank>": 8660,
+        "E": 2316,
+        "L": 1015,
+        "O": 609,
+        "G": 214
+      },
+      "accepted": 37186,
+      "excluded": 12814,
+      "valid_flag_missing_numeric": 0,
+      "policy": "V only, finite values; E/L/G/O/blank excluded; missing remains missing"
+    }
+  },
+  "energy_rows": 50000,
+  "energy_sample_rows": 20000,
+  "energy_split_counts": {
+    "train": 30000,
+    "test": 10000,
+    "validation": 10000
+  },
+  "energy_sample_split_counts": {
+    "train": 12000,
+    "validation": 4000,
+    "test": 4000
+  },
+  "synthetic_value_properties": 1800,
+  "synthetic_value_scenarios": 11340,
+  "synthetic_value_property_splits": {
+    "train": 1080,
+    "validation": 360,
+    "test": 360
+  },
+  "synthetic_value_scenario_splits": {
+    "train": 6783,
+    "validation": 2280,
+    "test": 2277
+  },
+  "target_year": 2024,
+  "acceptable_quality_flags": [
+    "V"
+  ],
+  "property_id_policy": "Stable 1-based source row ID within the hash-pinned official snapshot; each row represents a property. No source identifiers supplied.",
+  "split_policy": "Seeded property-ID permutation; 60/20/20 before scenario expansion; sampling independent of target/flags.",
+  "leakage_exclusions": [
+    "All consumption/quality columns as features",
+    "MAIN_HEAT_FUEL (uses 2022-2024 gas)",
+    "Installation flags/dates (can post-date target)",
+    "2025 deprivation/tax bands",
+    "IDs and synthetic references"
+  ],
+  "temporal_caveat": "Most recent EPC has no lodgement date; October 2025 property snapshot. Retrospective cohort benchmark only, not a time-safe 2024 forecast.",
+  "files": {
+    "synthetic_value_properties.csv": "b77b51ea68348a02bbc11d4787c94a7f65efb5e4f30cc21c31e55dc214495fb7",
+    "energy_splits.csv": "2bf3d7948768d83b8accfca955f10bcec5c893d50800ab356a4975f2bce13087",
+    "synthetic_value_scenarios.csv": "b9d2476d22181d6aaf60e71446a05301acd267522e98a141b7ba456bda996068",
+    "energy_properties.csv": "175be2c81bdb61c8899b570f909877bafe9f7fc380d6f4966522e2615495f19f"
+  }
+}

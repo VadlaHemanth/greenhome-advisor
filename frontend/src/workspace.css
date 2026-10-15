@@ -1,0 +1,637 @@
+/* The supplied board remains the design system: ivory #faf9f6, sage #7a8f7a,
+   forest #1e2e27, sand #ede6de, gold #d8b483; Inter + Playfair Display.
+   New views are calm household worksheets, not a second SaaS visual system. */
+.continuity-bar {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 12px 3%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.continuity-bar > span {
+  flex: 1 1 400px;
+  color: var(--muted);
+}
+.continuity-bar a {
+  text-underline-offset: 4px;
+}
+.continuity-bar .button {
+  font-size: 0.875rem;
+  min-height: 44px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.workspace-panel,
+.homes-section,
+.plan-section {
+  padding: clamp(20px, 3vw, 36px);
+  margin-bottom: 24px;
+}
+.workspace-panel p,
+.homes-section p,
+.customer-plan p {
+  max-width: 78ch;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+.workspace-panel h2,
+.homes-section h2,
+.plan-section h2 {
+  font-size: 1.25rem;
+}
+.workspace-panel h3,
+.homes-section h3 {
+  font-size: 1.05rem;
+}
+.workspace-panel .button,
+.homes-section .button,
+.homes-toolbar .button {
+  font-size: 0.875rem;
+  min-height: 44px;
+  white-space: normal;
+}
+.workspace-panel .check-row {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 14px 0;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.workspace-panel .check-row input {
+  margin-top: 4px;
+  flex-shrink: 0;
+  accent-color: var(--forest);
+}
+.workspace-panel .form-field > span {
+  font-size: 0.875rem;
+}
+.workspace-panel small {
+  font-size: 0.8125rem;
+}
+.workspace-panel fieldset {
+  min-width: 0;
+  border: 0;
+  margin: 0 0 20px;
+  padding: 0;
+}
+.workspace-panel legend {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+.workspace-panel .deferred-options {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 24px;
+}
+.workspace-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #edf0e9;
+}
+.workspace-summary > div {
+  flex: 1 1 320px;
+}
+.workspace-summary p:last-child {
+  margin-bottom: 0;
+}
+.save-status {
+  min-height: 1.5em;
+  color: var(--forest);
+  font-size: 0.9375rem;
+}
+.completion-history {
+  padding-left: 24px;
+  line-height: 1.8;
+}
+.completion-history li {
+  padding: 10px 0;
+}
+.deletion-panel {
+  border-color: #c8bfb3;
+  background: #f5f1eb;
+}
+.homes-toolbar {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 24px 0;
+}
+.homes-toolbar .form-field {
+  flex: 1;
+  min-width: 220px;
+  max-width: 540px;
+}
+.home-ranking {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.home-ranking > li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 235px;
+  gap: 20px;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+.rank-number {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2rem;
+  color: var(--forest);
+}
+.rank-copy h3 {
+  margin-bottom: 5px;
+}
+.rank-copy > p {
+  margin-bottom: 12px;
+}
+.rank-copy > p:first-of-type {
+  font-size: 0.8125rem;
+}
+.rank-copy details {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.rank-outcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.rank-outcome > strong {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.rank-outcome > span {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.rank-outcome .button {
+  margin-top: 8px;
+}
+.evidence-queue {
+  background: #f6f2eb;
+}
+.evidence-queue article {
+  padding: 22px 0;
+  border-top: 1px solid #ddd7ce;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.evidence-queue article > div {
+  flex: 1;
+}
+.evidence-queue article p {
+  margin: 12px 0 0;
+}
+.ranking-method {
+  margin: 24px 0;
+  font-size: 0.9375rem;
+}
+.customer-plan {
+  max-width: 1040px;
+  margin: auto;
+}
+.plan-identity {
+  margin: 0 0 24px;
+  padding: 24px 0;
+  border-top: 2px solid var(--sage);
+  border-bottom: 1px solid var(--line);
+}
+.plan-identity p {
+  margin-bottom: 8px;
+}
+.customer-plan .summary-list dt,
+.customer-plan .summary-list dd {
+  font-size: 0.9375rem;
+}
+.customer-plan ul {
+  padding-left: 22px;
+  line-height: 1.8;
+  font-size: 0.9375rem;
+}
+.customer-plan li {
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+.plan-evidence a {
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+[aria-invalid="true"] {
+  outline: 2px solid #a33d36;
+  outline-offset: 2px;
+}
+.home-form [id^="error-"] {
+  color: #8c2f2f;
+}
+.desktop-nav {
+  gap: 17px;
+}
+.desktop-nav a {
+  font-size: 0.8125rem;
+}
+.brand small {
+  font-size: 0.625rem;
+}
+.fine-print,
+.rail-disclaimer {
+  font-size: 0.8125rem;
+}
+.notice {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.workspace-bar > div,
+.home-selector select {
+  font-size: 0.8125rem;
+}
+.tag {
+  font-size: 0.75rem;
+  white-space: normal;
+}
+.metric-detail {
+  font-size: 0.8125rem;
+}
+.button {
+  min-height: 44px;
+}
+
+@media (max-width: 1250px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-menu-button {
+    display: inline-flex;
+  }
+  .mobile-navigation {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .brand {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .header-actions {
+    margin-left: auto;
+  }
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-copy {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .hero h1,
+  .hero p,
+  .page-heading > div,
+  .page-heading h1,
+  .page-heading p {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .page-heading {
+    flex-wrap: wrap;
+  }
+  .home-glance .section-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .continuity-bar {
+    padding: 14px 20px;
+    gap: 12px;
+  }
+  .continuity-bar > span {
+    flex-basis: 100%;
+  }
+  .continuity-bar .button {
+    padding: 10px 14px;
+  }
+  .mobile-navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mobile-navigation a {
+    font-size: 0.875rem;
+    min-height: 48px;
+  }
+  .workspace-bar {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0;
+  }
+  .workspace-bar > div {
+    font-size: 0.8125rem;
+  }
+  .home-selector {
+    width: 100%;
+    font-size: 0.8125rem;
+  }
+  .home-selector select {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+  .home-ranking > li {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .rank-outcome {
+    grid-column: 2;
+    border-left: 3px solid var(--sage);
+    padding-left: 16px;
+  }
+  .rank-outcome > strong {
+    font-size: 1.75rem;
+  }
+  .evidence-queue article {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .homes-toolbar .form-field {
+    min-width: 0;
+    flex-basis: 100%;
+  }
+  .workspace-panel .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .customer-plan .summary-list > div {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .customer-plan .summary-list dd {
+    text-align: left;
+  }
+  .customer-plan .page-heading {
+    display: block;
+  }
+  .customer-plan .page-heading .button {
+    margin-top: 10px;
+  }
+  .hero {
+    padding-top: 0;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 0.9375rem;
+  }
+  .hero-figure {
+    display: none;
+  }
+  .metric-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .metric-card {
+    min-height: 0;
+    padding: 22px;
+  }
+  .metric-heading h2 {
+    font-size: 0.9375rem;
+  }
+  .metric-value {
+    font-size: 2.2rem;
+  }
+  .metric-detail,
+  .metric-detail .tag,
+  .fuel-mini > div {
+    font-size: 0.8125rem;
+  }
+  .home-glance .button,
+  .recommendation-copy .button {
+    font-size: 0.875rem;
+    padding: 12px 16px;
+  }
+  .home-glance h2 {
+    font-size: 1rem;
+  }
+  .site-footer .text-link,
+  .site-footer p {
+    font-size: 0.8125rem;
+  }
+  .brand small {
+    font-size: 0.625rem;
+    max-width: 230px;
+    white-space: normal;
+  }
+  .form-field > span,
+  .form-field > small {
+    font-size: 0.875rem;
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 1rem;
+  }
+  .scenario-rail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rail-fuels,
+  .rail-rec-copy small,
+  .picker-details summary {
+    font-size: 0.875rem;
+  }
+  .component-row > div:first-child {
+    font-size: 0.875rem;
+  }
+  .component-row strong small {
+    font-size: 0.8125rem;
+  }
+  .metric-detail p,
+  .metric-detail small,
+  .metric-value > span,
+  .data-context,
+  .home-facts dt,
+  .source-links a,
+  .summary-list dd small,
+  .rail-fuels > div,
+  .rail-rec-copy .tag,
+  .check-row small,
+  .score-card .text-link,
+  .question-examples button,
+  .recommendation-copy .tag {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+  .page-heading p,
+  .recommendation-copy p,
+  .check-row strong,
+  .fictional-choice .check-row strong,
+  .unavailable-item .button,
+  .decision-result .button,
+  .card-actions .button {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .score-gauge .tag,
+  .gauge-label small {
+    font-size: 0.75rem;
+  }
+  .recommendation-feature {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .feature-image {
+    min-height: 160px;
+    max-height: 220px;
+  }
+}
+@media print {
+  @page {
+    margin: 16mm;
+  }
+  .continuity-bar,
+  .mobile-navigation,
+  .skip-link {
+    display: none !important;
+  }
+  .customer-plan {
+    max-width: none;
+  }
+  .customer-plan .page-heading h1 {
+    font-size: 24pt;
+  }
+  .customer-plan p,
+  .customer-plan li,
+  .customer-plan .summary-list dt,
+  .customer-plan .summary-list dd,
+  .customer-plan .notice {
+    font-size: 10pt;
+    line-height: 1.4;
+    color: #000;
+  }
+  .customer-plan .plan-section {
+    padding: 8px 0;
+    margin-block: 8px;
+    border: none;
+    border-radius: 0;
+    break-inside: auto;
+  }
+  .customer-plan h2,
+  .customer-plan h3 {
+    break-after: avoid;
+  }
+  .customer-plan .summary-list > div,
+  .customer-plan li {
+    break-inside: avoid;
+  }
+  .customer-plan .summary-list > div {
+    padding-block: 6px;
+  }
+  .customer-plan .plan-evidence li {
+    margin-bottom: 5px;
+  }
+  .customer-plan a {
+    overflow-wrap: anywhere;
+  }
+  .customer-plan .notice {
+    border: 1px solid #777;
+    padding: 12px;
+    background: none;
+  }
+  .customer-plan .plan-evidence {
+    display: block !important;
+  }
+}
+
+/* Customer → property hierarchy follows the existing GreenHome worksheet. */
+.workspace-bar .scope-selectors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px 20px;
+  min-width: 0;
+}
+.scope-selectors .home-selector select {
+  max-width: 340px;
+  min-height: 44px;
+}
+.customer-settings {
+  border-left: 4px solid var(--sage);
+}
+.workspace-panel .section-heading {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+}
+.workspace-panel .section-heading > div {
+  flex: 1 1 240px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.workspace-panel .section-heading > .tag {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+.workspace-panel h2,
+.workspace-panel p,
+.plan-identity {
+  overflow-wrap: anywhere;
+}
+.portfolio-summary {
+  max-width: 780px;
+}
+.workspace-panel .summary-list > div {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.property-target {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.legacy-reserve {
+  border-left: 3px solid #d8b483;
+  padding-left: 20px;
+  margin-block: 20px;
+}
+@media (max-width: 1000px) {
+  .workspace-bar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .workspace-bar .scope-selectors {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 700px) {
+  .workspace-bar .scope-selectors {
+    width: 100%;
+  }
+  .scope-selectors .home-selector select {
+    max-width: none;
+  }
+  .scope-selectors .home-selector > span {
+    min-width: 68px;
+  }
+}

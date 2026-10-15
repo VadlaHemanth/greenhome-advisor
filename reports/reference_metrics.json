@@ -1,0 +1,1198 @@
+{
+  "absolute_tolerance": 1e-08,
+  "acceptance_mismatches": 0,
+  "cluster_macro_fuel_mae": {
+    "customer_id": {
+      "electricity_saving_kwh": {
+        "groups": 24,
+        "mae": 8.002299364299774e-14
+      },
+      "gas_saving_kwh": {
+        "groups": 24,
+        "mae": 2.4511068489217034e-13
+      }
+    },
+    "property_id": {
+      "electricity_saving_kwh": {
+        "groups": 48,
+        "mae": 7.327471962526033e-14
+      },
+      "gas_saving_kwh": {
+        "groups": 46,
+        "mae": 2.0395665832557312e-13
+      }
+    }
+  },
+  "counts": {
+    "dev": {
+      "accepted": 232,
+      "customers": 12,
+      "feasibility_labels": {
+        "budget": 26,
+        "excluded": 3,
+        "feasible": 51,
+        "infeasible": 9,
+        "no_modelled_benefit": 10,
+        "unknown": 18,
+        "unsupported_existing_pv": 3
+      },
+      "properties": 24,
+      "ranking_statuses": {
+        "available": 16,
+        "insufficient_evidence": 5,
+        "no_affordable_option": 1,
+        "no_modelled_benefit": 1,
+        "unsupported": 1
+      },
+      "scenarios": 792
+    },
+    "test": {
+      "accepted": 232,
+      "customers": 12,
+      "feasibility_labels": {
+        "budget": 26,
+        "excluded": 3,
+        "feasible": 51,
+        "infeasible": 9,
+        "no_modelled_benefit": 10,
+        "unknown": 18,
+        "unsupported_existing_pv": 3
+      },
+      "properties": 24,
+      "ranking_statuses": {
+        "available": 16,
+        "insufficient_evidence": 5,
+        "no_affordable_option": 1,
+        "no_modelled_benefit": 1,
+        "unsupported": 1
+      },
+      "scenarios": 792
+    },
+    "train": {
+      "accepted": 0,
+      "customers": 0,
+      "feasibility_labels": {},
+      "properties": 0,
+      "ranking_statuses": {},
+      "scenarios": 0
+    }
+  },
+  "evaluated_at_utc": "2026-10-11T01:03:43.915432+00:00",
+  "failure_count": 0,
+  "failures": [],
+  "feasibility": {
+    "by_state": {
+      "budget": {
+        "correct": 52,
+        "n": 52
+      },
+      "excluded": {
+        "correct": 6,
+        "n": 6
+      },
+      "feasible": {
+        "correct": 102,
+        "n": 102
+      },
+      "infeasible": {
+        "correct": 18,
+        "n": 18
+      },
+      "no_modelled_benefit": {
+        "correct": 20,
+        "n": 20
+      },
+      "unknown": {
+        "correct": 36,
+        "n": 36
+      },
+      "unsupported_existing_pv": {
+        "correct": 6,
+        "n": 6
+      }
+    },
+    "false_negatives": 0,
+    "false_positives": 0,
+    "n": 240,
+    "unknown_reference": 36
+  },
+  "fuel_baselines": [
+    {
+      "bias": 0.0,
+      "field": "electricity_saving_kwh",
+      "kind": "no_op",
+      "mae": 0.0,
+      "n": 24,
+      "split": "dev",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 0.0,
+      "field": "gas_saving_kwh",
+      "kind": "no_op",
+      "mae": 0.0,
+      "n": 23,
+      "split": "dev",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": -444.6068068427673,
+      "field": "electricity_saving_kwh",
+      "kind": "package",
+      "mae": 476.364618163522,
+      "n": 159,
+      "split": "dev",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 801.2345620125786,
+      "field": "gas_saving_kwh",
+      "kind": "package",
+      "mae": 801.2345620125786,
+      "n": 159,
+      "split": "dev",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 0.0,
+      "field": "electricity_saving_kwh",
+      "kind": "standalone",
+      "mae": 0.0,
+      "n": 49,
+      "split": "dev",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 0.0,
+      "field": "gas_saving_kwh",
+      "kind": "standalone",
+      "mae": 0.0,
+      "n": 48,
+      "split": "dev",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 0.0,
+      "field": "electricity_saving_kwh",
+      "kind": "no_op",
+      "mae": 0.0,
+      "n": 24,
+      "split": "dev",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": 0.0,
+      "field": "gas_saving_kwh",
+      "kind": "no_op",
+      "mae": 0.0,
+      "n": 23,
+      "split": "dev",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": 1017.515205735849,
+      "field": "electricity_saving_kwh",
+      "kind": "package",
+      "mae": 2096.230350389937,
+      "n": 159,
+      "split": "dev",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": -5375.278645534591,
+      "field": "gas_saving_kwh",
+      "kind": "package",
+      "mae": 5375.278645534591,
+      "n": 159,
+      "split": "dev",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": -73.09115646258502,
+      "field": "electricity_saving_kwh",
+      "kind": "standalone",
+      "mae": 491.2680272108844,
+      "n": 49,
+      "split": "dev",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": -1396.7333333333333,
+      "field": "gas_saving_kwh",
+      "kind": "standalone",
+      "mae": 1396.7333333333333,
+      "n": 48,
+      "split": "dev",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": 0.0,
+      "field": "electricity_saving_kwh",
+      "kind": "no_op",
+      "mae": 0.0,
+      "n": 24,
+      "split": "test",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 0.0,
+      "field": "gas_saving_kwh",
+      "kind": "no_op",
+      "mae": 0.0,
+      "n": 23,
+      "split": "test",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": -448.5679875220126,
+      "field": "electricity_saving_kwh",
+      "kind": "package",
+      "mae": 479.1159774591195,
+      "n": 159,
+      "split": "test",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 818.6095466666667,
+      "field": "gas_saving_kwh",
+      "kind": "package",
+      "mae": 818.6095466666667,
+      "n": 159,
+      "split": "test",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 0.0,
+      "field": "electricity_saving_kwh",
+      "kind": "standalone",
+      "mae": 0.0,
+      "n": 49,
+      "split": "test",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 0.0,
+      "field": "gas_saving_kwh",
+      "kind": "standalone",
+      "mae": 0.0,
+      "n": 48,
+      "split": "test",
+      "strategy": "sum_of_standalone"
+    },
+    {
+      "bias": 0.0,
+      "field": "electricity_saving_kwh",
+      "kind": "no_op",
+      "mae": 0.0,
+      "n": 24,
+      "split": "test",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": 0.0,
+      "field": "gas_saving_kwh",
+      "kind": "no_op",
+      "mae": 0.0,
+      "n": 23,
+      "split": "test",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": 1049.3683646792454,
+      "field": "electricity_saving_kwh",
+      "kind": "package",
+      "mae": 2107.9288024150947,
+      "n": 159,
+      "split": "test",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": -5503.213849559748,
+      "field": "gas_saving_kwh",
+      "kind": "package",
+      "mae": 5503.213849559748,
+      "n": 159,
+      "split": "test",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": -60.275374149659875,
+      "field": "electricity_saving_kwh",
+      "kind": "standalone",
+      "mae": 494.1801360544218,
+      "n": 49,
+      "split": "test",
+      "strategy": "zero_savings"
+    },
+    {
+      "bias": -1425.7333333333333,
+      "field": "gas_saving_kwh",
+      "kind": "standalone",
+      "mae": 1425.7333333333333,
+      "n": 48,
+      "split": "test",
+      "strategy": "zero_savings"
+    }
+  ],
+  "ml_inference": "Energy and synthetic-value functions stubbed; not evaluated by this required-output suite.",
+  "numeric_by_split_and_kind": {
+    "dev": {
+      "all": {
+        "carbon_reduction_kgco2e": {
+          "bias": -4.726653850925884e-15,
+          "compared": 230,
+          "failed_checks": 0,
+          "mae": 8.084740606452966e-14,
+          "max_abs_error": 3.410605131648481e-13,
+          "null_reference": 2,
+          "reference_numeric": 230
+        },
+        "electricity_kwh": {
+          "bias": -4.5082711510296014e-14,
+          "compared": 232,
+          "failed_checks": 0,
+          "mae": 1.2642760401800403e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 232
+        },
+        "electricity_saving_kwh": {
+          "bias": -3.430206310566001e-15,
+          "compared": 232,
+          "failed_checks": 0,
+          "mae": 1.6219975554247804e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 232,
+          "sign_checks": {
+            "negative": {
+              "correct": 79,
+              "n": 79
+            },
+            "positive": {
+              "correct": 63,
+              "n": 63
+            },
+            "zero": {
+              "correct": 90,
+              "n": 90
+            }
+          }
+        },
+        "gas_kwh": {
+          "bias": -1.5817299161268317e-13,
+          "compared": 230,
+          "failed_checks": 0,
+          "mae": 2.8471138490282973e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 2,
+          "reference_numeric": 230
+        },
+        "gas_saving_kwh": {
+          "bias": -2.12544957479543e-14,
+          "compared": 230,
+          "failed_checks": 0,
+          "mae": 2.011762737073814e-13,
+          "max_abs_error": 1.3642420526593924e-12,
+          "null_reference": 2,
+          "reference_numeric": 230,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 173,
+              "n": 173
+            },
+            "zero": {
+              "correct": 57,
+              "n": 57
+            }
+          }
+        },
+        "improvement_percent": {
+          "bias": -2.6567782423344355e-16,
+          "compared": 229,
+          "failed_checks": 0,
+          "mae": 2.6548389881429506e-15,
+          "max_abs_error": 1.4210854715202004e-14,
+          "null_reference": 3,
+          "reference_numeric": 229
+        },
+        "net_saving_kwh": {
+          "bias": -1.8783042754006126e-14,
+          "compared": 230,
+          "failed_checks": 0,
+          "mae": 3.3315186358421393e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 2,
+          "reference_numeric": 230
+        }
+      },
+      "no_op": {
+        "carbon_reduction_kgco2e": {
+          "bias": 0.0,
+          "compared": 23,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 1,
+          "reference_numeric": 23
+        },
+        "electricity_kwh": {
+          "bias": 0.0,
+          "compared": 24,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 0,
+          "reference_numeric": 24
+        },
+        "electricity_saving_kwh": {
+          "bias": 0.0,
+          "compared": 24,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 0,
+          "reference_numeric": 24,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 0,
+              "n": 0
+            },
+            "zero": {
+              "correct": 24,
+              "n": 24
+            }
+          }
+        },
+        "gas_kwh": {
+          "bias": 0.0,
+          "compared": 23,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 1,
+          "reference_numeric": 23
+        },
+        "gas_saving_kwh": {
+          "bias": 0.0,
+          "compared": 23,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 1,
+          "reference_numeric": 23,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 0,
+              "n": 0
+            },
+            "zero": {
+              "correct": 23,
+              "n": 23
+            }
+          }
+        },
+        "improvement_percent": {
+          "bias": 0.0,
+          "compared": 22,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 2,
+          "reference_numeric": 22
+        },
+        "net_saving_kwh": {
+          "bias": 0.0,
+          "compared": 23,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 1,
+          "reference_numeric": 23
+        }
+      },
+      "package": {
+        "carbon_reduction_kgco2e": {
+          "bias": -5.898845353480077e-15,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 9.706281899817217e-14,
+          "max_abs_error": 3.410605131648481e-13,
+          "null_reference": 0,
+          "reference_numeric": 159
+        },
+        "electricity_kwh": {
+          "bias": -6.006097087179715e-14,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 1.7875288949939628e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 159
+        },
+        "electricity_saving_kwh": {
+          "bias": -7.150115579975851e-16,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 2.209385714212538e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 159,
+          "sign_checks": {
+            "negative": {
+              "correct": 75,
+              "n": 75
+            },
+            "positive": {
+              "correct": 50,
+              "n": 50
+            },
+            "zero": {
+              "correct": 34,
+              "n": 34
+            }
+          }
+        },
+        "gas_kwh": {
+          "bias": -2.059233287033045e-13,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 3.203251779829181e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 159
+        },
+        "gas_saving_kwh": {
+          "bias": -2.502540452991548e-14,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 1.9090808598535523e-13,
+          "max_abs_error": 1.3642420526593924e-12,
+          "null_reference": 0,
+          "reference_numeric": 159,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 137,
+              "n": 137
+            },
+            "zero": {
+              "correct": 22,
+              "n": 22
+            }
+          }
+        },
+        "improvement_percent": {
+          "bias": -3.798498901862171e-16,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 3.1058314550520103e-15,
+          "max_abs_error": 1.4210854715202004e-14,
+          "null_reference": 0,
+          "reference_numeric": 159
+        },
+        "net_saving_kwh": {
+          "bias": -1.716027739194204e-14,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 3.660859176947636e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 159
+        }
+      },
+      "standalone": {
+        "carbon_reduction_kgco2e": {
+          "bias": -3.1086244689504383e-15,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 6.587323279442596e-14,
+          "max_abs_error": 2.2737367544323206e-13,
+          "null_reference": 1,
+          "reference_numeric": 48
+        },
+        "electricity_kwh": {
+          "bias": -1.856111636271282e-14,
+          "compared": 49,
+          "failed_checks": 0,
+          "mae": 1.856111636271282e-14,
+          "max_abs_error": 9.094947017729282e-13,
+          "null_reference": 0,
+          "reference_numeric": 49
+        },
+        "electricity_saving_kwh": {
+          "bias": -1.3920837272034616e-14,
+          "compared": 49,
+          "failed_checks": 0,
+          "mae": 5.104306999746026e-14,
+          "max_abs_error": 9.094947017729282e-13,
+          "null_reference": 0,
+          "reference_numeric": 49,
+          "sign_checks": {
+            "negative": {
+              "correct": 4,
+              "n": 4
+            },
+            "positive": {
+              "correct": 13,
+              "n": 13
+            },
+            "zero": {
+              "correct": 32,
+              "n": 32
+            }
+          }
+        },
+        "gas_kwh": {
+          "bias": -7.579122514774402e-14,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 3.0316490059097606e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 1,
+          "reference_numeric": 48
+        },
+        "gas_saving_kwh": {
+          "bias": -1.8947806286936004e-14,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 3.3158661002138007e-13,
+          "max_abs_error": 1.1368683772161603e-12,
+          "null_reference": 1,
+          "reference_numeric": 48,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 36,
+              "n": 36
+            },
+            "zero": {
+              "correct": 12,
+              "n": 12
+            }
+          }
+        },
+        "improvement_percent": {
+          "bias": -9.25185853854297e-18,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 2.3777276444055437e-15,
+          "max_abs_error": 7.105427357601002e-15,
+          "null_reference": 1,
+          "reference_numeric": 48
+        },
+        "net_saving_kwh": {
+          "bias": -3.315866100213801e-14,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 3.836930773104541e-13,
+          "max_abs_error": 1.1368683772161603e-12,
+          "null_reference": 1,
+          "reference_numeric": 48
+        }
+      }
+    },
+    "test": {
+      "all": {
+        "carbon_reduction_kgco2e": {
+          "bias": -3.0089940201319025e-14,
+          "compared": 230,
+          "failed_checks": 0,
+          "mae": 7.49468120414784e-14,
+          "max_abs_error": 3.410605131648481e-13,
+          "null_reference": 2,
+          "reference_numeric": 230
+        },
+        "electricity_kwh": {
+          "bias": 5.684341886080802e-14,
+          "compared": 232,
+          "failed_checks": 0,
+          "mae": 1.3818831136851603e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 232
+        },
+        "electricity_saving_kwh": {
+          "bias": -6.933917042072702e-14,
+          "compared": 232,
+          "failed_checks": 0,
+          "mae": 1.9282659760110305e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 232,
+          "sign_checks": {
+            "negative": {
+              "correct": 79,
+              "n": 79
+            },
+            "positive": {
+              "correct": 63,
+              "n": 63
+            },
+            "zero": {
+              "correct": 90,
+              "n": 90
+            }
+          }
+        },
+        "gas_kwh": {
+          "bias": -7.908649580634158e-14,
+          "compared": 230,
+          "failed_checks": 0,
+          "mae": 2.688940857415614e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 2,
+          "reference_numeric": 230
+        },
+        "gas_saving_kwh": {
+          "bias": -1.6805880358847588e-14,
+          "compared": 230,
+          "failed_checks": 0,
+          "mae": 2.263850942456528e-13,
+          "max_abs_error": 1.4779288903810084e-12,
+          "null_reference": 2,
+          "reference_numeric": 230,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 173,
+              "n": 173
+            },
+            "zero": {
+              "correct": 57,
+              "n": 57
+            }
+          }
+        },
+        "improvement_percent": {
+          "bias": -3.490657544672981e-16,
+          "compared": 229,
+          "failed_checks": 0,
+          "mae": 2.978694438120944e-15,
+          "max_abs_error": 1.4210854715202004e-14,
+          "null_reference": 3,
+          "reference_numeric": 229
+        },
+        "net_saving_kwh": {
+          "bias": -4.9676205178358306e-14,
+          "compared": 230,
+          "failed_checks": 0,
+          "mae": 3.9963394912141983e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 2,
+          "reference_numeric": 230
+        }
+      },
+      "no_op": {
+        "carbon_reduction_kgco2e": {
+          "bias": 0.0,
+          "compared": 23,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 1,
+          "reference_numeric": 23
+        },
+        "electricity_kwh": {
+          "bias": 0.0,
+          "compared": 24,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 0,
+          "reference_numeric": 24
+        },
+        "electricity_saving_kwh": {
+          "bias": 0.0,
+          "compared": 24,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 0,
+          "reference_numeric": 24,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 0,
+              "n": 0
+            },
+            "zero": {
+              "correct": 24,
+              "n": 24
+            }
+          }
+        },
+        "gas_kwh": {
+          "bias": 0.0,
+          "compared": 23,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 1,
+          "reference_numeric": 23
+        },
+        "gas_saving_kwh": {
+          "bias": 0.0,
+          "compared": 23,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 1,
+          "reference_numeric": 23,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 0,
+              "n": 0
+            },
+            "zero": {
+              "correct": 23,
+              "n": 23
+            }
+          }
+        },
+        "improvement_percent": {
+          "bias": 0.0,
+          "compared": 22,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 2,
+          "reference_numeric": 22
+        },
+        "net_saving_kwh": {
+          "bias": 0.0,
+          "compared": 23,
+          "failed_checks": 0,
+          "mae": 0.0,
+          "max_abs_error": 0.0,
+          "null_reference": 1,
+          "reference_numeric": 23
+        }
+      },
+      "package": {
+        "carbon_reduction_kgco2e": {
+          "bias": -3.110300277289495e-14,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 8.15113176117247e-14,
+          "max_abs_error": 3.410605131648481e-13,
+          "null_reference": 0,
+          "reference_numeric": 159
+        },
+        "electricity_kwh": {
+          "bias": 7.15011557997585e-14,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 1.9019307442735764e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 159
+        },
+        "electricity_saving_kwh": {
+          "bias": -8.008129449572953e-14,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 2.5168406841514995e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 159,
+          "sign_checks": {
+            "negative": {
+              "correct": 75,
+              "n": 75
+            },
+            "positive": {
+              "correct": 50,
+              "n": 50
+            },
+            "zero": {
+              "correct": 34,
+              "n": 34
+            }
+          }
+        },
+        "gas_kwh": {
+          "bias": -1.6016258899145905e-13,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 2.7456443827107267e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 159
+        },
+        "gas_saving_kwh": {
+          "bias": 2.8600462319903404e-14,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 2.0020323623932383e-13,
+          "max_abs_error": 1.4779288903810084e-12,
+          "null_reference": 0,
+          "reference_numeric": 159,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 137,
+              "n": 137
+            },
+            "zero": {
+              "correct": 22,
+              "n": 22
+            }
+          }
+        },
+        "improvement_percent": {
+          "bias": -1.6199480610882786e-16,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 3.357202705910536e-15,
+          "max_abs_error": 1.4210854715202004e-14,
+          "null_reference": 0,
+          "reference_numeric": 159
+        },
+        "net_saving_kwh": {
+          "bias": -6.435104021978266e-15,
+          "compared": 159,
+          "failed_checks": 0,
+          "mae": 4.1828176142858726e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 0,
+          "reference_numeric": 159
+        }
+      },
+      "standalone": {
+        "carbon_reduction_kgco2e": {
+          "bias": -4.115226677943914e-14,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 8.91139014432459e-14,
+          "max_abs_error": 2.5579538487363607e-13,
+          "null_reference": 1,
+          "reference_numeric": 48
+        },
+        "electricity_kwh": {
+          "bias": 3.712223272542564e-14,
+          "compared": 49,
+          "failed_checks": 0,
+          "mae": 3.712223272542564e-14,
+          "max_abs_error": 9.094947017729282e-13,
+          "null_reference": 0,
+          "reference_numeric": 49
+        },
+        "electricity_saving_kwh": {
+          "bias": -6.844411658750353e-14,
+          "compared": 49,
+          "failed_checks": 0,
+          "mae": 9.628579113157277e-14,
+          "max_abs_error": 9.094947017729282e-13,
+          "null_reference": 0,
+          "reference_numeric": 49,
+          "sign_checks": {
+            "negative": {
+              "correct": 4,
+              "n": 4
+            },
+            "positive": {
+              "correct": 13,
+              "n": 13
+            },
+            "zero": {
+              "correct": 32,
+              "n": 32
+            }
+          }
+        },
+        "gas_kwh": {
+          "bias": 1.5158245029548803e-13,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 3.789561257387201e-13,
+          "max_abs_error": 1.8189894035458565e-12,
+          "null_reference": 1,
+          "reference_numeric": 48
+        },
+        "gas_saving_kwh": {
+          "bias": -1.7526720815415805e-13,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 4.2158868988432613e-13,
+          "max_abs_error": 1.4779288903810084e-12,
+          "null_reference": 1,
+          "reference_numeric": 48,
+          "sign_checks": {
+            "negative": {
+              "correct": 0,
+              "n": 0
+            },
+            "positive": {
+              "correct": 36,
+              "n": 36
+            },
+            "zero": {
+              "correct": 12,
+              "n": 12
+            }
+          }
+        },
+        "improvement_percent": {
+          "bias": -1.1287267417022424e-15,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 3.0901207518733522e-15,
+          "max_abs_error": 1.0658141036401503e-14,
+          "null_reference": 1,
+          "reference_numeric": 48
+        },
+        "net_saving_kwh": {
+          "bias": -2.1671553440683056e-13,
+          "compared": 48,
+          "failed_checks": 0,
+          "mae": 5.293543381412746e-13,
+          "max_abs_error": 1.4779288903810084e-12,
+          "null_reference": 1,
+          "reference_numeric": 48
+        }
+      }
+    }
+  },
+  "protocol_sha256": "fab06ea51b368213e5c30a3c4f88b8c88c1a5e592fe4f6229f885b26b907302b",
+  "python": "3.12.14",
+  "ranking": {
+    "dev": {
+      "best_standalone": {
+        "accuracy_including_ties_and_missing": 0.9150326797385621,
+        "correct_strict": 134,
+        "correct_ties": 6,
+        "homes": 18,
+        "incorrect": 13,
+        "max_potential_regret_percentage_points": 23.084,
+        "mean_potential_regret_percentage_points": 7.544849556770682,
+        "pairs": 153,
+        "strict_pairs": 147,
+        "ties": 6
+      },
+      "candidate": {
+        "accuracy_including_ties_and_missing": 1.0,
+        "correct_strict": 147,
+        "correct_ties": 6,
+        "pairs": 153,
+        "row_checks": {
+          "fully_correct": 24,
+          "n": 24,
+          "rank_correct": 24,
+          "status_correct": 24
+        },
+        "strict_pairs": 147,
+        "ties": 6
+      },
+      "no_action": {
+        "accuracy_including_ties_and_missing": 0.0392156862745098,
+        "correct_ties": 6,
+        "homes": 18,
+        "incorrect": 147,
+        "max_potential_regret_percentage_points": 73.4502495543672,
+        "mean_potential_regret_percentage_points": 23.215199178100693,
+        "pairs": 153,
+        "strict_pairs": 147,
+        "ties": 6
+      }
+    },
+    "test": {
+      "best_standalone": {
+        "accuracy_including_ties_and_missing": 0.9150326797385621,
+        "correct_strict": 134,
+        "correct_ties": 6,
+        "homes": 18,
+        "incorrect": 13,
+        "max_potential_regret_percentage_points": 23.143990825688075,
+        "mean_potential_regret_percentage_points": 7.506673820268805,
+        "pairs": 153,
+        "strict_pairs": 147,
+        "ties": 6
+      },
+      "candidate": {
+        "accuracy_including_ties_and_missing": 1.0,
+        "correct_strict": 147,
+        "correct_ties": 6,
+        "pairs": 153,
+        "row_checks": {
+          "fully_correct": 24,
+          "n": 24,
+          "rank_correct": 24,
+          "status_correct": 24
+        },
+        "strict_pairs": 147,
+        "ties": 6
+      },
+      "no_action": {
+        "accuracy_including_ties_and_missing": 0.0392156862745098,
+        "correct_ties": 6,
+        "homes": 18,
+        "incorrect": 147,
+        "max_potential_regret_percentage_points": 73.5495970498291,
+        "mean_potential_regret_percentage_points": 23.210969693366852,
+        "pairs": 153,
+        "strict_pairs": 147,
+        "ties": 6
+      }
+    }
+  },
+  "reference_sha256": "9a8c65161d74b5fbac6ef82c221f1b17ff9392ceb8cece18d1abea51ef481912",
+  "scenario_requests": 1584,
+  "scope": "Synthetic contract conformance ONLY. No observed savings, customer study, value accuracy or memory benefit.",
+  "source_hashes_after": {
+    "data/source_register.json": "6ac941bac0e5a57a50d07d8e6d40de4df82613f42fb42f569087b2d9f40d8305",
+    "docs/CALCULATIONS.md": "4dde579fe9f734f3662fdbae8fad2c857ed91b3b73bb3630b80cba446700c2b0",
+    "docs/FINAL_BUILD_CONTRACT.md": "712a7436330bf6bc0f4b7e0d49db04ff3401cbaa9d2c57a27560c3258282f2dc",
+    "docs/PROPERTY_RANKING.md": "31e97dcb42b93ec9a74436397beae4d95952382b8075c9f2da7e0b7a150a9a0c",
+    "greenhome/decision.py": "23b30cd2b4ab93eb7354b02eef555ca0b1dc0180b1fd90ed445afa45a64e1e48",
+    "greenhome/engine.py": "688965410bd1a52ef235b6b57ef0850e7a06620d04da3090282d2a15389d2da3",
+    "greenhome/ranking.py": "7bc7ea0686f34d464bfb2f2a0dbf7d69ad042c0479319c495c9d3f2861f2530e",
+    "scripts/evaluate_reference_cases.py": "f649c8af34a27ee308060e2a5a21a75167a65e5a6447f22b88af22b9e6e9340b"
+  },
+  "source_hashes_before": {
+    "data/source_register.json": "6ac941bac0e5a57a50d07d8e6d40de4df82613f42fb42f569087b2d9f40d8305",
+    "docs/CALCULATIONS.md": "4dde579fe9f734f3662fdbae8fad2c857ed91b3b73bb3630b80cba446700c2b0",
+    "docs/FINAL_BUILD_CONTRACT.md": "712a7436330bf6bc0f4b7e0d49db04ff3401cbaa9d2c57a27560c3258282f2dc",
+    "docs/PROPERTY_RANKING.md": "31e97dcb42b93ec9a74436397beae4d95952382b8075c9f2da7e0b7a150a9a0c",
+    "greenhome/decision.py": "23b30cd2b4ab93eb7354b02eef555ca0b1dc0180b1fd90ed445afa45a64e1e48",
+    "greenhome/engine.py": "688965410bd1a52ef235b6b57ef0850e7a06620d04da3090282d2a15389d2da3",
+    "greenhome/ranking.py": "7bc7ea0686f34d464bfb2f2a0dbf7d69ad042c0479319c495c9d3f2861f2530e",
+    "scripts/evaluate_reference_cases.py": "f649c8af34a27ee308060e2a5a21a75167a65e5a6447f22b88af22b9e6e9340b"
+  },
+  "splits_evaluated": [
+    "dev",
+    "test"
+  ],
+  "status": "completed"
+}

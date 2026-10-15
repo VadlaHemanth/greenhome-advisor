@@ -1,0 +1,283 @@
+{
+  "status": "completed",
+  "trained_at_utc": "2026-10-10T13:41:38.962358+00:00",
+  "seed": 42,
+  "versions": {
+    "python": "3.12.14",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "joblib": "1.6.0"
+  },
+  "methodology": "Fixed configurations decided before fitting. Train-only preprocessing and models. No test tuning, no selection on test, no train+validation refit.",
+  "data_manifest_sha256": "ec61fd27d02a22fa6fec522582c153d0df04f60ccb3e93feb11ef4d0e00d7cc2",
+  "source_data_kind": "observed_NEED2026",
+  "fallback_reason": null,
+  "energy": {
+    "data_kind": "observed_NEED2026",
+    "target_year": 2024,
+    "units": "kWh/year",
+    "algorithm": "ExtraTreesRegressor trained on log1p(target), expm1 inverse",
+    "fixed_parameters": {
+      "n_estimators": 128,
+      "min_samples_leaf": 15,
+      "max_depth": 18,
+      "max_features": 0.85,
+      "random_state": 42,
+      "n_jobs": 2
+    },
+    "features": [
+      "PROP_TYPE",
+      "PROP_AGE_BAND",
+      "FLOOR_AREA_BAND",
+      "REGION",
+      "EPC"
+    ],
+    "baseline": "DummyRegressor(strategy='median') fitted on train only",
+    "full_data_audit": {
+      "unique_properties": {
+        "train": 30000,
+        "validation": 10000,
+        "test": 10000
+      },
+      "row_counts": {
+        "train": 30000,
+        "test": 10000,
+        "validation": 10000
+      },
+      "property_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      }
+    },
+    "sample_audit": {
+      "unique_properties": {
+        "train": 12000,
+        "validation": 4000,
+        "test": 4000
+      },
+      "row_counts": {
+        "train": 12000,
+        "validation": 4000,
+        "test": 4000
+      },
+      "property_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      }
+    },
+    "targets": {
+      "electricity": {
+        "target": "Econs2024",
+        "row_counts": {
+          "train": 10941,
+          "validation": 3615,
+          "test": 3607
+        },
+        "missing_excluded_in_sample": 1837,
+        "fit_seconds": 2.557,
+        "validation": {
+          "model": {
+            "mae": 1570.5901569794812,
+            "rmse": 2551.8576975667497,
+            "n": 3615
+          },
+          "dummy_median": {
+            "mae": 1639.585062240664,
+            "rmse": 2682.210747715224,
+            "n": 3615
+          },
+          "mae_improvement_percent_vs_dummy": 4.208071105923228
+        },
+        "test": {
+          "model": {
+            "mae": 1610.7151856326773,
+            "rmse": 2578.0639343867965,
+            "n": 3607
+          },
+          "dummy_median": {
+            "mae": 1691.1006376490159,
+            "rmse": 2734.824042795311,
+            "n": 3607
+          },
+          "mae_improvement_percent_vs_dummy": 4.753439873814447
+        }
+      },
+      "gas": {
+        "target": "Gcons2024",
+        "row_counts": {
+          "train": 8918,
+          "validation": 2991,
+          "test": 2983
+        },
+        "missing_excluded_in_sample": 5108,
+        "fit_seconds": 1.5454,
+        "validation": {
+          "model": {
+            "mae": 4120.808162715995,
+            "rmse": 5823.373577353577,
+            "n": 2991
+          },
+          "dummy_median": {
+            "mae": 4932.497492477432,
+            "rmse": 6934.625471112853,
+            "n": 2991
+          },
+          "mae_improvement_percent_vs_dummy": 16.455950175328972
+        },
+        "test": {
+          "model": {
+            "mae": 4065.568205476974,
+            "rmse": 5727.3114094104485,
+            "n": 2983
+          },
+          "dummy_median": {
+            "mae": 4860.945357023131,
+            "rmse": 6789.491693214544,
+            "n": 2983
+          },
+          "mae_improvement_percent_vs_dummy": 16.362602192122765
+        }
+      }
+    }
+  },
+  "synthetic_value": {
+    "data_kind": "synthetic_hypothetical_NOT_market_calibrated",
+    "algorithm": "Three GradientBoostingRegressor quantile models; p10/p50/p90",
+    "fixed_parameters": {
+      "n_estimators": 170,
+      "learning_rate": 0.055,
+      "max_depth": 3,
+      "min_samples_leaf": 20,
+      "random_state": 42
+    },
+    "quantiles": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "nominal_interval_coverage": 0.8,
+    "coverage_scope": "Synthetic references only; no real causal/market coverage claim.",
+    "features": [
+      "property_type",
+      "region",
+      "heating",
+      "insulation",
+      "glazing",
+      "floor_area_m2",
+      "age_band",
+      "epc_deficit",
+      "log_current_value",
+      "solar_kwp",
+      "has_controls",
+      "loft_insulation",
+      "double_glazing",
+      "smart_controls",
+      "heat_pump",
+      "solar_pv"
+    ],
+    "split_audit": {
+      "unique_properties": {
+        "train": 1080,
+        "validation": 360,
+        "test": 360
+      },
+      "row_counts": {
+        "train": 6783,
+        "validation": 2280,
+        "test": 2277
+      },
+      "property_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      }
+    },
+    "postprocessing": "Sort crossed quantiles; force no-intervention predictions to exact zero. No interval tuning/calibration.",
+    "baseline": "Train-set global median, with same exact-zero no-op identity.",
+    "fit_seconds": 10.2161,
+    "validation": {
+      "p50_percent": {
+        "mae": 0.5097494651379875,
+        "rmse": 0.7123028097707585,
+        "n": 2280
+      },
+      "dummy_median_percent": {
+        "mae": 0.5788789313591962,
+        "rmse": 0.8391486582292202,
+        "n": 2280
+      },
+      "p50_gbp": {
+        "mae": 2710.567413672579,
+        "rmse": 4215.716243183727,
+        "n": 2280
+      },
+      "coverage_p10_p90_all_scenarios": 0.7758771929824562,
+      "coverage_p10_p90_active_scenarios": 0.7338541666666667,
+      "property_all_scenarios_covered_fraction": 0.5027777777777778,
+      "mean_interval_width_percentage_points": 1.461308967196282,
+      "active_mean_interval_width_percentage_points": 1.7353043985455847,
+      "pinball_loss": {
+        "p10": 0.11342725132053198,
+        "p50": 0.25487473256899373,
+        "p90": 0.11235322185117329
+      },
+      "no_op_rows": 360,
+      "active_rows": 1920,
+      "no_op_exact_zero": true,
+      "intervals_ordered": true
+    },
+    "test": {
+      "p50_percent": {
+        "mae": 0.47825141947396493,
+        "rmse": 0.6765023611766755,
+        "n": 2277
+      },
+      "dummy_median_percent": {
+        "mae": 0.5418605205039986,
+        "rmse": 0.7906073579298507,
+        "n": 2277
+      },
+      "p50_gbp": {
+        "mae": 2528.092442899553,
+        "rmse": 3947.3786311152057,
+        "n": 2277
+      },
+      "coverage_p10_p90_all_scenarios": 0.8041282389108476,
+      "coverage_p10_p90_active_scenarios": 0.7673448095983307,
+      "property_all_scenarios_covered_fraction": 0.5611111111111111,
+      "mean_interval_width_percentage_points": 1.4641368686933782,
+      "active_mean_interval_width_percentage_points": 1.7390921491991769,
+      "pinball_loss": {
+        "p10": 0.10715830760268788,
+        "p50": 0.23912570973698247,
+        "p90": 0.1053638357733396
+      },
+      "no_op_rows": 360,
+      "active_rows": 1917,
+      "no_op_exact_zero": true,
+      "intervals_ordered": true
+    }
+  },
+  "total_train_evaluate_seconds": 15.8323,
+  "artifacts": {
+    "reports/validation_predictions.csv": {
+      "sha256": "6a05c3a9c4900b22bdfeae51561b11e88676095b080fb510d4bc7ef8a33827ec",
+      "rows": 8886
+    },
+    "reports/test_predictions.csv": {
+      "sha256": "32fed65d27803540fa9c94203531d65e6309656d50fbe4f06530899ec645df6b",
+      "rows": 8867
+    },
+    "models/synthetic_value.joblib": {
+      "sha256": "97cbb21e369a277c305bbebb77ccc09e9c4d3d58e09f2b466c5bf662998db9af",
+      "bytes": 162721
+    },
+    "models/energy_benchmark.joblib": {
+      "sha256": "0e49b26bd32c15f3db053ef34f023e275f5563a4fef0ee8a0dcd3a7cfc648b5a",
+      "bytes": 4721546
+    }
+  }
+}
