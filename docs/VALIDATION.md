@@ -70,6 +70,17 @@ revision (or null), and local/hosted indicator. Reports shows this metadata.
 Missing metadata stays explicitly unknown, and arbitrary environment values
 are not returned. The identity panel is not an uptime or correctness guarantee.
 
+### Local Vercel builder
+
+The exact public application at revision `0bb8815` was built through the
+installed official Python builder with the larger-function capability enabled
+locally. The output contains both unchanged trained model files, required API
+modules and 23 frontend assets. Function files measured approximately 342 MiB.
+The default local packaging mode did not fit; `docs/HOSTING.md` records this
+constraint and the distinction between local capability simulation and actual
+free-account eligibility. No cloud deployment or database was created by the
+build check.
+
 ## Not yet established by this record
 
 - Successful public deployment of this revision.

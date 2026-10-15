@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-10-15T14:42:24.059Z",
+  "source_commit": "0bb881598506009722c38509886e0341191f5d3f",
+  "deployed": false,
+  "local_large_function_capability_enabled": true,
+  "resultVersion": 2,
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "handle": "rewrite"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/fastapi",
+      "transforms": [
+        {
+          "type": "request.path",
+          "op": "set",
+          "args": "/$1"
+        }
+      ]
+    }
+  ],
+  "staticOutputCount": 0,
+  "functions": {
+    "fastapi": {
+      "runtime": "python3.12",
+      "handler": "vc__handler__python.vc_handler",
+      "fileCount": 11688,
+      "measured_file_bytes": 358521734,
+      "required_files_present": true,
+      "model_hashes": {
+        "models/energy_benchmark.joblib": "0e49b26bd32c15f3db053ef34f023e275f5563a4fef0ee8a0dcd3a7cfc648b5a",
+        "models/synthetic_value.joblib": "97cbb21e369a277c305bbebb77ccc09e9c4d3d58e09f2b466c5bf662998db9af"
+      },
+      "assets": 23
+    }
+  }
+}
