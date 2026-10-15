@@ -3,6 +3,18 @@
 An England and Wales home-improvement screening demo. Python owns the
 calculations; React shows the assumptions and comparisons. Currency is GBP.
 
+## Try the hosted demo
+
+**[Open GreenHome Advisor](https://greenhome-advisor-xi.vercel.app)**
+
+Choose **Explore an example home** to start without an account. Add improvements,
+then open **Costs & packages** and enter your own tariffs or explicitly choose
+the illustrative preset. Saved workspace is optional and accepts fictional
+household data only. No shared username or password is required.
+
+The public demo uses local explanations, not paid/live AI calls.
+See `docs/VALIDATION.md` for the tested source revision and release checks.
+
 ## Run locally
 
 Requires Python 3.12 and a supported Node.js runtime.
@@ -53,6 +65,8 @@ See `docs/HOSTING.md`. Hosting requires persistent Postgres for saved
 fictional workspaces; an ephemeral filesystem is not a substitute.
 The public entry defaults to local explanations and does not need live AI
 credentials. Free plans have eligibility rules and usage limits.
+Deployment is currently explicit through the Vercel CLI; pushing to GitHub
+does **not** automatically deploy this project.
 
 ## Data and models
 

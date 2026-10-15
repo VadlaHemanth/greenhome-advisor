@@ -27,4 +27,5 @@ not be committed. Historical reports are selected rather than copied wholesale.
 Initial copied baseline: 330 required backend tests and 263 frontend tests.
 These counts are dated baseline evidence, not the final release total. Final
 test/build, deployed-API, persistence and desktop/mobile screenshot results
-will be recorded separately after they run.
+are recorded in `docs/VALIDATION.md`. The verified public application is at
+`https://greenhome-advisor-xi.vercel.app`; its source revision is recorded there.

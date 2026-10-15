@@ -1,0 +1,20 @@
+{
+  "base": "https://greenhome-advisor-xi.vercel.app",
+  "checked_at": "2026-10-15T15:34:54Z",
+  "release": {
+    "name": "GreenHome Advisor",
+    "version": "2026.10",
+    "revision": "754b5fbfe1ff6de346ed2523c07224c24872a36e",
+    "environment": "hosted"
+  },
+  "checks": {
+    "workspace_survived_redeployment": true,
+    "customer_survived_redeployment": true,
+    "property_survived_redeployment": true,
+    "saved_plan_survived_redeployment": true,
+    "source_revision_unchanged": true
+  },
+  "checks_passed": 5,
+  "scope": "Fictional workspace saved before a production Vercel redeploy; loaded from Neon afterwards. Database provider restart not induced.",
+  "live_provider_calls": 0
+}

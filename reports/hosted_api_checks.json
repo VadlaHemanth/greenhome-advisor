@@ -1,0 +1,188 @@
+{
+  "base": "https://greenhome-advisor-xi.vercel.app",
+  "checked_at": "2026-10-15T15:29:47Z",
+  "release": {
+    "name": "GreenHome Advisor",
+    "version": "2026.10",
+    "revision": "754b5fbfe1ff6de346ed2523c07224c24872a36e",
+    "environment": "hosted"
+  },
+  "checks": {
+    "hosted_revision": true,
+    "readiness": true,
+    "anonymous_landing": true,
+    "private_paths_not_served": true,
+    "public_openapi_disabled": true,
+    "score_37": true,
+    "signed_energy": true,
+    "carbon": true,
+    "money_fixture": true,
+    "per_fuel_money": true,
+    "negative_saving_no_payback": true,
+    "unknown_tariff_abstains": true,
+    "cross_origin_write_rejected": true,
+    "invalid_tariff_rejected": true,
+    "own_home_value_abstention": true,
+    "local_explanation": true,
+    "no_workspace_before_consent": true,
+    "workspace_consent_required": true,
+    "secure_cookie": true,
+    "plan_save": true,
+    "stale_write": true,
+    "different_workspaces": true,
+    "cross_workspace_read": true,
+    "cross_workspace_write": true,
+    "cross_site_workspace_rejected": true,
+    "export_is_own_workspace": true,
+    "fresh_session_has_no_saved_access": true
+  },
+  "request_timings": [
+    {
+      "method": "GET",
+      "path": "/api/release",
+      "status": 200,
+      "seconds": 0.093
+    },
+    {
+      "method": "GET",
+      "path": "/api/readiness",
+      "status": 200,
+      "seconds": 0.103
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200,
+      "seconds": 0.036
+    },
+    {
+      "method": "GET",
+      "path": "/.env",
+      "status": 404,
+      "seconds": 0.031
+    },
+    {
+      "method": "GET",
+      "path": "/openapi.json",
+      "status": 404,
+      "seconds": 0.041
+    },
+    {
+      "method": "GET",
+      "path": "/api/demo-homes",
+      "status": 200,
+      "seconds": 0.073
+    },
+    {
+      "method": "POST",
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.059
+    },
+    {
+      "method": "POST",
+      "path": "/api/money-plan",
+      "status": 200,
+      "seconds": 0.039
+    },
+    {
+      "method": "POST",
+      "path": "/api/money-plan",
+      "status": 200,
+      "seconds": 0.045
+    },
+    {
+      "method": "POST",
+      "path": "/api/money-plan",
+      "status": 200,
+      "seconds": 0.034
+    },
+    {
+      "method": "POST",
+      "path": "/api/assess",
+      "status": 403,
+      "seconds": 0.032
+    },
+    {
+      "method": "POST",
+      "path": "/api/money-plan",
+      "status": 422,
+      "seconds": 0.044
+    },
+    {
+      "method": "POST",
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.029
+    },
+    {
+      "method": "POST",
+      "path": "/api/what-if",
+      "status": 200,
+      "seconds": 0.079
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace/session",
+      "status": 200,
+      "seconds": 0.034
+    },
+    {
+      "method": "POST",
+      "path": "/api/workspace",
+      "status": 422,
+      "seconds": 0.06
+    },
+    {
+      "method": "POST",
+      "path": "/api/workspace",
+      "status": 200,
+      "seconds": 1.492
+    },
+    {
+      "method": "POST",
+      "path": "/api/workspace",
+      "status": 200,
+      "seconds": 0.78
+    },
+    {
+      "method": "POST",
+      "path": "/api/workspace",
+      "status": 409,
+      "seconds": 0.611
+    },
+    {
+      "method": "POST",
+      "path": "/api/workspace",
+      "status": 200,
+      "seconds": 1.332
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "status": 404,
+      "seconds": 0.346
+    },
+    {
+      "method": "POST",
+      "path": "/api/workspace",
+      "status": 404,
+      "seconds": 0.435
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace/session",
+      "status": 403,
+      "seconds": 0.032
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace/export",
+      "status": 200,
+      "seconds": 0.356
+    }
+  ],
+  "live_provider_calls": 0,
+  "scope": "Actual public production URL and private fictional Neon workspaces; not physical savings or user research",
+  "persistence_receipt": "hosted_persistence_checks.json"
+}

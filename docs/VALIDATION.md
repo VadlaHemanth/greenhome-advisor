@@ -1,6 +1,81 @@
 # Release validation — 15 October 2026
 
-This record distinguishes local verification from public deployment.
+This record distinguishes local verification from checks on the actual public
+deployment. Counts overlap and must not be added.
+
+## Public deployment verified
+
+**URL:** `https://greenhome-advisor-xi.vercel.app`
+
+**Application revision:** `754b5fbfe1ff6de346ed2523c07224c24872a36e`
+
+Verified on 15 October 2026 using Vercel Hobby and Neon Free (London).
+Documentation/evidence commits after this application revision do not change
+the deployed application. `/api/release` and the Reports screen expose the
+application revision; a Git push is not an automatic deployment.
+
+| Public check | Actual result |
+|---|---|
+| HTTPS API and isolation checks | 27 passed |
+| Same saved workspace, customer, property and selection after production redeployment; source unchanged | 5 passed |
+| Isolated browser workflows on the production alias | 42 checks; 24 screenshots; 0 JavaScript page errors |
+| Focused live keyboard and tariff error-state checks | 12 passed |
+| Principal viewport captures | 1440×900 desktop and 390×844 mobile |
+| Additional overflow checks | 320px and 768px on start, money, reports and homes |
+| Live model-provider calls during hosted verification | 0 |
+
+The API checks cover health/readiness/release identity, anonymous entry,
+blocked private-file and OpenAPI paths, signed energy/carbon and currency
+results, negative saving without payback, missing-tariff abstention, invalid
+input rejection, user-entered value abstention, local explanation, consent and
+secure cookies, plan save/stale-version rejection, separate-workspace read/write
+isolation, cross-origin rejection, own-workspace export and fresh-session
+isolation. Only generated fictional data was used.
+
+Safe receipts contain no credentials, cookies, connection strings or workspace
+identifiers:
+
+- `reports/hosted_api_checks.json`
+- `reports/hosted_persistence_checks.json`
+- `reports/hosted_browser_checks.json`
+- `reports/hosted_interaction_checks.json`
+
+The additional interaction checks exercised keyboard opening/navigation of the
+mobile menu, modal focus entry/trapping/Escape/return, keyboard scrolling of the
+mobile cost table, immediate hiding of stale amounts after a tariff edit,
+missing-rate partial results, accessible invalid-rate errors, explicit zero
+rates and absence of JavaScript page errors. This is a focused check, not a
+comprehensive accessibility audit.
+
+### What the persistence check proves
+
+A fictional workspace and selection were saved on the public app. The same
+source was redeployed to a new production Vercel deployment. With the original
+verification session, the same workspace, customer, property and saved
+selection were returned from Neon afterwards. Browser reload persistence was
+also checked on desktop and mobile.
+
+This proves persistence across the tested application redeployment, **not** a
+forced Neon/database-provider restart, disaster recovery, cross-device login
+or indefinite retention. Anonymous access depends on the browser cookie;
+fictional workspaces expire after 30 days.
+
+### Screenshot scope
+
+Twelve views were captured on each device: start, dashboard, score dialog,
+home inputs, improvements, selected results, costs/packages, explanation,
+adviser homes, saved workspace, plan and evidence. The screenshot bundle is a
+local release artifact, not a new public database or an upload of real home
+data. No page-wide horizontal overflow was found at the tested sizes.
+
+For the money example, DEMO-01 with loft insulation and heat pump uses the
+**explicitly illustrative** 25p electricity / 7p gas preset. Annual variable
+charges change from **£2,040 to £1,946: £94/year saved**. Electricity increases
+by 2,312 kWh while gas falls by 9,600 kWh; the 7,288 kWh net reduction is not the
+same percentage as the bill reduction. Heat pump alone produces **−£8/year**
+at these illustrative tariffs, with no positive payback shown.
+
+All values are model/scenario estimates, not measured household savings.
 
 ## Completed locally
 
@@ -33,6 +108,13 @@ raw dataset and historical experiment hashes that are deliberately not all
 republished. README commands explicitly exclude those groups for a clean
 checkout and explain their requirements; they are not reported as passing.
 
+After public deployment, the focused 204-test backend suite, full 330-test
+frontend suite and production frontend build were run again and passed against
+the unchanged application source. An independent final scoped review of the
+tracked publication boundary, hosted configuration, model hashes, metadata and
+hosted receipts found no material blocker. It was not a penetration test or
+an independent repeat of every live test.
+
 ### Browser checks
 
 A fresh isolated local browser captured 12 principal views at 1440×900 and
@@ -60,8 +142,10 @@ restart. No live provider call was made. The task database was stopped after
 verification; no existing database or service was stopped.
 
 This establishes that the existing PostgreSQL adapter worked in this local
-test. It does not replace the pending hosted connection, pooler, ingress,
-restart and persistence checks.
+test. The separate hosted connection, ingress and application-redeployment
+checks above used Neon. Its default pooled connection rejected a startup
+timeout option; the working configuration uses the unpooled SSL secret
+override described in `docs/HOSTING.md`.
 
 ### Deployment identity
 
@@ -81,16 +165,17 @@ constraint and the distinction between local capability simulation and actual
 free-account eligibility. No cloud deployment or database was created by the
 build check.
 
-## Not yet established by this record
+## Remaining limits
 
-- Successful public deployment of this revision.
-- Production HTTPS ingress, database persistence across hosted restarts, or
-  hosted multi-client isolation.
-- Final deployed desktop/mobile screenshot set.
-- Production capacity, SLA, accessibility certification or real property-value
-  accuracy.
-
-The hosting configuration is prepared for an eligible free personal demo with
-durable Postgres. Account authorisation and database provisioning must succeed
-before deployment can be declared complete. A public GitHub repository is not
-proof of a working hosted application.
+- No production capacity/SLA, sustained hosted load test, accessibility
+  certification or real-participant usability study is claimed.
+- No Neon-provider restart, backup restore or disaster-recovery test was run.
+- No live Gemini/provider behaviour was tested on this public deployment;
+  explanations deliberately use the local fallback.
+- The property-value model remains synthetic, not market-calibrated or causal;
+  user-entered homes abstain from value-premium predictions.
+- The data-backed pilot covers England and Wales. Results are screening
+  estimates, not EPC certificates, installer quotes, loan decisions or savings
+  guarantees. Tariffs, cost ranges and assumptions must be reviewed.
+- Free hosting has quotas, idle behaviour and eligibility rules; this is a
+  personal demonstration, not guaranteed free production service.

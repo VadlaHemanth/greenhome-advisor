@@ -13,6 +13,7 @@ outputs/
 .venv/
 .venv
 node_modules/
+node_modules
 frontend/dist/
 __pycache__/
 .pytest_cache/

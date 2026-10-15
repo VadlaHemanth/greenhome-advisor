@@ -1,0 +1,25 @@
+{
+  "base": "https://greenhome-advisor-xi.vercel.app",
+  "checked_at": "2026-10-15T15:43:30.709Z",
+  "revision": "754b5fbfe1ff6de346ed2523c07224c24872a36e",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "checks": {
+    "menu_opens_with_keyboard": true,
+    "navigation_closes_after_choice": true,
+    "dialog_receives_focus": true,
+    "dialog_keeps_keyboard_focus": true,
+    "escape_closes_dialog": true,
+    "dialog_restores_trigger_focus": true,
+    "mobile_table_is_keyboard_scrollable": true,
+    "edited_rate_hides_previous_result": true,
+    "missing_rate_shows_partial_not_zero": true,
+    "invalid_rate_has_accessible_error": true,
+    "explicit_zero_rates_are_accepted": true,
+    "no_javascript_page_errors": true
+  },
+  "live_provider_calls": 0,
+  "scope": "Actual public browser interactions using fictional example, focused keyboard and tariff error-state checks; not a comprehensive accessibility audit."
+}

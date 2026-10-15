@@ -1,0 +1,298 @@
+{
+  "base": "https://greenhome-advisor-xi.vercel.app",
+  "date": "2026-10-15T15:35:36.724Z",
+  "findings": [
+    {
+      "device": "desktop",
+      "name": "01-start",
+      "url": "https://greenhome-advisor-xi.vercel.app/",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "02-dashboard",
+      "url": "https://greenhome-advisor-xi.vercel.app/#dashboard",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "03-score",
+      "url": "https://greenhome-advisor-xi.vercel.app/#dashboard",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "04-home",
+      "url": "https://greenhome-advisor-xi.vercel.app/#home",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "05-improvements",
+      "url": "https://greenhome-advisor-xi.vercel.app/#improvements",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "06-selected-results",
+      "url": "https://greenhome-advisor-xi.vercel.app/#dashboard",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "07-money",
+      "url": "https://greenhome-advisor-xi.vercel.app/#money",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "08-explanation",
+      "url": "https://greenhome-advisor-xi.vercel.app/#what-if",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "09-adviser",
+      "url": "https://greenhome-advisor-xi.vercel.app/#homes",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "10-workspace",
+      "url": "https://greenhome-advisor-xi.vercel.app/#workspace",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "workspace_restored_after_reload": true
+    },
+    {
+      "device": "desktop",
+      "name": "11-plan",
+      "url": "https://greenhome-advisor-xi.vercel.app/#plan",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "name": "12-evidence",
+      "url": "https://greenhome-advisor-xi.vercel.app/#reports",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "device": "desktop",
+      "additional_width": 320,
+      "route": "welcome",
+      "viewport": 320,
+      "content": 320
+    },
+    {
+      "device": "desktop",
+      "additional_width": 320,
+      "route": "money",
+      "viewport": 320,
+      "content": 320
+    },
+    {
+      "device": "desktop",
+      "additional_width": 320,
+      "route": "reports",
+      "viewport": 320,
+      "content": 320
+    },
+    {
+      "device": "desktop",
+      "additional_width": 320,
+      "route": "homes",
+      "viewport": 320,
+      "content": 320
+    },
+    {
+      "device": "desktop",
+      "additional_width": 768,
+      "route": "welcome",
+      "viewport": 768,
+      "content": 768
+    },
+    {
+      "device": "desktop",
+      "additional_width": 768,
+      "route": "money",
+      "viewport": 768,
+      "content": 768
+    },
+    {
+      "device": "desktop",
+      "additional_width": 768,
+      "route": "reports",
+      "viewport": 768,
+      "content": 768
+    },
+    {
+      "device": "desktop",
+      "additional_width": 768,
+      "route": "homes",
+      "viewport": 768,
+      "content": 768
+    },
+    {
+      "device": "mobile",
+      "name": "01-start",
+      "url": "https://greenhome-advisor-xi.vercel.app/",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "02-dashboard",
+      "url": "https://greenhome-advisor-xi.vercel.app/#dashboard",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "03-score",
+      "url": "https://greenhome-advisor-xi.vercel.app/#dashboard",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "04-home",
+      "url": "https://greenhome-advisor-xi.vercel.app/#home",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "05-improvements",
+      "url": "https://greenhome-advisor-xi.vercel.app/#improvements",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "06-selected-results",
+      "url": "https://greenhome-advisor-xi.vercel.app/#dashboard",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "07-money",
+      "url": "https://greenhome-advisor-xi.vercel.app/#money",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "08-explanation",
+      "url": "https://greenhome-advisor-xi.vercel.app/#what-if",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "09-adviser",
+      "url": "https://greenhome-advisor-xi.vercel.app/#homes",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "10-workspace",
+      "url": "https://greenhome-advisor-xi.vercel.app/#workspace",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "workspace_restored_after_reload": true
+    },
+    {
+      "device": "mobile",
+      "name": "11-plan",
+      "url": "https://greenhome-advisor-xi.vercel.app/#plan",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "name": "12-evidence",
+      "url": "https://greenhome-advisor-xi.vercel.app/#reports",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "device": "mobile",
+      "additional_width": 320,
+      "route": "welcome",
+      "viewport": 320,
+      "content": 320
+    },
+    {
+      "device": "mobile",
+      "additional_width": 320,
+      "route": "money",
+      "viewport": 320,
+      "content": 320
+    },
+    {
+      "device": "mobile",
+      "additional_width": 320,
+      "route": "reports",
+      "viewport": 320,
+      "content": 320
+    },
+    {
+      "device": "mobile",
+      "additional_width": 320,
+      "route": "homes",
+      "viewport": 320,
+      "content": 320
+    },
+    {
+      "device": "mobile",
+      "additional_width": 768,
+      "route": "welcome",
+      "viewport": 768,
+      "content": 768
+    },
+    {
+      "device": "mobile",
+      "additional_width": 768,
+      "route": "money",
+      "viewport": 768,
+      "content": 768
+    },
+    {
+      "device": "mobile",
+      "additional_width": 768,
+      "route": "reports",
+      "viewport": 768,
+      "content": 768
+    },
+    {
+      "device": "mobile",
+      "additional_width": 768,
+      "route": "homes",
+      "viewport": 768,
+      "content": 768
+    }
+  ],
+  "pageErrors": [],
+  "live_provider_calls": 0,
+  "revision": "754b5fbfe1ff6de346ed2523c07224c24872a36e",
+  "scope": "Actual public production alias, fictional inputs; isolated browser automation, not participant research or accessibility certification."
+}
