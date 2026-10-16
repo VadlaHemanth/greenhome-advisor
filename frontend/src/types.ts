@@ -219,6 +219,7 @@ export type Decision = {
 };
 export type Page =
   | "welcome"
+  | "examples"
   | "money"
   | "dashboard"
   | "home"

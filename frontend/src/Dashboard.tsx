@@ -30,7 +30,9 @@ import {
   Notice,
   ScoreGauge,
 } from "./components";
-import { HomeSchematic } from "./HomeSchematic";
+import { HomeComparison } from "./HomeComparison";
+import { DashboardMoney } from "./DashboardMoney";
+import type { MoneyController } from "./useMoneyPlan";
 import { RetrofitIcon } from "./RetrofitIcon";
 import "./planOverview.css";
 
@@ -45,6 +47,7 @@ export function Dashboard({
   showDetails,
   selected = plan?.selected_retrofits ?? [],
   onChange,
+  moneyController,
 }: {
   home: Home;
   baseline: Assessment;
@@ -56,6 +59,7 @@ export function Dashboard({
   showDetails: (r: Recommendation) => void;
   selected?: RetrofitId[];
   onChange?: (ids: RetrofitId[]) => void;
+  moneyController?: MoneyController;
 }) {
   const hasSelection = selected.length > 0;
   // Preview an already-computed standalone option without selecting or saving
@@ -84,7 +88,7 @@ export function Dashboard({
     isNumber(value.high_gbp);
   return (
     <>
-      <section className="hero intake-hero">
+      <section className="hero intake-hero comparison-hero">
         <div className="hero-copy">
           <h1>
             A considered plan.
@@ -99,7 +103,6 @@ export function Dashboard({
             Explore improvements <ArrowRight size={17} aria-hidden="true" />
           </Button>
         </div>
-        <HomeSchematic home={home} selected={selected} />
       </section>
       <div className="data-context">
         <ShieldCheck size={15} aria-hidden="true" />
@@ -111,15 +114,31 @@ export function Dashboard({
         <span className="context-separator">·</span>
         <span>England & Wales pilot</span>
       </div>
-      <div className="release-compare-link">
-        <p>
-          <strong>What could this mean for your bills?</strong>Enter your
-          tariffs and compare suitable packages. Energy and money savings are
-          different.
-        </p>
-        <Button variant="primary" onClick={() => navigate("money")}>
-          Compare costs & packages
-        </Button>
+      <div className="dashboard-experience">
+        <HomeComparison
+          key={home.property_id ?? "unknown-home"}
+          home={home}
+          selected={selected}
+          recommendations={baseline.recommendations}
+          loading={planLoading || (hasSelection && plan === null)}
+        />
+        {moneyController ? (
+          <DashboardMoney
+            controller={moneyController}
+            onCompare={() => navigate("money")}
+          />
+        ) : (
+          <div className="release-compare-link">
+            <p>
+              <strong>What could this mean for your bills?</strong>Enter your
+              tariffs and compare suitable packages. Energy and money savings
+              are different.
+            </p>
+            <Button variant="primary" onClick={() => navigate("money")}>
+              Compare costs & packages
+            </Button>
+          </div>
+        )}
       </div>
       <section
         className="metric-grid"

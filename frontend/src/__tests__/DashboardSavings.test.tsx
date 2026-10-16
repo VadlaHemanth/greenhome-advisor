@@ -46,6 +46,27 @@ function card(title: string) {
 }
 
 describe("dashboard separates an empty plan from calculated savings", () => {
+  it("withholds proposed geometry when the selected package has no valid assessment", () => {
+    const { container } = render(
+      <Dashboard
+        home={home}
+        baseline={noPlan}
+        plan={null}
+        planLoading={false}
+        selected={["heat_pump"]}
+        edit={vi.fn()}
+        navigate={vi.fn()}
+        showScore={vi.fn()}
+        showDetails={vi.fn()}
+      />,
+    );
+    expect(
+      container.querySelectorAll(
+        '.hc-proposed [data-feature-status="proposed"]',
+      ),
+    ).toHaveLength(0);
+    expect(screen.getByText(/Pending assessment/)).toBeTruthy();
+  });
   it("explains unavailable suggestions without presenting no-op arithmetic as opportunity", () => {
     const props = showDashboard(noPlan, { selected: [] });
     expect(card("Suggested energy saving").textContent).toContain(

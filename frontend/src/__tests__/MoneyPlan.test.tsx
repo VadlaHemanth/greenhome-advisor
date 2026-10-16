@@ -475,7 +475,6 @@ describe("MoneyPlan server packages and async isolation", () => {
     ["energy", { electricity_kwh: 6000 }],
     ["physical facts", { floor_area_m2: 120 }],
     ["assumptions", { heat_pump_spf: 4 }],
-    ["identity", { property_id: "ANOTHER-HOME" }],
   ] as [string, Partial<Home>][])(
     "keys requests by the full home including %s and discards late responses",
     async (_name, patch) => {
@@ -512,6 +511,30 @@ describe("MoneyPlan server packages and async isolation", () => {
       expect(table()).toBeTruthy();
     },
   );
+
+  it("immediately resets a new home without relying on a parent mount key", async () => {
+    const { rerender } = renderPlan();
+    preset();
+    await screen.findByRole("table", {
+      name: "Annual energy costs for your selected plan (GBP)",
+    });
+    rerender(
+      <MoneyPlan
+        home={{ ...home, property_id: "ANOTHER-HOME" }}
+        selected={selected}
+        onChange={vi.fn()}
+      />,
+    );
+    expect(screen.queryByRole("table")).toBeNull();
+    expect(
+      screen.getByRole("textbox", { name: "Electricity unit rate (p/kWh)" }),
+    ).toHaveProperty("value", "");
+    expect(
+      screen.getByRole("textbox", { name: "Gas unit rate (p/kWh)" }),
+    ).toHaveProperty("value", "");
+    expect(screen.getByText("User-entered rates")).toBeTruthy();
+    expect(api.request).toHaveBeenCalledTimes(1);
+  });
 
   it("immediately hides completed results on selection changes and requests the new explicit selection", async () => {
     const next = deferred<MoneyPlanResponse>();

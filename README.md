@@ -7,10 +7,21 @@ calculations; React shows the assumptions and comparisons. Currency is GBP.
 
 **[Open GreenHome Advisor](https://greenhome-advisor-xi.vercel.app)**
 
-Choose **Explore an example home** to start without an account. Add improvements,
-then open **Costs & packages** and enter your own tariffs or explicitly choose
-the illustrative preset. Saved workspace is optional and accepts fictional
-household data only. No shared username or password is required.
+Choose **Explore an example home** to start without an account, or open
+**Examples** to browse 200 independently generated fictional homes. Filter by
+building type, assessment status or search, then choose **Explore this home**.
+
+On **Dashboard**, rotate the linked current/proposed 3D illustrations with the
+buttons, arrow keys or a sideways drag. Add improvements under **Improvements**;
+only feasible selected work appears as proposed. The illustrations are not
+surveys or photographs of real homes.
+
+Enter your electricity and gas tariffs in the dashboard's bill comparison, or
+explicitly choose the illustrative preset, to see annual costs before/after
+and signed £ savings. The same temporary rates are available under **Costs &
+packages**. Changing homes resets the tariffs. Saved workspace is optional and
+accepts fictional household data only; browsing examples does not save them.
+No shared username or password is required.
 
 The public demo uses local explanations, not paid/live AI calls.
 See `docs/VALIDATION.md` for the tested source revision and release checks.
@@ -44,6 +55,7 @@ Do not expose the local-mode server through a public tunnel.
 
 ```bash
 .venv/bin/python -m pytest tests/test_money.py tests/test_money_api.py tests/test_hosted.py -q
+.venv/bin/python -m pytest tests/test_demo_catalogue.py tests/test_demo_catalogue_integration.py -q
 .venv/bin/python -m pytest -m "not training_data and not historical_artifacts" -q
 npm test --prefix frontend -- --maxWorkers=1
 npm run build --prefix frontend

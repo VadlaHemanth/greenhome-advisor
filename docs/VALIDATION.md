@@ -1,5 +1,43 @@
 # Release validation — 15 October 2026
 
+## 16 October upgrade — local verification
+
+The current/proposed interactive geometry, 200-home fictional catalogue and
+shared dashboard bill comparison have been implemented. The original training
+artifacts, four seed homes and private workspace limits are unchanged.
+
+| Check | Actual result |
+|---|---|
+| Full backend suite excluding explicitly marked training/archive dependencies | 1,339 passed; 14 deselected |
+| Full frontend suite | 448 passed across 35 files |
+| TypeScript/Vite production build | Passed |
+| Local desktop/mobile workflows, including six building families | 58 checks; 20 screenshots; 0 JavaScript page errors |
+| Additional browser touchscreen, friendly-region search and zero-rate checks | 5 passed |
+
+These counts overlap earlier scoped tests; do not add them. Browser checks
+covered 320/390/768/1280/1440 widths, linked camera controls, pointer drag,
+shared rates between Dashboard and Costs & packages, missing and negative
+savings, home switching, static catalogue pages and no continuous idle
+animation-frame loop. Touchscreen input was Chrome emulation, not a
+physical-device study.
+
+The local browser reproduced £2,040 → £1,946 and £94/year at the explicit
+illustrative 25p/7p rates, and −£8/year for heat pump alone. An additional
+regression withholds proposed geometry when the selected package has no valid
+assessment. The independent integration review found no blocking issue; its
+friendly-region search finding was fixed and tested.
+
+The 200-example catalogue has 200 unique physical-input fingerprints, six
+building families, 180 numerically assessed cases and 20 evidence-needed or
+unsupported cases under its fixed snapshot. These are authored demonstrations,
+not measured homes, a population sample, additional model training or new
+accuracy evidence. Details are in `docs/DEMO_CATALOGUE.md`.
+
+**Hosted status for this upgrade:** pending the final deployment verification.
+The completed hosted evidence below still refers to the earlier application
+revision. Do not treat local screenshots or a successful build as proof of a
+new public deployment.
+
 This record distinguishes local verification from checks on the actual public
 deployment. Counts overlap and must not be added.
 

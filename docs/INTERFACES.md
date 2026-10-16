@@ -10,6 +10,35 @@ never returns credentials or arbitrary environment values. A missing revision
 is explicitly unknown. `/api/readiness` remains the separate asset/model
 readiness check; a version identifier does not prove deployment success.
 
+## Public example catalogue and visual comparison
+
+`GET /api/demo-catalogue` is separate from the four-record `/api/demo-homes`
+endpoint. It serves a fixed, integrity-checked 200-home fictional snapshot.
+The query accepts `q` (at most 100 characters), an optional supported
+`property_type` or ranking `status`, `page` (at least 1), and `page_size`
+(1–24, default 12). See `docs/DEMO_CATALOGUE.md` for the exact response,
+generator and provenance. Filtering precedes pagination and never renumbers
+global ranks. Arbitrary `POST /api/rank-homes` input remains capped at 100.
+
+The `#examples` page opens an exact catalogue home in temporary mode after the
+existing unsaved-change confirmation. It does not insert public records into
+the private workspace or enlarge the four initial workspace seeds. Public
+catalogue homes are demonstration inputs, not observed household data or
+additional training/evaluation evidence.
+
+`HomeComparison` receives current `Home`, selected IDs, current-home
+`Recommendation[]` and a loading flag. The parent owns assessment identity.
+Current installed features appear in both views. Only current, feasible
+selected measures appear as proposed. Scene state is illustrative and never
+computes energy, costs, carbon, scores, EPCs or values. Geometry depends on
+building family, not inferred floor plans or measured dimensions.
+
+`useMoneyPlan(home, selected, scope)` owns temporary tariff draft, confirmation
+and the existing money API resource above Dashboard and Costs & packages.
+Changing scope/home identity clears tariffs; editing rates hides old amounts.
+Same-home input/package changes recompute with confirmed rates. Neither
+tariffs nor catalogue browsing change database schemas or ownership rules.
+
 ## Engine interface owned by lead
 
 `greenhome.engine` exports:

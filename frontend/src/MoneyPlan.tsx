@@ -1,16 +1,10 @@
-import { useId, useRef, useState } from "react";
-import { ApiError, request } from "./api";
+import { useId } from "react";
 import { number } from "./format";
-import type {
-  MoneyPlanResponse,
-  MoneyTariffDraft,
-  MoneyTariffErrors,
-  MoneyTariffField,
-  MoneyTariffs,
-} from "./moneyTypes";
-import { parseMoneyTariffs, validMoneyPlan } from "./moneyValidation";
+import { MoneyRateForm } from "./MoneyRateForm";
+import type { MoneyPlanResponse } from "./moneyTypes";
 import type { Home, RetrofitId } from "./types";
-import { useResource } from "./useResource";
+import { useMoneyPlan } from "./useMoneyPlan";
+import type { MoneyController } from "./useMoneyPlan";
 import "./money.css";
 
 const names: Record<RetrofitId, string> = {
@@ -45,12 +39,6 @@ const costRange = (range: [number, number]) =>
   `${pounds(range[0])}–${pounds(range[1])}`;
 const measure = (value: number | null, unit: string, decimals = 1) =>
   value === null ? "Unavailable" : `${number(value, decimals)}${unit}`;
-const dateFormat = new Intl.DateTimeFormat("en-GB", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-  timeZone: "UTC",
-});
 const objectives = [
   {
     key: "energy",
@@ -69,93 +57,37 @@ const objectives = [
   },
 ] as const;
 
-export function MoneyPlan({
-  home,
-  selected,
-  onChange,
-}: {
+type MoneyPlanProps = {
   home: Home;
   selected: RetrofitId[];
   onChange: (ids: RetrofitId[]) => void;
+  controller?: MoneyController;
+};
+
+export function MoneyPlan(props: MoneyPlanProps) {
+  // Keep the fallback hook in its own component: supplied controllers never
+  // create a second request owner, and switching modes does not change hooks.
+  return props.controller ? (
+    <MoneyPlanView controller={props.controller} onChange={props.onChange} />
+  ) : (
+    <StandaloneMoneyPlan {...props} />
+  );
+}
+
+function StandaloneMoneyPlan({ home, selected, onChange }: MoneyPlanProps) {
+  const controller = useMoneyPlan(home, selected, "standalone");
+  return <MoneyPlanView controller={controller} onChange={onChange} />;
+}
+
+function MoneyPlanView({
+  controller,
+  onChange,
+}: {
+  controller: MoneyController;
+  onChange: (ids: RetrofitId[]) => void;
 }) {
   const id = useId();
-  const [draft, setDraft] = useState<MoneyTariffDraft>({
-    electricity_pence: "",
-    gas_pence: "",
-    as_of: "",
-    source: "user_entered",
-  });
-  const [errors, setErrors] = useState<MoneyTariffErrors>({});
-  const [confirmed, setConfirmed] = useState<{
-    tariffs: MoneyTariffs;
-    revision: number;
-  } | null>(null);
-  const revision = useRef(0);
-  const fields = useRef<
-    Partial<Record<MoneyTariffField, HTMLInputElement | null>>
-  >({});
-  const body = confirmed
-    ? { home, selected_retrofits: selected, tariffs: confirmed.tariffs }
-    : null;
-  // Rendering is gated by the entire request, not just the property's ID.
-  // A separate revision makes explicit same-input retries fresh as well.
-  const key = body ? JSON.stringify([body, confirmed?.revision]) : null;
-  const result = useResource<MoneyPlanResponse>(key, async (signal) => {
-    const data = await request<MoneyPlanResponse>("/money-plan", body, signal);
-    if (!validMoneyPlan(data))
-      throw new ApiError(
-        "The service returned an incomplete money response. Please calculate again.",
-        502,
-        "invalid_response",
-      );
-    if (
-      !body ||
-      (Object.keys(body.tariffs) as (keyof MoneyTariffs)[]).some(
-        (field) => data.tariffs[field] !== body.tariffs[field],
-      )
-    )
-      throw new ApiError(
-        "The service returned different rates or provenance. Please calculate again.",
-        502,
-        "invalid_response",
-      );
-    return data;
-  });
-
-  function edit(field: MoneyTariffField, value: string) {
-    setDraft((previous) => ({
-      ...previous,
-      [field]: value,
-      source: "user_entered",
-    }));
-    setErrors({});
-    setConfirmed(null);
-  }
-  function calculate(nextDraft: MoneyTariffDraft) {
-    const parsed = parseMoneyTariffs(nextDraft);
-    setErrors(parsed.errors);
-    if (!parsed.tariffs) {
-      setConfirmed(null);
-      const first = Object.keys(parsed.errors)[0] as MoneyTariffField;
-      fields.current[first]?.focus();
-      return;
-    }
-    setConfirmed({ tariffs: parsed.tariffs, revision: ++revision.current });
-  }
-  function useIllustration() {
-    // Deliberately clear any old date; this preset is not a dated tariff quote.
-    const next: MoneyTariffDraft = {
-      electricity_pence: "25",
-      gas_pence: "7",
-      as_of: "",
-      source: "illustrative",
-    };
-    setDraft(next);
-    calculate(next);
-  }
-  const parsedDraft = parseMoneyTariffs(draft);
-  const enteredDate = parsedDraft.tariffs?.as_of;
-
+  const { result, confirmed, selected } = controller;
   return (
     <section className="money-plan" aria-labelledby={`${id}-title`}>
       <header className="money-heading">
@@ -166,111 +98,7 @@ export function MoneyPlan({
           savings guarantees.
         </p>
       </header>
-
-      <form
-        className="money-rate-form"
-        noValidate
-        onSubmit={(event) => {
-          event.preventDefault();
-          calculate(draft);
-        }}
-      >
-        <fieldset>
-          <legend>Your energy unit rates</legend>
-          <p id={`${id}-rate-hint`} className="money-hint">
-            Use pence per kWh, not pounds. Blank means unknown; 0 is accepted.
-            Supported range: 0–200 p/kWh, including fractional pence.
-          </p>
-          <div className="money-inputs">
-            {(
-              [
-                ["electricity_pence", "Electricity unit rate (p/kWh)"],
-                ["gas_pence", "Gas unit rate (p/kWh)"],
-                ["as_of", "Rate date (optional)"],
-              ] as const
-            ).map(([field, label]) => (
-              <div className="money-field" key={field}>
-                <label htmlFor={`${id}-${field}`}>{label}</label>
-                <input
-                  ref={(element) => {
-                    fields.current[field] = element;
-                  }}
-                  id={`${id}-${field}`}
-                  name={field}
-                  type={field === "as_of" ? "date" : "text"}
-                  inputMode={field === "as_of" ? undefined : "decimal"}
-                  autoComplete="off"
-                  value={draft[field]}
-                  aria-invalid={errors[field] ? true : undefined}
-                  aria-describedby={[
-                    `${id}-${field === "as_of" ? "date" : "rate"}-hint`,
-                    errors[field] ? `${id}-${field}-error` : "",
-                  ]
-                    .filter(Boolean)
-                    .join(" ")}
-                  onChange={(event) => edit(field, event.target.value)}
-                />
-                {errors[field] && (
-                  <p
-                    className="money-error"
-                    id={`${id}-${field}-error`}
-                    role="alert"
-                  >
-                    {errors[field]}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
-          <p className="money-hint" id={`${id}-date-hint`}>
-            The entered date records your source; it does not verify a tariff or
-            its availability.
-          </p>
-        </fieldset>
-
-        <div className="money-form-actions">
-          <button type="submit" className="money-calculate">
-            Calculate
-          </button>
-          <button
-            type="button"
-            className="money-preset"
-            onClick={useIllustration}
-          >
-            Use illustrative 25p / 7p preset
-          </button>
-        </div>
-        <dl className="money-provenance">
-          <div>
-            <dt>Rate source</dt>
-            <dd>
-              {draft.source === "illustrative"
-                ? "Illustrative rates — not current tariffs"
-                : "User-entered rates"}
-            </dd>
-          </div>
-          <div>
-            <dt>Entered rate date</dt>
-            <dd>
-              {enteredDate ? (
-                <time dateTime={enteredDate}>
-                  {dateFormat.format(new Date(`${enteredDate}T00:00:00Z`))}
-                </time>
-              ) : draft.as_of ? (
-                "Date needs checking"
-              ) : (
-                "No date entered"
-              )}
-            </dd>
-          </div>
-        </dl>
-        <p className="money-standing-note">
-          Standing charges are excluded from before/after costs and assumed
-          unchanged for savings—not zero. A heat pump does not imply removal of
-          the gas supply or its standing charge.
-        </p>
-      </form>
-
+      <MoneyRateForm controller={controller} />
       <div className="money-output" aria-busy={result.loading}>
         {result.loading ? (
           <p role="status" className="money-state">

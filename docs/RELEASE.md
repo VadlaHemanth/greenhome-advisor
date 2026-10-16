@@ -11,6 +11,13 @@ journey, feature-linked house schematic, and adviser summary. Existing
 calculation, privacy, missing-data, ownership and synthetic-model limitations
 remain in force.
 
+The 16 October upgrade adds linked interactive current/proposed house
+illustrations, a separate 200-home fictional catalogue, and dashboard bill
+comparisons sharing temporary rates with Costs & packages. Catalogue data is
+independently generated, not new model training, survey data or an organiser
+dataset. Original four seed homes and private workspace limits remain unchanged.
+See `docs/HOME_COMPARISON.md` and `docs/DEMO_CATALOGUE.md`.
+
 Tariffs start unknown. The 25p/7p example is an explicit illustration, never
 a claim about current rates. Score and required energy-percentage ranking do
 not depend on tariffs. The house is a schematic, not a surveyed replica.

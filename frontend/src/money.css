@@ -420,3 +420,139 @@
     transition: none;
   }
 }
+
+/* Dashboard: the comparison leads; the shared tariff form stays secondary. */
+.dashboard-money {
+  container-type: inline-size;
+  padding: clamp(18px, 2.5vw, 30px);
+  border: 1px solid var(--money-line);
+  border-radius: 16px;
+  background: #fff;
+}
+.dashboard-money-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.dashboard-money-heading h2 {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  margin: 0 0 8px;
+}
+.dashboard-money-heading p {
+  max-width: 66ch;
+  font-size: 0.84rem;
+  margin: 0;
+}
+.dashboard-money .money-compare {
+  background: var(--money-tint);
+  color: var(--money-forest);
+  border: 1px solid #a5bdb1;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.dashboard-money button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.dashboard-money-summary {
+  margin: 22px 0;
+}
+.dashboard-money-primary,
+.dashboard-money-secondary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 22px 0 0;
+}
+.dashboard-money-primary > div,
+.dashboard-money-secondary > div {
+  min-width: 0;
+}
+.dashboard-money-primary > div + div {
+  border-left: 1px solid var(--money-line);
+  padding-left: 22px;
+}
+.dashboard-money-primary dt,
+.dashboard-money-secondary dt {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--money-muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.dashboard-money-primary dd,
+.dashboard-money-secondary dd {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+.dashboard-money-primary dd {
+  font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+}
+.dashboard-money-secondary {
+  grid-template-columns: 1fr 2fr;
+  border-top: 1px solid var(--money-line);
+  padding-top: 18px;
+}
+.dashboard-money-secondary dd {
+  font-size: clamp(1.05rem, 1.7vw, 1.4rem);
+}
+.dashboard-money .dashboard-money-sign {
+  font-size: 0.85rem;
+  margin: 16px 0 0;
+}
+.dashboard-money .money-rate-form {
+  padding: 20px;
+  margin-top: 22px;
+  border-top: 1px solid var(--money-line);
+  border-radius: 10px;
+  background: #f6f9f7;
+}
+.dashboard-money .money-inputs {
+  gap: 16px;
+  margin-top: 16px;
+}
+.dashboard-money .money-form-actions {
+  margin: 18px 0;
+}
+.dashboard-money-notes {
+  font-size: 0.8rem;
+  color: var(--money-muted);
+  margin-top: 16px;
+}
+.dashboard-money-notes summary {
+  padding-block: 12px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.dashboard-money-notes li {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  margin-block: 8px;
+}
+@container (max-width: 640px) {
+  .dashboard-money-primary,
+  .dashboard-money-secondary,
+  .dashboard-money .money-inputs {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .dashboard-money-primary > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--money-line);
+    padding: 18px 0 0;
+  }
+  .dashboard-money .money-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -47,6 +47,8 @@ import { WorkspacePage } from "./WorkspacePage";
 import { CustomerPlan } from "./CustomerPlan";
 import { Welcome } from "./Welcome";
 import { MoneyPlan } from "./MoneyPlan";
+import { DemoCatalogue } from "./DemoCatalogue";
+import { useMoneyPlan } from "./useMoneyPlan";
 import { useWorkspace } from "./useWorkspace";
 import {
   propertyHome,
@@ -59,6 +61,7 @@ import {
 const navigation: { id: Page; label: string; icon: typeof House }[] = [
   { id: "welcome", label: "Start", icon: House },
   { id: "dashboard", label: "Dashboard", icon: House },
+  { id: "examples", label: "Examples", icon: House },
   { id: "home", label: "My home", icon: House },
   { id: "improvements", label: "Improvements", icon: ListChecks },
   { id: "money", label: "Costs & packages", icon: PoundSterling },
@@ -163,6 +166,7 @@ export default function App() {
     sourceHome && customer && property && preferences
       ? withPreferences(sourceHome, preferences, customer.customer_preferences)
       : sourceHome;
+  const moneyController = useMoneyPlan(home, selected, scope);
   const householdDirty = Boolean(
     customer &&
       property &&
@@ -369,6 +373,19 @@ export default function App() {
     }
     const found = bootstrap.data?.homes.find((item) => item.property_id === id);
     if (found) updateHome(structuredClone(found));
+  }
+  function openExample(example: Home) {
+    if (!discardAllowed()) return;
+    resetDrafts();
+    setCustomerId(null);
+    setPropertyId(undefined);
+    setEditedHome(structuredClone(example));
+    setSelected([]);
+    setPage("dashboard");
+    setMenu(false);
+    window.history.pushState(null, "", "#dashboard");
+    window.scrollTo({ top: 0, behavior: "instant" });
+    requestAnimationFrame(() => main.current?.focus({ preventScroll: true }));
   }
   function changePreferences(next: Preferences) {
     setPreferenceDraft(next);
@@ -713,6 +730,16 @@ export default function App() {
                     {item.property_id} · {item.property_type}
                   </option>
                 ))}
+                {home?.data_kind === "synthetic_demo" &&
+                home.property_id &&
+                !bootstrap.data?.homes.some(
+                  (item) => item.property_id === home.property_id,
+                ) ? (
+                  <option value={home.property_id}>
+                    {home.property_id} · {home.property_type} · catalogue
+                    example
+                  </option>
+                ) : null}
                 <option value="MY-HOME">Enter your own home</option>
               </select>
             </label>
@@ -733,9 +760,12 @@ export default function App() {
         <a href="#plan" onClick={(e) => nativeClick(e, "plan")}>
           Go to my plan
         </a>
+        <a href="#examples" onClick={(e) => nativeClick(e, "examples")}>
+          Browse example homes
+        </a>
       </div>
       <div
-        className={`workspace-layout ${["welcome", "money", "reports", "homes", "workspace", "plan", "home"].includes(page) ? "reports-layout" : ""}`}
+        className={`workspace-layout ${["welcome", "examples", "money", "reports", "homes", "workspace", "plan", "home"].includes(page) ? "reports-layout" : ""} ${page === "dashboard" ? "dashboard-layout" : ""}`}
       >
         <main id="main" ref={main} tabIndex={-1} className="main-content">
           {page === "welcome" ? (
@@ -750,10 +780,13 @@ export default function App() {
               }}
               onOwnHome={() => pickHome("MY-HOME")}
               onEvidence={() => navigate("reports")}
+              onCatalogue={() => navigate("examples")}
             />
           ) : null}
           <p className="sr-only" role="status" aria-live="polite">
-            {!["welcome", "workspace", "homes", "reports"].includes(page)
+            {!["welcome", "workspace", "homes", "examples", "reports"].includes(
+              page,
+            )
               ? plan.loading
                 ? "Updating the current home plan."
                 : plan.data
@@ -764,7 +797,16 @@ export default function App() {
               : ""}
           </p>
           {page === "workspace" ? savedWorkspacePage : null}
-          {bootstrap.error && page !== "workspace" && page !== "welcome" ? (
+          {page === "examples" ? (
+            <DemoCatalogue
+              onOpen={openExample}
+              hasSavedWorkspace={Boolean(saved)}
+            />
+          ) : null}
+          {bootstrap.error &&
+          page !== "workspace" &&
+          page !== "welcome" &&
+          page !== "examples" ? (
             <section className="connection-state card">
               <h1>Let’s reconnect your home</h1>
               <Notice kind="error">{bootstrap.error}</Notice>
@@ -777,7 +819,8 @@ export default function App() {
           {(bootstrap.loading || !home) &&
           !bootstrap.error &&
           page !== "workspace" &&
-          page !== "welcome" ? (
+          page !== "welcome" &&
+          page !== "examples" ? (
             <div className="dashboard-skeleton" aria-busy="true">
               <Loading label="Preparing your home workspace…" />
               <div className="skeleton-hero" />
@@ -791,6 +834,7 @@ export default function App() {
           ) : null}
           {page !== "workspace" &&
           page !== "welcome" &&
+          page !== "examples" &&
           home &&
           !bootstrap.loading &&
           !bootstrap.error ? (
@@ -882,6 +926,7 @@ export default function App() {
                   home={home}
                   selected={selected}
                   onChange={updatePlan}
+                  controller={moneyController}
                 />
               ) : page === "reports" ? (
                 <Reports home={home} assessment={plan.data} />
@@ -896,6 +941,7 @@ export default function App() {
                       plan={plan.data}
                       planLoading={plan.loading}
                       selected={selected}
+                      moneyController={moneyController}
                       onChange={updatePlan}
                       edit={() => setDialog({ type: "edit" })}
                       navigate={navigate}
@@ -940,6 +986,7 @@ export default function App() {
         </main>
         {![
           "welcome",
+          "examples",
           "money",
           "reports",
           "workspace",

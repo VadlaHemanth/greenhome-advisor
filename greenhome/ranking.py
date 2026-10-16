@@ -77,6 +77,17 @@ def rank_homes(homes: list[dict]) -> dict:
             "cost_gbp": list(scenario["cost_gbp"]) if scenario else None,
             "budget_gbp": h.get("budget_gbp"),
         })
+    return {"policy": POLICY, "rows": assign_global_ranks(rows), "warnings": list(WARNINGS)}
+
+
+def assign_global_ranks(rows: list[dict]) -> list[dict]:
+    """Sort screened, already-quantized rows and replace all competition ranks.
+
+    This mutates the supplied rows, just as rank_homes historically did. The
+    trusted offline catalogue builder can combine screened batches here without
+    raising the arbitrary-input screening admission limit or publishing local
+    batch ranks. This helper does not screen homes or quantize fuel calculations.
+    """
     rows.sort(key=lambda row: (
         row["improvement_percent"] is None,
         -(row["improvement_percent"] or 0),
@@ -84,6 +95,7 @@ def rank_homes(homes: list[dict]) -> dict:
     ))
     previous, rank = None, None
     for position, row in enumerate(rows, 1):
+        row["rank"] = None
         value = row["improvement_percent"]
         if value is None:
             continue
@@ -91,4 +103,4 @@ def rank_homes(homes: list[dict]) -> dict:
             rank = position
         row["rank"] = rank
         previous = value
-    return {"policy": POLICY, "rows": rows, "warnings": list(WARNINGS)}
+    return rows

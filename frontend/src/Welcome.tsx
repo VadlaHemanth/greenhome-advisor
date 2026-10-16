@@ -34,10 +34,12 @@ export function Welcome({
   onExample,
   onOwnHome,
   onEvidence,
+  onCatalogue,
 }: {
   onExample: () => void;
   onOwnHome: () => void;
   onEvidence: () => void;
+  onCatalogue?: () => void;
 }) {
   return (
     <div className="release-welcome">
@@ -65,6 +67,11 @@ export function Welcome({
               Assess my own home
             </button>
           </div>
+          {onCatalogue ? (
+            <button className="text-link" onClick={onCatalogue}>
+              Browse the fictional home collection
+            </button>
+          ) : null}
           <p className="welcome-scope">
             England and Wales pilot. Own-home assessments are temporary and
             unsaved.

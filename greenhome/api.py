@@ -566,6 +566,8 @@ def create_app(*, load_environment: bool = True) -> FastAPI:
     application.include_router(workspace_router)
     from greenhome.money_api import make_money_router
     application.include_router(make_money_router(HomeInput, run_calculation=calculations.run))
+    from greenhome.demo_catalogue_api import create_demo_catalogue_router
+    application.include_router(create_demo_catalogue_router())
 
     # Only the compiled frontend directory is exposed; never serve the repository.
     built = ROOT / "frontend" / "dist"
