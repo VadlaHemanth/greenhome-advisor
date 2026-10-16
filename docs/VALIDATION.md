@@ -1,6 +1,13 @@
-# Release validation — 15 October 2026
+# Release validation — 16 October 2026
 
-## 16 October upgrade — local verification
+## 16 October upgrade — live deployment verified
+
+**Public URL:** `https://greenhome-advisor-xi.vercel.app`
+
+**Deployed application revision:** `8c1f1056f960a1928890f2aebacb683c807b6cb8`
+
+Documentation/evidence-only commits after that revision do not change the app.
+Check `/api/release` or the Reports screen for its actual source identity.
 
 The current/proposed interactive geometry, 200-home fictional catalogue and
 shared dashboard bill comparison have been implemented. The original training
@@ -13,6 +20,11 @@ artifacts, four seed homes and private workspace limits are unchanged.
 | TypeScript/Vite production build | Passed |
 | Local desktop/mobile workflows, including six building families | 58 checks; 20 screenshots; 0 JavaScript page errors |
 | Additional browser touchscreen, friendly-region search and zero-rate checks | 5 passed |
+| Actual production API, all 200 examples, money and existing workspace persistence | 33 checks passed |
+| Actual production desktop/mobile browser matrix | 58 checks; 20 screenshots; 0 JavaScript page errors |
+| Actual production touchscreen emulation, friendly-region search and zero-rate checks | 5 passed |
+| Clean public-source backend run before frontend build | 1,338 passed; 1 asset-dependent skip; 14 deselected |
+| Built clean-source security/readiness checks | 18 passed |
 
 These counts overlap earlier scoped tests; do not add them. Browser checks
 covered 320/390/768/1280/1440 widths, linked camera controls, pointer drag,
@@ -33,15 +45,59 @@ unsupported cases under its fixed snapshot. These are authored demonstrations,
 not measured homes, a population sample, additional model training or new
 accuracy evidence. Details are in `docs/DEMO_CATALOGUE.md`.
 
-**Hosted status for this upgrade:** pending the final deployment verification.
-The completed hosted evidence below still refers to the earlier application
-revision. Do not treat local screenshots or a successful build as proof of a
-new public deployment.
+The live API check independently loaded every catalogue page and checked
+uniqueness and global competition ranks; all six types were assessed through
+the actual API. Friendly London/Wales queries, zero-result filtering, strict
+query/input caps, private path rejection, same-origin policy, missing tariffs,
+negative payback suppression and user-entered value abstention passed.
+
+The pre-existing fictional verification workspace was read before and after
+this upgrade. Its customer, property and selected plan survived the new
+application deployment unchanged. No database-provider restart or disaster
+recovery exercise was performed.
+
+Safe machine-readable evidence, without credentials, cookies or workspace IDs:
+
+- `reports/home_upgrade_hosted_checks.json`
+- `reports/home_upgrade_browser_checks.json`
+- `reports/home_upgrade_touch_checks.json`
+- `reports/home_upgrade_render_observations.json`
+
+Observed catalogue API request median was approximately 0.037 seconds across
+16 checks, with maximum 0.165 seconds in that run. These are observations, not
+a cold-start/load benchmark or latency guarantee. Browser checks found no
+continuously scheduled animation-frame loop while the scene was idle.
+For 12 desktop paired-scene rotations in isolated headless Chrome, the observed
+click-to-two-animation-frames median was 26.5 ms and maximum 52.7 ms. This includes
+frame scheduling; it is not pure GPU/CPU time, a physical-device benchmark or a
+performance guarantee.
+
+### Build correction and verification boundaries
+
+The first upgrade cloud build failed because a shared test fixture existed
+locally but had been omitted from the public file allowlist. A clean-checkout
+build reproduced the exact missing-module failure. The fixture was included
+in commit `8c1f105`, the corrected clean build and 51 affected tests passed,
+and the actual Vercel production build then succeeded. No dependency, model or
+numerical engine was changed to work around it. A scan found no other untracked
+relative frontend imports.
+
+The independent scene review found no material blocker and independently ran
+51 focused tests. Its numerical occlusion sampling found a decorative
+chimney/roof join limitation at some attached-building rotations; it did not
+identify an upgrade-equipment state error. Browser visual review covered all
+six families on desktop/mobile. No claim of perfect arbitrary-mesh occlusion,
+photorealism, accessibility certification or physical-device research is made.
+
+The screenshots are real production captures delivered in a local gallery and
+ZIP; local previews are retained separately. Vercel Hobby and Neon Free remain
+the deployment configuration, with local explanations and no paid upgrade or
+live model-provider calls during this verification.
 
 This record distinguishes local verification from checks on the actual public
 deployment. Counts overlap and must not be added.
 
-## Public deployment verified
+## Earlier public deployment — 15 October 2026
 
 **URL:** `https://greenhome-advisor-xi.vercel.app`
 

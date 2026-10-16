@@ -7,7 +7,7 @@ unlimited or guaranteed free production service.
 ## Verified deployment
 
 - Public demo: `https://greenhome-advisor-xi.vercel.app`
-- Application source revision: `754b5fbfe1ff6de346ed2523c07224c24872a36e`
+- Application source revision: `8c1f1056f960a1928890f2aebacb683c807b6cb8`
 - Platform observed on 15 October 2026: Vercel Hobby, FastAPI, Python 3.12,
   Node.js 22; Neon Free database in London. Neon Auth is not enabled.
 - React is built with Vite and served by the FastAPI application. The app's
@@ -15,6 +15,10 @@ unlimited or guaranteed free production service.
 - Public HTTPS checks, separate-workspace isolation, browser reload, and
   restoration of a previously saved plan after a production redeployment passed.
   See `docs/VALIDATION.md` and the safe receipts in `reports/hosted_*.json`.
+- The 16 October upgrade adds the fixed `/api/demo-catalogue` snapshot, 3D
+  illustrative comparisons and shared dashboard bill estimates. Its actual
+  hosted checks are in `reports/home_upgrade_*.json`; the existing saved test
+  workspace and selection survived the application upgrade.
 
 No paid plan, card entry or upgrade was used for this release. This records the
 configuration observed at deployment, not a permanent pricing or availability
@@ -65,6 +69,13 @@ integration remains in the source for separately reviewed deployments.
 Do not enter a payment method, upgrade a plan or enable paid usage simply to
 make this demo deploy. Pause and reassess if quotas or build limits do not fit.
 No secrets belong in `vercel.json`, frontend environment variables or Git.
+
+The catalogue JSON and its manifest are required runtime artifacts; include
+both in the clean deployment archive. They contain only independently authored
+fictional examples. The deployment does not generate data or train models.
+Keep shared frontend test fixtures in Git too: TypeScript checks test imports
+during the existing build. The initial 16 October cloud build caught an omitted
+fixture; the corrected clean-source build and deployment were verified.
 
 ### Why the unpooled Neon connection is required here
 

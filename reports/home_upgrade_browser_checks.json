@@ -1,0 +1,462 @@
+{
+  "base": "https://greenhome-advisor-xi.vercel.app",
+  "checked_at": "2026-10-16T02:18:17.686Z",
+  "checks": [
+    {
+      "check": "all_200_catalogue_records_loaded_once",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "linked_rotation_keyboard_and_reset",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "pointer_drag_rotates_geometry",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "signed_94_money_and_current_vs_proposed",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "money_and_scene_visible_side_by_side",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "confirmed_rates_and_amounts_shared_between_pages",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "edited_and_missing_rates_hide_old_totals",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "negative_annual_cost_change_visible",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "new_home_does_not_inherit_tariffs",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "empty_filter_explicit_no_false_homes",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "family_before_after",
+      "family": "Detached",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "family_before_after",
+      "family": "Semi detached",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "family_before_after",
+      "family": "Mid terrace",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "family_before_after",
+      "family": "End terrace",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "family_before_after",
+      "family": "Bungalow",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "family_before_after",
+      "family": "Flat",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "no_continuous_idle_animation_frames",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "reduced_motion_respected",
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "dashboard",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "examples",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "money",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "dashboard",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "examples",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "money",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "dashboard",
+      "width": 1280,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "examples",
+      "width": 1280,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "money",
+      "width": 1280,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "dashboard",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "examples",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "device": "desktop",
+      "check": "responsive_no_page_overflow",
+      "route": "money",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "linked_rotation_keyboard_and_reset",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "pointer_drag_rotates_geometry",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "signed_94_money_and_current_vs_proposed",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "confirmed_rates_and_amounts_shared_between_pages",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "edited_and_missing_rates_hide_old_totals",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "negative_annual_cost_change_visible",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "new_home_does_not_inherit_tariffs",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "empty_filter_explicit_no_false_homes",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "family_before_after",
+      "family": "Detached",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "family_before_after",
+      "family": "Semi detached",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "family_before_after",
+      "family": "Mid terrace",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "family_before_after",
+      "family": "End terrace",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "family_before_after",
+      "family": "Bungalow",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "family_before_after",
+      "family": "Flat",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "no_continuous_idle_animation_frames",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "reduced_motion_respected",
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "dashboard",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "examples",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "money",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "dashboard",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "examples",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "money",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "dashboard",
+      "width": 1280,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "examples",
+      "width": 1280,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "money",
+      "width": 1280,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "dashboard",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "examples",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "device": "mobile",
+      "check": "responsive_no_page_overflow",
+      "route": "money",
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "desktop-01-current",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-02-selected-plan",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-03-negative-saving",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-04-catalogue",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-family-1-detached",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-family-2-semi-detached",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-family-3-mid-terrace",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-family-4-end-terrace",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-family-5-bungalow",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "desktop-family-6-flat",
+      "viewport": 1440,
+      "content": 1440
+    },
+    {
+      "name": "mobile-01-current",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-02-selected-plan",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-03-negative-saving",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-04-catalogue",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-family-1-detached",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-family-2-semi-detached",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-family-3-mid-terrace",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-family-4-end-terrace",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-family-5-bungalow",
+      "viewport": 390,
+      "content": 390
+    },
+    {
+      "name": "mobile-family-6-flat",
+      "viewport": 390,
+      "content": 390
+    }
+  ],
+  "page_errors": [],
+  "api_request_count": 100,
+  "live_provider_calls": 0,
+  "scope": "Actual browser workflows and fictional examples; local unless base is the public deployment. Not measured household savings, a capacity guarantee or accessibility certification.",
+  "revision": "8c1f1056f960a1928890f2aebacb683c807b6cb8"
+}

@@ -1,0 +1,14 @@
+{
+  "base": "https://greenhome-advisor-xi.vercel.app",
+  "checked_at": "2026-10-16T02:18:46.382Z",
+  "checks": {
+    "real_browser_touch_drag_changes_camera": true,
+    "vertical_touch_scroll_not_trapped": true,
+    "vertical_touch_does_not_rotate": true,
+    "friendly_region_search": true,
+    "zero_rates_are_real_zero": true
+  },
+  "scope": "Isolated Chrome touchscreen emulation with trusted CDP input; not a physical-device study.",
+  "live_provider_calls": 0,
+  "revision": "8c1f1056f960a1928890f2aebacb683c807b6cb8"
+}

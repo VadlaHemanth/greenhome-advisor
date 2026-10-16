@@ -1,0 +1,234 @@
+{
+  "base": "https://greenhome-advisor-xi.vercel.app",
+  "checked_at": "2026-10-16T02:17:03Z",
+  "revision": "8c1f1056f960a1928890f2aebacb683c807b6cb8",
+  "checks": {
+    "release_identity_matches": true,
+    "health_ok": true,
+    "ready": true,
+    "root_public": true,
+    "private_path__.env": true,
+    "private_path__openapi.json": true,
+    "private_path__data_demo_catalogue.json": true,
+    "catalogue_200_unique_ids": true,
+    "catalogue_200_distinct_physical_inputs": true,
+    "catalogue_explicit_demo_only": true,
+    "global_competition_ranks": true,
+    "all_six_families": true,
+    "friendly_region_Wales": true,
+    "friendly_region_London": true,
+    "empty_filter": true,
+    "query_bounds": true,
+    "four_legacy_seeds": true,
+    "arbitrary_rank_cap_100": true,
+    "money_2040_1946_94": true,
+    "negative_8_no_payback": true,
+    "missing_not_zero": true,
+    "assessment_Bungalow": true,
+    "assessment_Detached": true,
+    "assessment_End terrace": true,
+    "assessment_Flat": true,
+    "assessment_Mid terrace": true,
+    "assessment_Semi detached": true,
+    "cross_origin_rejected": true,
+    "own_home_value_abstains": true,
+    "fresh_session_no_saved_workspace": true,
+    "workspace_survived_upgrade": true,
+    "customer_property_survived_upgrade": true,
+    "saved_selection_survived_upgrade": true
+  },
+  "request_timings": [
+    {
+      "path": "/api/release",
+      "status": 200,
+      "seconds": 0.166
+    },
+    {
+      "path": "/api/health",
+      "status": 200,
+      "seconds": 0.03
+    },
+    {
+      "path": "/api/readiness",
+      "status": 200,
+      "seconds": 0.073
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "seconds": 0.029
+    },
+    {
+      "path": "/.env",
+      "status": 404,
+      "seconds": 0.068
+    },
+    {
+      "path": "/openapi.json",
+      "status": 404,
+      "seconds": 0.081
+    },
+    {
+      "path": "/data/demo_catalogue.json",
+      "status": 404,
+      "seconds": 0.061
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.13
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.04
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.108
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.043
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.067
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.035
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.035
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.031
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.043
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.03
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.038
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 200,
+      "seconds": 0.033
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 422,
+      "seconds": 0.034
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 422,
+      "seconds": 0.028
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 422,
+      "seconds": 0.026
+    },
+    {
+      "path": "/api/demo-catalogue",
+      "status": 422,
+      "seconds": 0.165
+    },
+    {
+      "path": "/api/demo-homes",
+      "status": 200,
+      "seconds": 0.021
+    },
+    {
+      "path": "/api/rank-homes",
+      "status": 422,
+      "seconds": 0.034
+    },
+    {
+      "path": "/api/money-plan",
+      "status": 200,
+      "seconds": 0.039
+    },
+    {
+      "path": "/api/money-plan",
+      "status": 200,
+      "seconds": 0.031
+    },
+    {
+      "path": "/api/money-plan",
+      "status": 200,
+      "seconds": 0.027
+    },
+    {
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.074
+    },
+    {
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.039
+    },
+    {
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.053
+    },
+    {
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.072
+    },
+    {
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.073
+    },
+    {
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.1
+    },
+    {
+      "path": "/api/assess",
+      "status": 403,
+      "seconds": 0.034
+    },
+    {
+      "path": "/api/assess",
+      "status": 200,
+      "seconds": 0.039
+    },
+    {
+      "path": "/api/workspace/session",
+      "status": 200,
+      "seconds": 0.023
+    },
+    {
+      "path": "/api/workspace/session",
+      "status": 200,
+      "seconds": 0.34
+    }
+  ],
+  "live_provider_calls": 0,
+  "scope": "Actual production alias, independently authored fictional catalogue and pre-existing fictional verification workspace. Application deployment survival, not database-provider restart or physical-home validation."
+}

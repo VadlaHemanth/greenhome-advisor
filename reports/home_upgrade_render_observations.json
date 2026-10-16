@@ -1,0 +1,24 @@
+{
+  "base": "https://greenhome-advisor-xi.vercel.app",
+  "revision": "8c1f1056f960a1928890f2aebacb683c807b6cb8",
+  "checked_at": "2026-10-16T02:22:39.682Z",
+  "scenario": "DEMO-01 paired current/proposed illustrative geometry, desktop1440x1000, reduced motion, isolated headless Chromium",
+  "measurement": "Click listener timestamp to two requested animation frames, includes frame scheduling; not pure GPU or CPU time, not a capacity/physical-device benchmark.",
+  "samples_ms": [
+    52.7,
+    37,
+    23.4,
+    22.4,
+    25.8,
+    45.6,
+    24.7,
+    31.6,
+    26.2,
+    23.4,
+    30.4,
+    26.8
+  ],
+  "median_ms": 26.5,
+  "max_ms": 52.7,
+  "live_provider_calls": 0
+}
